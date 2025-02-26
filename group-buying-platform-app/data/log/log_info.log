@@ -1,0 +1,16 @@
+25-02-26.09:38:03.450 [main            ] INFO  DaoTest                - Starting DaoTest using Java 1.8.0_151 on mile with PID 18844 (started by aaa in D:\Develop\project\group-buying-platform\group-buying-platform-app)
+25-02-26.09:38:03.451 [main            ] INFO  DaoTest                - The following 1 profile is active: "dev"
+25-02-26.09:38:04.079 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-02-26.09:38:04.081 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-02-26.09:38:04.134 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+25-02-26.09:38:07.215 [main            ] INFO  Version                - Redisson 3.26.0
+25-02-26.09:38:07.934 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
+25-02-26.09:38:07.945 [redisson-netty-1-14] INFO  ConnectionsHolder      - 5 connections initialized for localhost/127.0.0.1:6379
+25-02-26.09:38:09.257 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-02-26.09:38:09.311 [main            ] INFO  DaoTest                - Started DaoTest in 6.244 seconds (JVM running for 7.951)
+25-02-26.09:38:09.618 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-02-26.09:38:11.289 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-02-26.09:38:11.470 [main            ] INFO  DaoTest                - [GroupBuyingActivity(id=1, activityId=100123, source=s01, channel=c01, goodsId=9890001, discountId=25120207, groupType=0, takeLimitCount=1, target=1, validTime=15, status=0, beginTime=Sat Dec 07 10:19:40 CST 2024, endTime=Sat Dec 07 10:19:40 CST 2024, tagId=1, tagScope=1, createTime=Sat Dec 07 10:19:40 CST 2024, updateTime=Sat Dec 07 10:19:40 CST 2024)]
+25-02-26.09:38:11.470 [main            ] INFO  DaoTest                - [GroupBuyingDiscount(id=1, discountId=9890001, discountName=测试优惠, discountDesc=测试优惠, discountType=0, marketingPlan=ZJ, marketingExpr=20, tagId=null, createTime=Sat Dec 07 10:20:15 CST 2024, updateTime=Sat Dec 07 10:20:15 CST 2024)]
+25-02-26.09:38:11.502 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-02-26.09:38:12.086 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
