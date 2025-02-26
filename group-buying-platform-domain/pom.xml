@@ -18,4 +18,23 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+    <dependencies>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+
+<!--        系统模块-->
+        <dependency>
+            <groupId>top.javarem.infrustracture</groupId>
+            <artifactId>group-buying-platform-infrastructure</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>top.javarem.types</groupId>
+            <artifactId>group-buying-platform-types</artifactId>
+        </dependency>
+
+    </dependencies>
+
 </project>
