@@ -11,4 +11,5 @@ import top.javarem.infrastructure.dao.po.GroupBuyingDiscount;
 */
 public interface GroupBuyingDiscountService extends IService<GroupBuyingDiscount> {
 
+    GroupBuyingDiscount queryGroupBuyingDiscountByDiscountId(String discountId);
 }

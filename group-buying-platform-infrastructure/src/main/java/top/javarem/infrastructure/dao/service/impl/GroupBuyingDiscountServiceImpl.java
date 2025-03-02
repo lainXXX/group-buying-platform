@@ -15,5 +15,11 @@ import top.javarem.infrastructure.dao.service.GroupBuyingDiscountService;
 @Service
 public class GroupBuyingDiscountServiceImpl extends ServiceImpl<GroupBuyingDiscountMapper, GroupBuyingDiscount>
 implements GroupBuyingDiscountService {
-
+    @Override
+    public GroupBuyingDiscount queryGroupBuyingDiscountByDiscountId(String discountId) {
+        return this.lambdaQuery()
+                .select(GroupBuyingDiscount::getDiscountId, GroupBuyingDiscount::getDiscountName,GroupBuyingDiscount::getDiscountDesc, GroupBuyingDiscount::getDiscountType, GroupBuyingDiscount::getMarketingPlan, GroupBuyingDiscount::getMarketingExpr, GroupBuyingDiscount::getTagId)
+                .eq(GroupBuyingDiscount::getDiscountId, discountId)
+                .one();
+    }
 }

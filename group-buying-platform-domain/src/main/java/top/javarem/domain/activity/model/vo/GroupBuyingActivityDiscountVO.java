@@ -1,19 +1,19 @@
-package top.javarem.infrastructure.dao.po;
+package top.javarem.domain.activity.model.vo;
 
-import java.io.Serializable;
+import lombok.*;
+
 import java.util.Date;
-import lombok.Data;
 
 /**
- * 拼团活动
- * @TableName group_buying_activity
+ * @Author: rem
+ * @Date: 2025/02/27/19:32
+ * @Description: 拼团活动营销配置值对象
  */
 @Data
-public class GroupBuyingActivity implements Serializable {
-    /**
-     * 自增ID
-     */
-    private Long id;
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class GroupBuyingActivityDiscountVO {
 
     /**
      * 活动ID
@@ -43,7 +43,7 @@ public class GroupBuyingActivity implements Serializable {
     /**
      * 折扣ID
      */
-    private String discountId;
+    private GroupBuyingDiscount groupBuyingDiscount;
 
     /**
      * 拼团方式 【0-自动成团、 1-达成目标成团】
@@ -90,15 +90,42 @@ public class GroupBuyingActivity implements Serializable {
      */
     private String tagScope;
 
-    /**
-     * 创建时间
-     */
-    private Date createTime;
+    @Getter
+    @Builder
+    @AllArgsConstructor
+    @NoArgsConstructor
+    public static class GroupBuyingDiscount {
 
-    /**
-     * 更新时间
-     */
-    private Date updateTime;
+        /**
+         * 折扣标题
+         */
+        private String discountName;
 
-    private static final long serialVersionUID = 1L;
+        /**
+         * 折扣描述
+         */
+        private String discountDesc;
+
+        /**
+         * 折扣类型【0-base、 1-tag】
+         */
+        private Integer discountType;
+
+        /**
+         * 营销优惠计划【ZJ-直减、MJ-满减、N元购】
+         */
+        private String marketingPlan;
+
+        /**
+         * 营销优惠表达式
+         */
+        private String marketingExpr;
+
+        /**
+         * 人群标签，特定优惠限定
+         */
+        private String tagId;
+
+    }
+
 }

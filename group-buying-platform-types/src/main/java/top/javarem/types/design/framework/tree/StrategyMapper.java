@@ -3,7 +3,7 @@ package top.javarem.types.design.framework.tree;
 /**
  * @Author: rem
  * @Date: 2025/02/26/11:18
- * @Description: 策略映射器
+ * @Description: 策略映射器 获取策略
  * T 入参类型
  * D 上下文类型
  * R 返回类型

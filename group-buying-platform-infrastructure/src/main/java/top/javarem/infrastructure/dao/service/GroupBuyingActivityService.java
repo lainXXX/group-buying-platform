@@ -11,4 +11,11 @@ import top.javarem.infrastructure.dao.po.GroupBuyingActivity;
 */
 public interface GroupBuyingActivityService extends IService<GroupBuyingActivity> {
 
+    /**
+     * 获取有效的拼团活动
+     * @param source 来源
+     * @param channel 渠道
+     * @return
+     */
+    GroupBuyingActivity queryValidGroupBuyingActivity(String source, String channel);
 }

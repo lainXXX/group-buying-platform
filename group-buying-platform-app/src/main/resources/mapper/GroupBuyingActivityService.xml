@@ -7,6 +7,7 @@
     <resultMap id="BaseResultMap" type="top.javarem.infrastructure.dao.po.GroupBuyingActivity">
             <id property="id" column="id" jdbcType="BIGINT"/>
             <result property="activityId" column="activity_id" jdbcType="BIGINT"/>
+            <result property="activityName" column="activity_name" jdbcType="VARCHAR"/>
             <result property="source" column="source" jdbcType="VARCHAR"/>
             <result property="channel" column="channel" jdbcType="VARCHAR"/>
             <result property="goodsId" column="goods_id" jdbcType="VARCHAR"/>
@@ -25,7 +26,7 @@
     </resultMap>
 
     <sql id="Base_Column_List">
-        id,activity_id,source,
+        id,activity_id,activity_name, source,
         channel,goods_id,discount_id,
         group_type,take_limit_count,target,
         valid_time,status,begin_time,

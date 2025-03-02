@@ -1,16 +1,52 @@
-25-02-26.09:38:03.450 [main            ] INFO  DaoTest                - Starting DaoTest using Java 1.8.0_151 on mile with PID 18844 (started by aaa in D:\Develop\project\group-buying-platform\group-buying-platform-app)
-25-02-26.09:38:03.451 [main            ] INFO  DaoTest                - The following 1 profile is active: "dev"
-25-02-26.09:38:04.079 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-25-02-26.09:38:04.081 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-25-02-26.09:38:04.134 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
-25-02-26.09:38:07.215 [main            ] INFO  Version                - Redisson 3.26.0
-25-02-26.09:38:07.934 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
-25-02-26.09:38:07.945 [redisson-netty-1-14] INFO  ConnectionsHolder      - 5 connections initialized for localhost/127.0.0.1:6379
-25-02-26.09:38:09.257 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-25-02-26.09:38:09.311 [main            ] INFO  DaoTest                - Started DaoTest in 6.244 seconds (JVM running for 7.951)
-25-02-26.09:38:09.618 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-25-02-26.09:38:11.289 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-25-02-26.09:38:11.470 [main            ] INFO  DaoTest                - [GroupBuyingActivity(id=1, activityId=100123, source=s01, channel=c01, goodsId=9890001, discountId=25120207, groupType=0, takeLimitCount=1, target=1, validTime=15, status=0, beginTime=Sat Dec 07 10:19:40 CST 2024, endTime=Sat Dec 07 10:19:40 CST 2024, tagId=1, tagScope=1, createTime=Sat Dec 07 10:19:40 CST 2024, updateTime=Sat Dec 07 10:19:40 CST 2024)]
-25-02-26.09:38:11.470 [main            ] INFO  DaoTest                - [GroupBuyingDiscount(id=1, discountId=9890001, discountName=测试优惠, discountDesc=测试优惠, discountType=0, marketingPlan=ZJ, marketingExpr=20, tagId=null, createTime=Sat Dec 07 10:20:15 CST 2024, updateTime=Sat Dec 07 10:20:15 CST 2024)]
-25-02-26.09:38:11.502 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-25-02-26.09:38:12.086 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-03-02.09:31:31.430 [main            ] INFO  IIndexGroupBuyingServiceTest - Starting IIndexGroupBuyingServiceTest using Java 1.8.0_151 on mile with PID 5204 (started by aaa in D:\Develop\project\group-buying-platform\group-buying-platform-app)
+25-03-02.09:31:31.430 [main            ] INFO  IIndexGroupBuyingServiceTest - The following 1 profile is active: "dev"
+25-03-02.09:31:32.311 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-03-02.09:31:32.320 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-03-02.09:31:32.351 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 23 ms. Found 0 Redis repository interfaces.
+25-03-02.09:31:35.885 [main            ] INFO  Version                - Redisson 3.26.0
+25-03-02.09:31:36.666 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
+25-03-02.09:31:36.681 [redisson-netty-1-14] INFO  ConnectionsHolder      - 5 connections initialized for localhost/127.0.0.1:6379
+25-03-02.09:31:38.152 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-03-02.09:31:38.210 [main            ] INFO  IIndexGroupBuyingServiceTest - Started IIndexGroupBuyingServiceTest in 7.15 seconds (JVM running for 8.526)
+25-03-02.09:31:38.590 [pool-2-thread-1 ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-03-02.09:31:40.258 [pool-2-thread-1 ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-03-02.09:31:40.680 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-03-02.09:31:40.800 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-03-02.09:36:02.903 [main            ] INFO  IIndexGroupBuyingServiceTest - Starting IIndexGroupBuyingServiceTest using Java 1.8.0_151 on mile with PID 8148 (started by aaa in D:\Develop\project\group-buying-platform\group-buying-platform-app)
+25-03-02.09:36:02.904 [main            ] INFO  IIndexGroupBuyingServiceTest - The following 1 profile is active: "dev"
+25-03-02.09:36:03.594 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-03-02.09:36:03.598 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-03-02.09:36:03.625 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 20 ms. Found 0 Redis repository interfaces.
+25-03-02.09:36:06.814 [main            ] INFO  Version                - Redisson 3.26.0
+25-03-02.09:36:07.539 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
+25-03-02.09:36:07.594 [redisson-netty-1-14] INFO  ConnectionsHolder      - 5 connections initialized for localhost/127.0.0.1:6379
+25-03-02.09:36:09.022 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-03-02.09:36:09.074 [main            ] INFO  IIndexGroupBuyingServiceTest - Started IIndexGroupBuyingServiceTest in 6.561 seconds (JVM running for 7.72)
+25-03-02.09:36:09.405 [pool-2-thread-2 ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-03-02.09:36:11.515 [pool-2-thread-2 ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-03-02.09:36:11.815 [main            ] INFO  MarketNode             - 拼团活动查询试算服务-MarketNode userId:rem 异步线程加载数据[GroupBuyingActivityDiscountVO、 SkuVO] 完成
+25-03-02.09:36:11.824 [main            ] INFO  MarketNode             - 拼团商品查询试算服务-MarketNode userId:rem requestParameter:{"userId":"rem","goodsId":"9890001","source":"s01","channel":"c01"}
+25-03-02.09:36:11.824 [main            ] INFO  EndNode                - 拼团商品查询试算服务-EndNode userId:rem requestParameter:{"userId":"rem","goodsId":"9890001","source":"s01","channel":"c01"}
+25-03-02.09:36:11.824 [main            ] INFO  IIndexGroupBuyingServiceTest - 请求参数: MarketProductEntity(userId=rem, goodsId=9890001, source=s01, channel=c01)
+25-03-02.09:36:11.824 [main            ] INFO  IIndexGroupBuyingServiceTest - 返回结果: TrialBalanceEntity(goodsId=9890001, goodsName=《手写MyBatis：渐进式源码实践》, originalPrice=100.00, deductionPrice=0.00, targetCount=1, startTime=Sat Dec 07 10:19:40 CST 2024, endTime=Sat Dec 07 10:19:40 CST 2024, isVisible=false, isEnable=false)
+25-03-02.09:36:11.886 [redisson-netty-1-7] ERROR ErrorsLoggingHandler   - Exception occured. Channel: [id: 0xc8add961, L:/127.0.0.1:59753 - R:localhost/127.0.0.1:6379]
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:256)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:357)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+25-03-02.09:36:11.905 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-03-02.09:36:12.124 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.

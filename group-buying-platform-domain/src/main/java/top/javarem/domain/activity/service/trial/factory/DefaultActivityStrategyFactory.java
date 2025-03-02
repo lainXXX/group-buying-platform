@@ -7,15 +7,15 @@ import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Service;
 import top.javarem.domain.activity.model.entity.MarketProductEntity;
 import top.javarem.domain.activity.model.entity.TrialBalanceEntity;
+import top.javarem.domain.activity.model.vo.GroupBuyingActivityDiscountVO;
+import top.javarem.domain.activity.model.vo.SkuVO;
 import top.javarem.domain.activity.service.trial.node.RootNode;
 import top.javarem.types.design.framework.tree.StrategyHandler;
-
-import javax.annotation.Resource;
 
 /**
  * @Author: rem
  * @Date: 2025/02/26/16:37
- * @Description:
+ * @Description:默认拼团活动策略工厂
  */
 @Service
 public class DefaultActivityStrategyFactory {
@@ -35,8 +35,15 @@ public class DefaultActivityStrategyFactory {
     @NoArgsConstructor
     @AllArgsConstructor
     public static class DynamicContext {
+        /**
+         * 拼团活动营销配置值对象
+         */
+        GroupBuyingActivityDiscountVO groupBuyingActivityDiscountVO;
 
-
+        /**
+         * 商品信息
+         */
+        SkuVO skuVO;
 
     }
 
