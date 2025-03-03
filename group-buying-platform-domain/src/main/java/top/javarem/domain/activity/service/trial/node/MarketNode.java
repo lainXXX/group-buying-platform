@@ -39,7 +39,7 @@ public class MarketNode extends AbstractGroupBuyingSupport<MarketProductEntity, 
     private Map<String, IDiscountCalculateService> discountCalculateServiceGroup;
 
     @Override
-    protected void multiThread(MarketProductEntity requestParameter, DefaultActivityStrategyFactory.DynamicContext dynamicContext) throws Exception {
+    public void multiThread(MarketProductEntity requestParameter, DefaultActivityStrategyFactory.DynamicContext dynamicContext) throws Exception {
 
 //        异步查询活动配置
         QueryGroupBuyingActivityDiscountThreadTask queryGroupBuyingActivityDiscountThreadTask = new QueryGroupBuyingActivityDiscountThreadTask(requestParameter.getSource(), requestParameter.getChannel(), repository);
@@ -49,6 +49,7 @@ public class MarketNode extends AbstractGroupBuyingSupport<MarketProductEntity, 
         QuerySkuVOFromDBThreadTask querySkuVOFromDBThreadTask = new QuerySkuVOFromDBThreadTask(requestParameter.getGoodsId(), repository);
         FutureTask<SkuVO> skuVOFutureTask = new FutureTask<>(querySkuVOFromDBThreadTask);
         threadPoolExecutor.execute(skuVOFutureTask);
+
 
         dynamicContext.setGroupBuyingActivityDiscountVO(groupBuyingActivityDiscountVOFutureTask.get());
         dynamicContext.setSkuVO(skuVOFutureTask.get());
