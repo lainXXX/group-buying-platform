@@ -8,7 +8,7 @@ import javax.annotation.Resource;
 /**
  * @Author: rem
  * @Date: 2025/02/26/16:32
- * @Description:
+ * @Description: 拼团服务支撑抽象类
  */
 public abstract class AbstractGroupBuyingSupport<MarketProductEntity, DynamicContext, TrialBalanceEntity> extends AbstractMultiThreadStrategyRouter<MarketProductEntity, DynamicContext, TrialBalanceEntity> {
 

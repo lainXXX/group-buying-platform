@@ -2,6 +2,7 @@ package top.javarem.infrastructure.adapter.repository;
 
 import org.springframework.stereotype.Repository;
 import top.javarem.domain.activity.adapter.repository.IActivityRepository;
+import top.javarem.domain.activity.model.vo.DiscountTypeEnum;
 import top.javarem.domain.activity.model.vo.GroupBuyingActivityDiscountVO;
 import top.javarem.domain.activity.model.vo.SkuVO;
 import top.javarem.infrastructure.dao.po.GroupBuyingActivity;
@@ -37,7 +38,7 @@ public class ActivityRepository implements IActivityRepository {
         GroupBuyingActivityDiscountVO.GroupBuyingDiscount groupBuyingDiscount = GroupBuyingActivityDiscountVO.GroupBuyingDiscount.builder()
                 .discountName(groupBuyingDiscountRes.getDiscountName())
                 .discountDesc(groupBuyingDiscountRes.getDiscountDesc())
-                .discountType(groupBuyingDiscountRes.getDiscountType())
+                .discountType(DiscountTypeEnum.get(groupBuyingDiscountRes.getDiscountType()))
                 .marketingPlan(groupBuyingDiscountRes.getMarketingPlan())
                 .marketingExpr(groupBuyingDiscountRes.getMarketingExpr())
                 .tagId(groupBuyingDiscountRes.getTagId())

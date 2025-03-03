@@ -11,12 +11,11 @@ import top.javarem.domain.activity.service.trial.factory.DefaultActivityStrategy
 import top.javarem.types.common.gson.GsonUtils;
 import top.javarem.types.design.framework.tree.StrategyHandler;
 
-import java.math.BigDecimal;
 
 /**
  * @Author: rem
  * @Date: 2025/02/26/16:46
- * @Description:
+ * @Description: 结束节点
  */
 @Service
 @Slf4j
@@ -31,7 +30,7 @@ public class EndNode extends AbstractGroupBuyingSupport<MarketProductEntity, Def
                 .goodsId(skuVO.getGoodsId())
                 .goodsName(skuVO.getGoodsName())
                 .originalPrice(skuVO.getOriginalPrice())
-                .deductionPrice(new BigDecimal("0.00"))
+                .discountPrice(dynamicContext.getDiscountPrice())
                 .targetCount(groupBuyingActivityDiscountVO.getTarget())
                 .startTime(groupBuyingActivityDiscountVO.getBeginTime())
                 .endTime(groupBuyingActivityDiscountVO.getEndTime())

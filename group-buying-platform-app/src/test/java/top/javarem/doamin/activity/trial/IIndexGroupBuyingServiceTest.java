@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import top.javarem.domain.activity.model.entity.MarketProductEntity;
 import top.javarem.domain.activity.model.entity.TrialBalanceEntity;
-import top.javarem.domain.activity.service.trial.IndexGroupBuyingService;
+import top.javarem.domain.activity.service.IndexGroupBuyingService;
 
 import javax.annotation.Resource;
 

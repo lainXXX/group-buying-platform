@@ -6,21 +6,26 @@ import top.javarem.domain.activity.model.entity.MarketProductEntity;
 import top.javarem.domain.activity.model.entity.TrialBalanceEntity;
 import top.javarem.domain.activity.model.vo.GroupBuyingActivityDiscountVO;
 import top.javarem.domain.activity.model.vo.SkuVO;
+import top.javarem.domain.activity.service.discount.IDiscountCalculateService;
 import top.javarem.domain.activity.service.trial.AbstractGroupBuyingSupport;
 import top.javarem.domain.activity.service.trial.factory.DefaultActivityStrategyFactory;
 import top.javarem.domain.activity.service.trial.thread.QueryGroupBuyingActivityDiscountThreadTask;
 import top.javarem.domain.activity.service.trial.thread.QuerySkuVOFromDBThreadTask;
 import top.javarem.types.common.gson.GsonUtils;
 import top.javarem.types.design.framework.tree.StrategyHandler;
+import top.javarem.types.enums.ResponseCode;
+import top.javarem.types.exception.AppException;
 
 import javax.annotation.Resource;
+import java.math.BigDecimal;
+import java.util.Map;
 import java.util.concurrent.FutureTask;
 import java.util.concurrent.ThreadPoolExecutor;
 
 /**
  * @Author: rem
  * @Date: 2025/02/26/16:45
- * @Description:
+ * @Description: 营销优惠节点
  */
 @Service
 @Slf4j
@@ -30,6 +35,8 @@ public class MarketNode extends AbstractGroupBuyingSupport<MarketProductEntity, 
     private ThreadPoolExecutor threadPoolExecutor;
     @Resource
     private EndNode endNode;
+    @Resource
+    private Map<String, IDiscountCalculateService> discountCalculateServiceGroup;
 
     @Override
     protected void multiThread(MarketProductEntity requestParameter, DefaultActivityStrategyFactory.DynamicContext dynamicContext) throws Exception {
@@ -52,8 +59,21 @@ public class MarketNode extends AbstractGroupBuyingSupport<MarketProductEntity, 
     public TrialBalanceEntity doApply(MarketProductEntity requestParameter, DefaultActivityStrategyFactory.DynamicContext dynamicContext) throws Exception {
 
         log.info("拼团商品查询试算服务-MarketNode userId:{} requestParameter:{}", requestParameter.getUserId(), GsonUtils.gson.toJson(requestParameter));
-//        TODO拼团优惠试算
-
+//        1.从参数中获取各种信息
+        SkuVO skuVO = dynamicContext.getSkuVO();
+        GroupBuyingActivityDiscountVO groupBuyingActivityDiscountVO = dynamicContext.getGroupBuyingActivityDiscountVO();
+        GroupBuyingActivityDiscountVO.GroupBuyingDiscount groupBuyingDiscount = groupBuyingActivityDiscountVO.getGroupBuyingDiscount();
+//        2.从商品的营销优惠计划中取出对应折扣服务
+        IDiscountCalculateService discountCalculateService = discountCalculateServiceGroup.get(groupBuyingDiscount.getMarketingPlan());
+        if (null == discountCalculateService) {
+            log.info("不存在{}类型的折扣计算服务，支持类型为:{}", groupBuyingDiscount.getMarketingPlan(), GsonUtils.gson.toJson(discountCalculateServiceGroup.keySet()));
+            throw new AppException(ResponseCode.E0001.getCode(), ResponseCode.E0001.getInfo());
+        }
+//        3.计算折扣优惠
+        BigDecimal discountPrice = discountCalculateService.calculate(requestParameter.getUserId(), skuVO.getOriginalPrice(), groupBuyingDiscount);
+//        4.填充折扣优惠后的价格到动态上下文信息中
+        dynamicContext.setDiscountPrice(discountPrice);
+//        5.路由传递到下一节点
         return router(requestParameter, dynamicContext);
 
     }

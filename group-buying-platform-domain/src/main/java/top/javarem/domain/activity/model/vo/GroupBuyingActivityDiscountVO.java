@@ -41,7 +41,7 @@ public class GroupBuyingActivityDiscountVO {
     private String goodsId;
 
     /**
-     * 折扣ID
+     * 折扣信息
      */
     private GroupBuyingDiscount groupBuyingDiscount;
 
@@ -109,7 +109,7 @@ public class GroupBuyingActivityDiscountVO {
         /**
          * 折扣类型【0-base、 1-tag】
          */
-        private Integer discountType;
+        private DiscountTypeEnum discountType;
 
         /**
          * 营销优惠计划【ZJ-直减、MJ-满减、N元购】

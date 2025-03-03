@@ -12,6 +12,8 @@ import top.javarem.domain.activity.model.vo.SkuVO;
 import top.javarem.domain.activity.service.trial.node.RootNode;
 import top.javarem.types.design.framework.tree.StrategyHandler;
 
+import java.math.BigDecimal;
+
 /**
  * @Author: rem
  * @Date: 2025/02/26/16:37
@@ -38,12 +40,14 @@ public class DefaultActivityStrategyFactory {
         /**
          * 拼团活动营销配置值对象
          */
-        GroupBuyingActivityDiscountVO groupBuyingActivityDiscountVO;
+        private GroupBuyingActivityDiscountVO groupBuyingActivityDiscountVO;
 
         /**
          * 商品信息
          */
-        SkuVO skuVO;
+        private SkuVO skuVO;
+
+        private BigDecimal discountPrice;
 
     }
 
