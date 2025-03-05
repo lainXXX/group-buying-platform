@@ -1,710 +1,80 @@
-25-03-03.09:36:16.268 [main            ] INFO  IIndexGroupBuyingServiceTest - Starting IIndexGroupBuyingServiceTest using Java 1.8.0_151 on mile with PID 720 (started by aaa in D:\Develop\project\group-buying-platform\group-buying-platform-app)
-25-03-03.09:36:16.284 [main            ] INFO  IIndexGroupBuyingServiceTest - The following 1 profile is active: "dev"
-25-03-03.09:36:17.075 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-25-03-03.09:36:17.091 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-25-03-03.09:36:17.123 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 24 ms. Found 0 Redis repository interfaces.
-25-03-03.09:36:19.763 [main            ] INFO  Version                - Redisson 3.26.0
-25-03-03.09:36:20.468 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
-25-03-03.09:36:20.468 [redisson-netty-1-14] INFO  ConnectionsHolder      - 5 connections initialized for localhost/127.0.0.1:6379
-25-03-03.09:36:21.880 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-25-03-03.09:36:21.927 [main            ] INFO  IIndexGroupBuyingServiceTest - Started IIndexGroupBuyingServiceTest in 6.036 seconds (JVM running for 7.356)
-25-03-03.09:36:22.311 [pool-2-thread-1 ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-25-03-03.09:36:23.746 [pool-2-thread-1 ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-25-03-03.09:36:23.983 [main            ] INFO  MarketNode             - 拼团活动查询试算服务-MarketNode userId:rem 异步线程加载数据[GroupBuyingActivityDiscountVO、 SkuVO] 完成
-25-03-03.09:36:23.999 [main            ] INFO  MarketNode             - 拼团商品查询试算服务-MarketNode userId:rem requestParameter:{"userId":"rem","goodsId":"9890001","source":"s01","channel":"c01"}
-25-03-03.09:36:23.999 [main            ] INFO  ZJCalculateService     - 折扣优惠服务- 直减计算， 原始价格: 100.00
-25-03-03.09:36:23.999 [main            ] INFO  EndNode                - 拼团商品查询试算服务-EndNode userId:rem requestParameter:{"userId":"rem","goodsId":"9890001","source":"s01","channel":"c01"}
-25-03-03.09:36:23.999 [main            ] INFO  IIndexGroupBuyingServiceTest - 请求参数: MarketProductEntity(userId=rem, goodsId=9890001, source=s01, channel=c01)
-25-03-03.09:36:23.999 [main            ] INFO  IIndexGroupBuyingServiceTest - 返回结果: TrialBalanceEntity(goodsId=9890001, goodsName=《手写MyBatis：渐进式源码实践》, originalPrice=100.00, deductionPrice=0.00, targetCount=1, startTime=Sat Dec 07 10:19:40 CST 2024, endTime=Sat Dec 07 10:19:40 CST 2024, isVisible=false, isEnable=false)
-25-03-03.09:36:24.030 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-25-03-03.09:36:24.360 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-25-03-03.09:38:19.993 [main            ] INFO  IIndexGroupBuyingServiceTest - Starting IIndexGroupBuyingServiceTest using Java 1.8.0_151 on mile with PID 19144 (started by aaa in D:\Develop\project\group-buying-platform\group-buying-platform-app)
-25-03-03.09:38:19.993 [main            ] INFO  IIndexGroupBuyingServiceTest - The following 1 profile is active: "dev"
-25-03-03.09:38:20.636 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-25-03-03.09:38:20.636 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-25-03-03.09:38:20.682 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 22 ms. Found 0 Redis repository interfaces.
-25-03-03.09:38:23.715 [main            ] INFO  Version                - Redisson 3.26.0
-25-03-03.09:38:24.427 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
-25-03-03.09:38:24.440 [redisson-netty-1-14] INFO  ConnectionsHolder      - 5 connections initialized for localhost/127.0.0.1:6379
-25-03-03.09:38:25.649 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-25-03-03.09:38:25.712 [main            ] INFO  IIndexGroupBuyingServiceTest - Started IIndexGroupBuyingServiceTest in 6.074 seconds (JVM running for 7.084)
-25-03-03.09:38:25.996 [pool-2-thread-2 ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-25-03-03.09:38:27.553 [pool-2-thread-2 ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-25-03-03.09:38:27.852 [main            ] INFO  MarketNode             - 拼团活动查询试算服务-MarketNode userId:rem 异步线程加载数据[GroupBuyingActivityDiscountVO、 SkuVO] 完成
-25-03-03.09:38:27.852 [main            ] INFO  MarketNode             - 拼团商品查询试算服务-MarketNode userId:rem requestParameter:{"userId":"rem","goodsId":"9890001","source":"s01","channel":"c01"}
-25-03-03.09:38:27.852 [main            ] INFO  ZJCalculateService     - 折扣优惠服务- 直减计算， 原始价格: 100.00
-25-03-03.09:38:27.852 [main            ] INFO  EndNode                - 拼团商品查询试算服务-EndNode userId:rem requestParameter:{"userId":"rem","goodsId":"9890001","source":"s01","channel":"c01"}
-25-03-03.09:38:27.852 [main            ] INFO  IIndexGroupBuyingServiceTest - 请求参数: MarketProductEntity(userId=rem, goodsId=9890001, source=s01, channel=c01)
-25-03-03.09:38:27.852 [main            ] INFO  IIndexGroupBuyingServiceTest - 返回结果: TrialBalanceEntity(goodsId=9890001, goodsName=《手写MyBatis：渐进式源码实践》, originalPrice=100.00, discountPrice=80.00, targetCount=1, startTime=Sat Dec 07 10:19:40 CST 2024, endTime=Sat Dec 07 10:19:40 CST 2024, isVisible=false, isEnable=false)
-25-03-03.09:38:27.947 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-25-03-03.09:38:28.087 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-25-03-03.09:41:40.652 [main            ] INFO  IIndexGroupBuyingServiceTest - Starting IIndexGroupBuyingServiceTest using Java 1.8.0_151 on mile with PID 12012 (started by aaa in D:\Develop\project\group-buying-platform\group-buying-platform-app)
-25-03-03.09:41:40.652 [main            ] INFO  IIndexGroupBuyingServiceTest - The following 1 profile is active: "dev"
-25-03-03.09:41:41.295 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-25-03-03.09:41:41.295 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-25-03-03.09:41:41.342 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 22 ms. Found 0 Redis repository interfaces.
-25-03-03.09:41:44.405 [main            ] INFO  Version                - Redisson 3.26.0
-25-03-03.09:41:45.124 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
-25-03-03.09:41:45.124 [redisson-netty-1-14] INFO  ConnectionsHolder      - 5 connections initialized for localhost/127.0.0.1:6379
-25-03-03.09:41:46.388 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-25-03-03.09:41:46.435 [main            ] INFO  IIndexGroupBuyingServiceTest - Started IIndexGroupBuyingServiceTest in 6.171 seconds (JVM running for 7.19)
-25-03-03.09:41:46.736 [pool-2-thread-1 ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-25-03-03.09:41:48.147 [pool-2-thread-1 ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-25-03-03.09:41:48.387 [main            ] INFO  MarketNode             - 拼团活动查询试算服务-MarketNode userId:rem 异步线程加载数据[GroupBuyingActivityDiscountVO、 SkuVO] 完成
-25-03-03.09:41:48.393 [main            ] INFO  MarketNode             - 拼团商品查询试算服务-MarketNode userId:rem requestParameter:{"userId":"rem","goodsId":"9890001","source":"s01","channel":"c01"}
-25-03-03.09:41:48.393 [main            ] INFO  MJCalculateService     - 折扣优惠服务- 满减计算， 原始价格: 100.00
-25-03-03.09:41:48.432 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-25-03-03.09:41:48.697 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-25-03-03.09:42:35.634 [main            ] INFO  IIndexGroupBuyingServiceTest - Starting IIndexGroupBuyingServiceTest using Java 1.8.0_151 on mile with PID 1828 (started by aaa in D:\Develop\project\group-buying-platform\group-buying-platform-app)
-25-03-03.09:42:35.634 [main            ] INFO  IIndexGroupBuyingServiceTest - The following 1 profile is active: "dev"
-25-03-03.09:42:36.353 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-25-03-03.09:42:36.353 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-25-03-03.09:42:36.384 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 23 ms. Found 0 Redis repository interfaces.
-25-03-03.09:42:39.626 [main            ] INFO  Version                - Redisson 3.26.0
-25-03-03.09:42:40.355 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
-25-03-03.09:42:40.373 [redisson-netty-1-14] INFO  ConnectionsHolder      - 5 connections initialized for localhost/127.0.0.1:6379
-25-03-03.09:42:41.762 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-25-03-03.09:42:41.809 [main            ] INFO  IIndexGroupBuyingServiceTest - Started IIndexGroupBuyingServiceTest in 6.582 seconds (JVM running for 8.158)
-25-03-03.09:42:42.168 [pool-2-thread-2 ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-25-03-03.09:42:43.684 [pool-2-thread-2 ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-25-03-03.09:42:43.984 [main            ] INFO  MarketNode             - 拼团活动查询试算服务-MarketNode userId:rem 异步线程加载数据[GroupBuyingActivityDiscountVO、 SkuVO] 完成
-25-03-03.09:42:43.999 [main            ] INFO  MarketNode             - 拼团商品查询试算服务-MarketNode userId:rem requestParameter:{"userId":"rem","goodsId":"9890001","source":"s01","channel":"c01"}
-25-03-03.09:42:43.999 [main            ] INFO  MJCalculateService     - 折扣优惠服务- 满减计算， 原始价格: 100.00
-25-03-03.09:42:53.953 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-25-03-03.09:42:54.127 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-25-03-03.09:43:17.305 [main            ] INFO  IIndexGroupBuyingServiceTest - Starting IIndexGroupBuyingServiceTest using Java 1.8.0_151 on mile with PID 3100 (started by aaa in D:\Develop\project\group-buying-platform\group-buying-platform-app)
-25-03-03.09:43:17.306 [main            ] INFO  IIndexGroupBuyingServiceTest - The following 1 profile is active: "dev"
-25-03-03.09:43:18.055 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-25-03-03.09:43:18.057 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-25-03-03.09:43:18.090 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 22 ms. Found 0 Redis repository interfaces.
-25-03-03.09:43:21.168 [main            ] INFO  Version                - Redisson 3.26.0
-25-03-03.09:43:21.856 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
-25-03-03.09:43:21.872 [redisson-netty-1-14] INFO  ConnectionsHolder      - 5 connections initialized for localhost/127.0.0.1:6379
-25-03-03.09:43:23.093 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-25-03-03.09:43:23.140 [main            ] INFO  IIndexGroupBuyingServiceTest - Started IIndexGroupBuyingServiceTest in 6.227 seconds (JVM running for 7.299)
-25-03-03.09:43:23.489 [pool-2-thread-1 ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-25-03-03.09:43:24.911 [pool-2-thread-1 ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-25-03-03.09:43:25.148 [main            ] INFO  MarketNode             - 拼团活动查询试算服务-MarketNode userId:rem 异步线程加载数据[GroupBuyingActivityDiscountVO、 SkuVO] 完成
-25-03-03.09:43:25.148 [main            ] INFO  MarketNode             - 拼团商品查询试算服务-MarketNode userId:rem requestParameter:{"userId":"rem","goodsId":"9890001","source":"s01","channel":"c01"}
-25-03-03.09:43:25.148 [main            ] INFO  MJCalculateService     - 折扣优惠服务- 满减计算， 原始价格: 100.00
-25-03-03.09:43:25.148 [main            ] INFO  EndNode                - 拼团商品查询试算服务-EndNode userId:rem requestParameter:{"userId":"rem","goodsId":"9890001","source":"s01","channel":"c01"}
-25-03-03.09:43:25.148 [main            ] INFO  IIndexGroupBuyingServiceTest - 请求参数: MarketProductEntity(userId=rem, goodsId=9890001, source=s01, channel=c01)
-25-03-03.09:43:25.148 [main            ] INFO  IIndexGroupBuyingServiceTest - 返回结果: TrialBalanceEntity(goodsId=9890001, goodsName=《手写MyBatis：渐进式源码实践》, originalPrice=100.00, discountPrice=100.00, targetCount=1, startTime=Sat Dec 07 10:19:40 CST 2024, endTime=Sat Dec 07 10:19:40 CST 2024, isVisible=false, isEnable=false)
-25-03-03.09:43:25.179 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-25-03-03.09:43:25.461 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-25-03-03.09:44:22.845 [main            ] INFO  IIndexGroupBuyingServiceTest - Starting IIndexGroupBuyingServiceTest using Java 1.8.0_151 on mile with PID 13812 (started by aaa in D:\Develop\project\group-buying-platform\group-buying-platform-app)
-25-03-03.09:44:22.845 [main            ] INFO  IIndexGroupBuyingServiceTest - The following 1 profile is active: "dev"
-25-03-03.09:44:23.488 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-25-03-03.09:44:23.503 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-25-03-03.09:44:23.534 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 23 ms. Found 0 Redis repository interfaces.
-25-03-03.09:44:26.627 [main            ] INFO  Version                - Redisson 3.26.0
-25-03-03.09:44:27.333 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
-25-03-03.09:44:27.333 [redisson-netty-1-14] INFO  ConnectionsHolder      - 5 connections initialized for localhost/127.0.0.1:6379
-25-03-03.09:44:28.541 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-25-03-03.09:44:28.588 [main            ] INFO  IIndexGroupBuyingServiceTest - Started IIndexGroupBuyingServiceTest in 6.118 seconds (JVM running for 7.146)
-25-03-03.09:44:28.890 [pool-2-thread-2 ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-25-03-03.09:44:30.444 [pool-2-thread-2 ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-25-03-03.09:44:30.704 [main            ] INFO  MarketNode             - 拼团活动查询试算服务-MarketNode userId:rem 异步线程加载数据[GroupBuyingActivityDiscountVO、 SkuVO] 完成
-25-03-03.09:44:30.704 [main            ] INFO  MarketNode             - 拼团商品查询试算服务-MarketNode userId:rem requestParameter:{"userId":"rem","goodsId":"9890001","source":"s01","channel":"c01"}
-25-03-03.09:44:30.704 [main            ] INFO  MJCalculateService     - 折扣优惠服务- 满减计算， 原始价格: 100.00
-25-03-03.09:44:30.704 [main            ] INFO  EndNode                - 拼团商品查询试算服务-EndNode userId:rem requestParameter:{"userId":"rem","goodsId":"9890001","source":"s01","channel":"c01"}
-25-03-03.09:44:30.704 [main            ] INFO  IIndexGroupBuyingServiceTest - 请求参数: MarketProductEntity(userId=rem, goodsId=9890001, source=s01, channel=c01)
-25-03-03.09:44:30.704 [main            ] INFO  IIndexGroupBuyingServiceTest - 返回结果: TrialBalanceEntity(goodsId=9890001, goodsName=《手写MyBatis：渐进式源码实践》, originalPrice=100.00, discountPrice=90.00, targetCount=1, startTime=Sat Dec 07 10:19:40 CST 2024, endTime=Sat Dec 07 10:19:40 CST 2024, isVisible=false, isEnable=false)
-25-03-03.09:44:30.735 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-25-03-03.09:44:30.999 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-25-03-03.09:45:06.335 [main            ] INFO  IIndexGroupBuyingServiceTest - Starting IIndexGroupBuyingServiceTest using Java 1.8.0_151 on mile with PID 8864 (started by aaa in D:\Develop\project\group-buying-platform\group-buying-platform-app)
-25-03-03.09:45:06.336 [main            ] INFO  IIndexGroupBuyingServiceTest - The following 1 profile is active: "dev"
-25-03-03.09:45:07.021 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-25-03-03.09:45:07.024 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-25-03-03.09:45:07.058 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 22 ms. Found 0 Redis repository interfaces.
-25-03-03.09:45:10.176 [main            ] INFO  Version                - Redisson 3.26.0
-25-03-03.09:45:10.867 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
-25-03-03.09:45:10.867 [redisson-netty-1-14] INFO  ConnectionsHolder      - 5 connections initialized for localhost/127.0.0.1:6379
-25-03-03.09:45:12.176 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-25-03-03.09:45:12.223 [main            ] INFO  IIndexGroupBuyingServiceTest - Started IIndexGroupBuyingServiceTest in 6.3 seconds (JVM running for 7.356)
-25-03-03.09:45:12.564 [pool-2-thread-2 ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-25-03-03.09:45:13.994 [pool-2-thread-2 ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-25-03-03.09:45:14.269 [main            ] INFO  MarketNode             - 拼团活动查询试算服务-MarketNode userId:rem 异步线程加载数据[GroupBuyingActivityDiscountVO、 SkuVO] 完成
-25-03-03.09:45:14.285 [main            ] INFO  MarketNode             - 拼团商品查询试算服务-MarketNode userId:rem requestParameter:{"userId":"rem","goodsId":"9890001","source":"s01","channel":"c01"}
-25-03-03.09:45:14.285 [main            ] INFO  ZKCalculateService     - 折扣优惠服务- 打折计算， 原始价格: 100.00
-25-03-03.09:45:14.285 [main            ] INFO  EndNode                - 拼团商品查询试算服务-EndNode userId:rem requestParameter:{"userId":"rem","goodsId":"9890001","source":"s01","channel":"c01"}
-25-03-03.09:45:14.285 [main            ] INFO  IIndexGroupBuyingServiceTest - 请求参数: MarketProductEntity(userId=rem, goodsId=9890001, source=s01, channel=c01)
-25-03-03.09:45:14.285 [main            ] INFO  IIndexGroupBuyingServiceTest - 返回结果: TrialBalanceEntity(goodsId=9890001, goodsName=《手写MyBatis：渐进式源码实践》, originalPrice=100.00, discountPrice=80.000, targetCount=1, startTime=Sat Dec 07 10:19:40 CST 2024, endTime=Sat Dec 07 10:19:40 CST 2024, isVisible=false, isEnable=false)
-25-03-03.09:45:14.332 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-25-03-03.09:45:14.583 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-25-03-03.09:45:58.833 [main            ] INFO  IIndexGroupBuyingServiceTest - Starting IIndexGroupBuyingServiceTest using Java 1.8.0_151 on mile with PID 10436 (started by aaa in D:\Develop\project\group-buying-platform\group-buying-platform-app)
-25-03-03.09:45:58.834 [main            ] INFO  IIndexGroupBuyingServiceTest - The following 1 profile is active: "dev"
-25-03-03.09:45:59.485 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-25-03-03.09:45:59.488 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-25-03-03.09:45:59.521 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 23 ms. Found 0 Redis repository interfaces.
-25-03-03.09:46:02.557 [main            ] INFO  Version                - Redisson 3.26.0
-25-03-03.09:46:03.245 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
-25-03-03.09:46:03.245 [redisson-netty-1-14] INFO  ConnectionsHolder      - 5 connections initialized for localhost/127.0.0.1:6379
-25-03-03.09:46:04.433 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-25-03-03.09:46:04.479 [main            ] INFO  IIndexGroupBuyingServiceTest - Started IIndexGroupBuyingServiceTest in 6.032 seconds (JVM running for 7.131)
-25-03-03.09:46:04.779 [pool-2-thread-2 ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-25-03-03.09:46:06.338 [pool-2-thread-2 ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-25-03-03.09:46:06.589 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-25-03-03.09:46:08.982 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-25-03-03.09:46:37.050 [main            ] INFO  IIndexGroupBuyingServiceTest - Starting IIndexGroupBuyingServiceTest using Java 1.8.0_151 on mile with PID 6184 (started by aaa in D:\Develop\project\group-buying-platform\group-buying-platform-app)
-25-03-03.09:46:37.051 [main            ] INFO  IIndexGroupBuyingServiceTest - The following 1 profile is active: "dev"
-25-03-03.09:46:37.725 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-25-03-03.09:46:37.725 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-25-03-03.09:46:37.756 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 22 ms. Found 0 Redis repository interfaces.
-25-03-03.09:46:40.872 [main            ] INFO  Version                - Redisson 3.26.0
-25-03-03.09:46:41.580 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
-25-03-03.09:46:41.595 [redisson-netty-1-14] INFO  ConnectionsHolder      - 5 connections initialized for localhost/127.0.0.1:6379
-25-03-03.09:46:42.836 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-25-03-03.09:46:42.895 [main            ] INFO  IIndexGroupBuyingServiceTest - Started IIndexGroupBuyingServiceTest in 6.233 seconds (JVM running for 7.26)
-25-03-03.09:46:43.183 [pool-2-thread-2 ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-25-03-03.09:46:44.731 [pool-2-thread-2 ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-25-03-03.09:46:45.082 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-25-03-03.09:46:45.410 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-25-03-03.09:47:18.809 [main            ] INFO  IIndexGroupBuyingServiceTest - Starting IIndexGroupBuyingServiceTest using Java 1.8.0_151 on mile with PID 13804 (started by aaa in D:\Develop\project\group-buying-platform\group-buying-platform-app)
-25-03-03.09:47:18.809 [main            ] INFO  IIndexGroupBuyingServiceTest - The following 1 profile is active: "dev"
-25-03-03.09:47:19.485 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-25-03-03.09:47:19.485 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-25-03-03.09:47:19.516 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 22 ms. Found 0 Redis repository interfaces.
-25-03-03.09:47:22.723 [main            ] INFO  Version                - Redisson 3.26.0
-25-03-03.09:47:23.444 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
-25-03-03.09:47:23.460 [redisson-netty-1-14] INFO  ConnectionsHolder      - 5 connections initialized for localhost/127.0.0.1:6379
-25-03-03.09:47:24.694 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-25-03-03.09:47:24.755 [main            ] INFO  IIndexGroupBuyingServiceTest - Started IIndexGroupBuyingServiceTest in 6.324 seconds (JVM running for 7.364)
-25-03-03.09:47:25.066 [pool-2-thread-2 ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-25-03-03.09:47:27.087 [pool-2-thread-2 ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-25-03-03.09:47:27.341 [main            ] INFO  MarketNode             - 拼团活动查询试算服务-MarketNode userId:rem 异步线程加载数据[GroupBuyingActivityDiscountVO、 SkuVO] 完成
-25-03-03.09:47:27.356 [main            ] INFO  MarketNode             - 拼团商品查询试算服务-MarketNode userId:rem requestParameter:{"userId":"rem","goodsId":"9890001","source":"s01","channel":"c01"}
-25-03-03.09:47:27.356 [main            ] INFO  NCalculateService      - 折扣优惠服务- N元购优惠计算， 原始价格: 100.00
-25-03-03.09:47:27.356 [main            ] INFO  EndNode                - 拼团商品查询试算服务-EndNode userId:rem requestParameter:{"userId":"rem","goodsId":"9890001","source":"s01","channel":"c01"}
-25-03-03.09:47:27.356 [main            ] INFO  IIndexGroupBuyingServiceTest - 请求参数: MarketProductEntity(userId=rem, goodsId=9890001, source=s01, channel=c01)
-25-03-03.09:47:27.356 [main            ] INFO  IIndexGroupBuyingServiceTest - 返回结果: TrialBalanceEntity(goodsId=9890001, goodsName=《手写MyBatis：渐进式源码实践》, originalPrice=100.00, discountPrice=1.99, targetCount=1, startTime=Sat Dec 07 10:19:40 CST 2024, endTime=Sat Dec 07 10:19:40 CST 2024, isVisible=false, isEnable=false)
-25-03-03.09:47:27.388 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-25-03-03.09:47:27.702 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-25-03-03.13:47:37.563 [main            ] INFO  IIndexGroupBuyingServiceTest - Starting IIndexGroupBuyingServiceTest using Java 1.8.0_151 on mile with PID 22116 (started by aaa in D:\Develop\project\group-buying-platform\group-buying-platform-app)
-25-03-03.13:47:37.563 [main            ] INFO  IIndexGroupBuyingServiceTest - The following 1 profile is active: "dev"
-25-03-03.13:47:38.330 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-25-03-03.13:47:38.347 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-25-03-03.13:47:38.380 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 28 ms. Found 0 Redis repository interfaces.
-25-03-03.13:47:41.915 [main            ] INFO  Version                - Redisson 3.26.0
-25-03-03.13:47:42.714 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
-25-03-03.13:47:42.730 [redisson-netty-1-14] INFO  ConnectionsHolder      - 5 connections initialized for localhost/127.0.0.1:6379
-25-03-03.13:47:44.064 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-25-03-03.13:47:44.114 [main            ] INFO  IIndexGroupBuyingServiceTest - Started IIndexGroupBuyingServiceTest in 7.04 seconds (JVM running for 8.314)
-25-03-03.13:47:44.447 [pool-2-thread-1 ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-25-03-03.13:47:46.130 [pool-2-thread-1 ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-25-03-03.13:47:46.381 [main            ] INFO  MarketNode             - 拼团活动查询试算服务-MarketNode userId:rem 异步线程加载数据[GroupBuyingActivityDiscountVO、 SkuVO] 完成
-25-03-03.13:47:46.381 [main            ] INFO  IIndexGroupBuyingServiceTest - 用时: 2051
-25-03-03.13:47:46.414 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-25-03-03.13:47:46.731 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-25-03-03.13:50:17.302 [main            ] INFO  IIndexGroupBuyingServiceTest - Starting IIndexGroupBuyingServiceTest using Java 1.8.0_151 on mile with PID 9512 (started by aaa in D:\Develop\project\group-buying-platform\group-buying-platform-app)
-25-03-03.13:50:17.302 [main            ] INFO  IIndexGroupBuyingServiceTest - The following 1 profile is active: "dev"
-25-03-03.13:50:18.003 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-25-03-03.13:50:18.003 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-25-03-03.13:50:18.036 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 22 ms. Found 0 Redis repository interfaces.
-25-03-03.13:50:21.302 [main            ] INFO  Version                - Redisson 3.26.0
-25-03-03.13:50:22.038 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
-25-03-03.13:50:22.055 [redisson-netty-1-14] INFO  ConnectionsHolder      - 5 connections initialized for localhost/127.0.0.1:6379
-25-03-03.13:50:23.419 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-25-03-03.13:50:23.469 [main            ] INFO  IIndexGroupBuyingServiceTest - Started IIndexGroupBuyingServiceTest in 6.556 seconds (JVM running for 7.677)
-25-03-03.13:50:23.769 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-25-03-03.13:50:27.269 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-25-03-03.13:50:29.103 [main            ] INFO  MarketNode             - 拼团活动查询试算服务-MarketNode userId:rem 异步线程加载数据[GroupBuyingActivityDiscountVO、 SkuVO] 完成
-25-03-03.13:50:29.103 [main            ] INFO  IIndexGroupBuyingServiceTest - 用时: 5434
-25-03-03.13:50:29.152 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-25-03-03.13:50:41.420 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-25-03-03.21:52:09.455 [main            ] INFO  ITagTest               - Starting ITagTest using Java 1.8.0_151 on mile with PID 25816 (started by aaa in D:\Develop\project\group-buying-platform\group-buying-platform-app)
-25-03-03.21:52:09.456 [main            ] INFO  ITagTest               - The following 1 profile is active: "dev"
-25-03-03.21:52:10.300 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-25-03-03.21:52:10.303 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-25-03-03.21:52:10.346 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 32 ms. Found 0 Redis repository interfaces.
-25-03-03.21:52:14.191 [main            ] INFO  Version                - Redisson 3.26.0
-25-03-03.21:52:14.978 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
-25-03-03.21:52:14.995 [redisson-netty-1-14] INFO  ConnectionsHolder      - 5 connections initialized for localhost/127.0.0.1:6379
-25-03-03.21:52:16.538 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-25-03-03.21:52:16.634 [main            ] INFO  ITagTest               - Started ITagTest in 7.661 seconds (JVM running for 8.984)
-25-03-03.21:52:16.825 [main            ] INFO  TagService             - 执行人群标签任务 tagId :RQ_KJHKL98UU78H66554GFDV batchId :10001
-25-03-03.21:52:16.945 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-25-03-03.21:52:24.882 [main            ] ERROR HikariPool             - HikariPool-1 - Exception during pool initialization.
-java.sql.SQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:110)
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89)
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63)
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:73)
-	at com.mysql.cj.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:903)
-	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:828)
-	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:453)
-	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
-	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198)
-	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
-	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364)
-	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
-	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476)
-	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
-	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
-	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
-	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:159)
-	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:117)
-	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:80)
-	at org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:80)
-	at org.mybatis.spring.transaction.SpringManagedTransaction.getConnection(SpringManagedTransaction.java:67)
-	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:348)
-	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:89)
-	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:64)
-	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:336)
-	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:158)
-	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:110)
-	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:90)
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:154)
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:142)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:425)
-	at com.sun.proxy.$Proxy84.selectList(Unknown Source)
-	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:224)
-	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.executeForMany(MybatisMapperMethod.java:164)
-	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:77)
-	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:152)
-	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89)
-	at com.sun.proxy.$Proxy90.selectList(Unknown Source)
-	at com.baomidou.mybatisplus.core.mapper.BaseMapper.selectOne(BaseMapper.java:306)
-	at java.lang.invoke.MethodHandle.invokeWithArguments(MethodHandle.java:627)
-	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$DefaultMethodInvoker.invoke(MybatisMapperProxy.java:166)
-	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89)
-	at com.sun.proxy.$Proxy90.selectOne(Unknown Source)
-	at com.baomidou.mybatisplus.core.mapper.BaseMapper.selectOne(BaseMapper.java:295)
-	at java.lang.invoke.MethodHandle.invokeWithArguments(MethodHandle.java:627)
-	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$DefaultMethodInvoker.invoke(MybatisMapperProxy.java:166)
-	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89)
-	at com.sun.proxy.$Proxy90.selectOne(Unknown Source)
-	at com.baomidou.mybatisplus.extension.conditions.query.ChainQuery.lambda$one$cd9f9c92$1(ChainQuery.java:59)
-	at com.baomidou.mybatisplus.extension.conditions.ChainWrapper.execute(ChainWrapper.java:63)
-	at com.baomidou.mybatisplus.extension.conditions.query.ChainQuery.one(ChainQuery.java:59)
-	at top.javarem.infrastructure.dao.service.impl.CrowdTagsJobServiceImpl.getCrowdTagJob(CrowdTagsJobServiceImpl.java:26)
-	at top.javarem.infrastructure.dao.service.impl.CrowdTagsJobServiceImpl$$FastClassBySpringCGLIB$$68616ca1.invoke(<generated>)
-	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
-	at org.springframework.aop.framework.CglibAopProxy.invokeMethod(CglibAopProxy.java:386)
-	at org.springframework.aop.framework.CglibAopProxy.access$000(CglibAopProxy.java:85)
-	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:704)
-	at top.javarem.infrastructure.dao.service.impl.CrowdTagsJobServiceImpl$$EnhancerBySpringCGLIB$$a7aa1171.getCrowdTagJob(<generated>)
-	at top.javarem.infrastructure.adapter.repository.TagRepository.queryCrowdTagJob(TagRepository.java:38)
-	at top.javarem.infrastructure.adapter.repository.TagRepository$$FastClassBySpringCGLIB$$a746231b.invoke(<generated>)
-	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
-	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
-	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
-	at top.javarem.infrastructure.adapter.repository.TagRepository$$EnhancerBySpringCGLIB$$72ba877e.queryCrowdTagJob(<generated>)
-	at top.javarem.domain.tag.service.TagService.execCrowdTagJob(TagService.java:29)
-	at top.javarem.doamin.activity.tag.ITagTest.test_execCrowdTagJob(ITagTest.java:29)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:725)
-	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:214)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:210)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:135)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:66)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at java.util.ArrayList.forEach(ArrayList.java:1255)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at java.util.ArrayList.forEach(ArrayList.java:1255)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
-	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
-	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:53)
-	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:57)
-	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
-	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
-	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
-	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
-	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
-Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
-
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
-	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
-	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
-	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
-	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:89)
-	at com.mysql.cj.NativeSession.connect(NativeSession.java:144)
-	at com.mysql.cj.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:847)
-	... 140 common frames omitted
-Caused by: java.net.UnknownHostException: c
-	at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
-	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
-	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
-	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:132)
-	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:63)
-	... 142 common frames omitted
-25-03-03.21:52:44.881 [main            ] INFO  ITagTest               - Starting ITagTest using Java 1.8.0_151 on mile with PID 16248 (started by aaa in D:\Develop\project\group-buying-platform\group-buying-platform-app)
-25-03-03.21:52:44.881 [main            ] INFO  ITagTest               - The following 1 profile is active: "dev"
-25-03-03.21:52:46.146 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-25-03-03.21:52:46.151 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-25-03-03.21:52:46.242 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 64 ms. Found 0 Redis repository interfaces.
-25-03-03.21:52:50.792 [main            ] INFO  Version                - Redisson 3.26.0
-25-03-03.21:52:51.573 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
-25-03-03.21:52:51.586 [redisson-netty-1-14] INFO  ConnectionsHolder      - 5 connections initialized for localhost/127.0.0.1:6379
-25-03-03.21:52:53.138 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-25-03-03.21:52:53.196 [main            ] INFO  ITagTest               - Started ITagTest in 8.944 seconds (JVM running for 10.644)
-25-03-03.21:52:53.424 [main            ] INFO  TagService             - 执行人群标签任务 tagId :RQ_KJHKL98UU78H66554GFDV batchId :10001
-25-03-03.21:52:53.548 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-25-03-03.21:53:01.368 [main            ] ERROR HikariPool             - HikariPool-1 - Exception during pool initialization.
-java.sql.SQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:110)
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89)
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63)
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:73)
-	at com.mysql.cj.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:903)
-	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:828)
-	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:453)
-	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246)
-	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198)
-	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
-	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364)
-	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
-	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476)
-	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
-	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
-	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
-	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:159)
-	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:117)
-	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:80)
-	at org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:80)
-	at org.mybatis.spring.transaction.SpringManagedTransaction.getConnection(SpringManagedTransaction.java:67)
-	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:348)
-	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:89)
-	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:64)
-	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:336)
-	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:158)
-	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:110)
-	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:90)
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:154)
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
-	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:142)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:425)
-	at com.sun.proxy.$Proxy84.selectList(Unknown Source)
-	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:224)
-	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.executeForMany(MybatisMapperMethod.java:164)
-	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:77)
-	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:152)
-	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89)
-	at com.sun.proxy.$Proxy90.selectList(Unknown Source)
-	at com.baomidou.mybatisplus.core.mapper.BaseMapper.selectOne(BaseMapper.java:306)
-	at java.lang.invoke.MethodHandle.invokeWithArguments(MethodHandle.java:627)
-	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$DefaultMethodInvoker.invoke(MybatisMapperProxy.java:166)
-	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89)
-	at com.sun.proxy.$Proxy90.selectOne(Unknown Source)
-	at com.baomidou.mybatisplus.core.mapper.BaseMapper.selectOne(BaseMapper.java:295)
-	at java.lang.invoke.MethodHandle.invokeWithArguments(MethodHandle.java:627)
-	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$DefaultMethodInvoker.invoke(MybatisMapperProxy.java:166)
-	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89)
-	at com.sun.proxy.$Proxy90.selectOne(Unknown Source)
-	at com.baomidou.mybatisplus.extension.conditions.query.ChainQuery.lambda$one$cd9f9c92$1(ChainQuery.java:59)
-	at com.baomidou.mybatisplus.extension.conditions.ChainWrapper.execute(ChainWrapper.java:63)
-	at com.baomidou.mybatisplus.extension.conditions.query.ChainQuery.one(ChainQuery.java:59)
-	at top.javarem.infrastructure.dao.service.impl.CrowdTagsJobServiceImpl.getCrowdTagJob(CrowdTagsJobServiceImpl.java:26)
-	at top.javarem.infrastructure.dao.service.impl.CrowdTagsJobServiceImpl$$FastClassBySpringCGLIB$$68616ca1.invoke(<generated>)
-	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
-	at org.springframework.aop.framework.CglibAopProxy.invokeMethod(CglibAopProxy.java:386)
-	at org.springframework.aop.framework.CglibAopProxy.access$000(CglibAopProxy.java:85)
-	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:704)
-	at top.javarem.infrastructure.dao.service.impl.CrowdTagsJobServiceImpl$$EnhancerBySpringCGLIB$$3eac2dbc.getCrowdTagJob(<generated>)
-	at top.javarem.infrastructure.adapter.repository.TagRepository.queryCrowdTagJob(TagRepository.java:38)
-	at top.javarem.infrastructure.adapter.repository.TagRepository$$FastClassBySpringCGLIB$$a746231b.invoke(<generated>)
-	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
-	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
-	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
-	at top.javarem.infrastructure.adapter.repository.TagRepository$$EnhancerBySpringCGLIB$$369eefe8.queryCrowdTagJob(<generated>)
-	at top.javarem.domain.tag.service.TagService.execCrowdTagJob(TagService.java:29)
-	at top.javarem.doamin.activity.tag.ITagTest.test_execCrowdTagJob(ITagTest.java:29)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:725)
-	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:214)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:210)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:135)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:66)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at java.util.ArrayList.forEach(ArrayList.java:1255)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at java.util.ArrayList.forEach(ArrayList.java:1255)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
-	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
-	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:53)
-	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:57)
-	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
-	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
-	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
-	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
-	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
-Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
-
-The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
-	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
-	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151)
-	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167)
-	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:89)
-	at com.mysql.cj.NativeSession.connect(NativeSession.java:144)
-	at com.mysql.cj.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:847)
-	... 140 common frames omitted
-Caused by: java.net.UnknownHostException: c
-	at java.net.InetAddress.getAllByName0(InetAddress.java:1280)
-	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
-	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
-	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:132)
-	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:63)
-	... 142 common frames omitted
-25-03-03.21:55:44.716 [main            ] INFO  ITagTest               - Starting ITagTest using Java 1.8.0_151 on mile with PID 25936 (started by aaa in D:\Develop\project\group-buying-platform\group-buying-platform-app)
-25-03-03.21:55:44.717 [main            ] INFO  ITagTest               - The following 1 profile is active: "dev"
-25-03-03.21:55:45.908 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-25-03-03.21:55:45.911 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-25-03-03.21:55:45.984 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 56 ms. Found 0 Redis repository interfaces.
-25-03-03.21:55:50.581 [main            ] INFO  Version                - Redisson 3.26.0
-25-03-03.21:55:51.337 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
-25-03-03.21:55:51.354 [redisson-netty-1-14] INFO  ConnectionsHolder      - 5 connections initialized for localhost/127.0.0.1:6379
-25-03-03.21:55:52.973 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-25-03-03.21:55:53.026 [main            ] INFO  ITagTest               - Started ITagTest in 8.966 seconds (JVM running for 10.828)
-25-03-03.21:55:53.250 [main            ] INFO  TagService             - 执行人群标签任务 tagId :RQ_KJHKL98UU78H66554GFDV batchId :10001
-25-03-03.21:55:53.387 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-25-03-03.21:55:55.828 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-25-03-03.21:55:57.109 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-25-03-03.21:55:57.634 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-25-03-03.21:57:15.516 [main            ] INFO  ITagTest               - Starting ITagTest using Java 1.8.0_151 on mile with PID 1992 (started by aaa in D:\Develop\project\group-buying-platform\group-buying-platform-app)
-25-03-03.21:57:15.521 [main            ] INFO  ITagTest               - The following 1 profile is active: "dev"
-25-03-03.21:57:16.277 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-25-03-03.21:57:16.277 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-25-03-03.21:57:16.330 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 34 ms. Found 0 Redis repository interfaces.
-25-03-03.21:57:19.948 [main            ] INFO  Version                - Redisson 3.26.0
-25-03-03.21:57:20.706 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
-25-03-03.21:57:20.726 [redisson-netty-1-14] INFO  ConnectionsHolder      - 5 connections initialized for localhost/127.0.0.1:6379
-25-03-03.21:57:22.411 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-25-03-03.21:57:22.467 [main            ] INFO  ITagTest               - Started ITagTest in 7.361 seconds (JVM running for 8.526)
-25-03-03.21:57:22.666 [main            ] INFO  TagService             - 执行人群标签任务 tagId :RQ_KJHKL98UU78H66554GFDV batchId :10001
-25-03-03.21:57:22.787 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-25-03-03.21:57:24.667 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-25-03-03.21:57:25.638 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-25-03-03.21:57:26.446 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-25-03-03.22:00:37.140 [main            ] INFO  ITagTest               - Starting ITagTest using Java 1.8.0_151 on mile with PID 24740 (started by aaa in D:\Develop\project\group-buying-platform\group-buying-platform-app)
-25-03-03.22:00:37.146 [main            ] INFO  ITagTest               - The following 1 profile is active: "dev"
-25-03-03.22:00:37.949 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-25-03-03.22:00:37.957 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-25-03-03.22:00:37.998 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 29 ms. Found 0 Redis repository interfaces.
-25-03-03.22:00:41.732 [main            ] INFO  Version                - Redisson 3.26.0
-25-03-03.22:00:42.518 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
-25-03-03.22:00:42.531 [redisson-netty-1-14] INFO  ConnectionsHolder      - 5 connections initialized for localhost/127.0.0.1:6379
-25-03-03.22:00:44.218 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-25-03-03.22:00:44.269 [main            ] INFO  ITagTest               - Started ITagTest in 7.528 seconds (JVM running for 8.711)
-25-03-03.22:00:44.487 [main            ] INFO  TagService             - 执行人群标签任务 tagId :RQ_KJHKL98UU78H66554GFDV batchId :10001
-25-03-03.22:00:44.609 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-25-03-03.22:00:46.509 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-25-03-03.22:00:47.269 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-25-03-03.22:00:47.392 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-25-03-03.22:02:27.220 [main            ] INFO  ITagTest               - Starting ITagTest using Java 1.8.0_151 on mile with PID 21648 (started by aaa in D:\Develop\project\group-buying-platform\group-buying-platform-app)
-25-03-03.22:02:27.220 [main            ] INFO  ITagTest               - The following 1 profile is active: "dev"
-25-03-03.22:02:28.210 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-25-03-03.22:02:28.216 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-25-03-03.22:02:28.259 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 32 ms. Found 0 Redis repository interfaces.
-25-03-03.22:02:31.974 [main            ] INFO  Version                - Redisson 3.26.0
-25-03-03.22:02:32.829 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
-25-03-03.22:02:32.848 [redisson-netty-1-14] INFO  ConnectionsHolder      - 5 connections initialized for localhost/127.0.0.1:6379
-25-03-03.22:02:34.528 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-25-03-03.22:02:34.590 [main            ] INFO  ITagTest               - Started ITagTest in 7.809 seconds (JVM running for 9.054)
-25-03-03.22:02:34.809 [main            ] INFO  TagService             - 执行人群标签任务 tagId :RQ_KJHKL98UU78H66554GFDV batchId :10001
-25-03-03.22:02:34.930 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-25-03-03.22:02:36.738 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-25-03-03.22:02:37.673 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-25-03-03.22:02:37.689 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-25-03-03.22:03:53.780 [main            ] INFO  ITagTest               - Starting ITagTest using Java 1.8.0_151 on mile with PID 24628 (started by aaa in D:\Develop\project\group-buying-platform\group-buying-platform-app)
-25-03-03.22:03:53.782 [main            ] INFO  ITagTest               - The following 1 profile is active: "dev"
-25-03-03.22:03:54.969 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-25-03-03.22:03:54.970 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-25-03-03.22:03:55.040 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 47 ms. Found 0 Redis repository interfaces.
-25-03-03.22:03:59.535 [main            ] INFO  Version                - Redisson 3.26.0
-25-03-03.22:04:00.283 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
-25-03-03.22:04:00.299 [redisson-netty-1-14] INFO  ConnectionsHolder      - 5 connections initialized for localhost/127.0.0.1:6379
-25-03-03.22:04:01.800 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-25-03-03.22:04:01.855 [main            ] INFO  ITagTest               - Started ITagTest in 8.766 seconds (JVM running for 10.653)
-25-03-03.22:04:02.079 [main            ] INFO  TagService             - 执行人群标签任务 tagId :RQ_KJHKL98UU78H66554GFDV batchId :10001
-25-03-03.22:04:02.185 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-25-03-03.22:04:04.049 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-25-03-03.22:04:05.657 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-25-03-03.22:04:06.234 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-25-03-03.22:05:28.052 [main            ] INFO  ITagTest               - Starting ITagTest using Java 1.8.0_151 on mile with PID 5004 (started by aaa in D:\Develop\project\group-buying-platform\group-buying-platform-app)
-25-03-03.22:05:28.052 [main            ] INFO  ITagTest               - The following 1 profile is active: "dev"
-25-03-03.22:05:28.873 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-25-03-03.22:05:28.873 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-25-03-03.22:05:28.926 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 37 ms. Found 0 Redis repository interfaces.
-25-03-03.22:05:32.642 [main            ] INFO  Version                - Redisson 3.26.0
-25-03-03.22:05:33.422 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
-25-03-03.22:05:33.433 [redisson-netty-1-14] INFO  ConnectionsHolder      - 5 connections initialized for localhost/127.0.0.1:6379
-25-03-03.22:05:35.212 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-25-03-03.22:05:35.273 [main            ] INFO  ITagTest               - Started ITagTest in 7.625 seconds (JVM running for 8.763)
-25-03-03.22:05:35.492 [main            ] INFO  ITagTest               - rem 存在，预期结果为 true，测试结果:false
-25-03-03.22:27:58.332 [main            ] INFO  ITagTest               - Starting ITagTest using Java 1.8.0_151 on mile with PID 12428 (started by aaa in D:\Develop\project\group-buying-platform\group-buying-platform-app)
-25-03-03.22:27:58.332 [main            ] INFO  ITagTest               - The following 1 profile is active: "dev"
-25-03-03.22:27:59.098 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-25-03-03.22:27:59.098 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-25-03-03.22:27:59.156 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 40 ms. Found 0 Redis repository interfaces.
-25-03-03.22:28:02.838 [main            ] INFO  Version                - Redisson 3.26.0
-25-03-03.22:28:03.626 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
-25-03-03.22:28:03.642 [redisson-netty-1-14] INFO  ConnectionsHolder      - 5 connections initialized for localhost/127.0.0.1:6379
-25-03-03.22:28:05.238 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-25-03-03.22:28:05.297 [main            ] INFO  ITagTest               - Started ITagTest in 7.36 seconds (JVM running for 8.755)
-25-03-03.22:28:05.523 [main            ] INFO  ITagTest               - rem 存在，预期结果为 true，测试结果:false
-25-03-03.22:28:44.471 [main            ] INFO  ITagTest               - Starting ITagTest using Java 1.8.0_151 on mile with PID 28800 (started by aaa in D:\Develop\project\group-buying-platform\group-buying-platform-app)
-25-03-03.22:28:44.471 [main            ] INFO  ITagTest               - The following 1 profile is active: "dev"
-25-03-03.22:28:45.162 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-25-03-03.22:28:45.178 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-25-03-03.22:28:45.209 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 33 ms. Found 0 Redis repository interfaces.
-25-03-03.22:28:48.744 [main            ] INFO  Version                - Redisson 3.26.0
-25-03-03.22:28:49.502 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
-25-03-03.22:28:49.533 [redisson-netty-1-14] INFO  ConnectionsHolder      - 5 connections initialized for localhost/127.0.0.1:6379
-25-03-03.22:28:51.500 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-25-03-03.22:28:51.563 [main            ] INFO  ITagTest               - Started ITagTest in 7.506 seconds (JVM running for 8.712)
-25-03-03.22:28:51.768 [main            ] INFO  ITagTest               - rem 存在，预期结果为 true，测试结果:false
-25-03-03.22:49:48.459 [main            ] INFO  ITagTest               - Starting ITagTest using Java 1.8.0_151 on mile with PID 28724 (started by aaa in D:\Develop\project\group-buying-platform\group-buying-platform-app)
-25-03-03.22:49:48.459 [main            ] INFO  ITagTest               - The following 1 profile is active: "dev"
-25-03-03.22:49:49.214 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-25-03-03.22:49:49.214 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-25-03-03.22:49:49.261 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 28 ms. Found 0 Redis repository interfaces.
-25-03-03.22:49:52.905 [main            ] INFO  Version                - Redisson 3.26.0
-25-03-03.22:49:53.640 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
-25-03-03.22:49:53.656 [redisson-netty-1-14] INFO  ConnectionsHolder      - 5 connections initialized for localhost/127.0.0.1:6379
-25-03-03.22:49:55.253 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-25-03-03.22:49:55.305 [main            ] INFO  ITagTest               - Started ITagTest in 7.263 seconds (JVM running for 8.427)
-25-03-03.22:49:55.542 [main            ] INFO  ITagTest               - rem 存在，预期结果为 true，测试结果:false
-25-03-03.22:49:55.542 [main            ] INFO  ITagTest               - gudebai 不存在，预期结果为 false，测试结果:false
-25-03-03.22:50:48.725 [main            ] INFO  ITagTest               - Starting ITagTest using Java 1.8.0_151 on mile with PID 25704 (started by aaa in D:\Develop\project\group-buying-platform\group-buying-platform-app)
-25-03-03.22:50:48.725 [main            ] INFO  ITagTest               - The following 1 profile is active: "dev"
-25-03-03.22:50:49.465 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-25-03-03.22:50:49.465 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-25-03-03.22:50:49.512 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 33 ms. Found 0 Redis repository interfaces.
-25-03-03.22:50:53.015 [main            ] INFO  Version                - Redisson 3.26.0
-25-03-03.22:50:53.741 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
-25-03-03.22:50:53.757 [redisson-netty-1-14] INFO  ConnectionsHolder      - 5 connections initialized for localhost/127.0.0.1:6379
-25-03-03.22:50:55.257 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-25-03-03.22:50:55.304 [main            ] INFO  ITagTest               - Started ITagTest in 6.945 seconds (JVM running for 8.298)
-25-03-03.22:50:55.516 [main            ] INFO  ITagTest               - rem 存在，预期结果为 true，测试结果:true
-25-03-03.22:50:55.516 [main            ] INFO  ITagTest               - gudebai 不存在，预期结果为 false，测试结果:false
+25-03-05.10:16:24.693 [main            ] INFO  IIndexGroupBuyingServiceTest - Starting IIndexGroupBuyingServiceTest using Java 1.8.0_151 on mile with PID 8004 (started by aaa in D:\Develop\project\group-buying-platform\group-buying-platform-app)
+25-03-05.10:16:24.693 [main            ] INFO  IIndexGroupBuyingServiceTest - The following 1 profile is active: "dev"
+25-03-05.10:16:25.573 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-03-05.10:16:25.574 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-03-05.10:16:25.614 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 29 ms. Found 0 Redis repository interfaces.
+25-03-05.10:16:28.564 [main            ] INFO  Version                - Redisson 3.26.0
+25-03-05.10:16:29.343 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
+25-03-05.10:16:29.363 [redisson-netty-1-14] INFO  ConnectionsHolder      - 5 connections initialized for localhost/127.0.0.1:6379
+25-03-05.10:16:30.764 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-03-05.10:16:30.813 [main            ] INFO  IIndexGroupBuyingServiceTest - Started IIndexGroupBuyingServiceTest in 6.527 seconds (JVM running for 8.005)
+25-03-05.10:16:31.179 [pool-2-thread-2 ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-03-05.10:16:33.814 [pool-2-thread-2 ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-03-05.10:16:34.407 [main            ] INFO  MarketNode             - 拼团活动查询试算服务-MarketNode userId:rem 异步线程加载数据[GroupBuyingActivityDiscountVO、 SkuVO] 完成
+25-03-05.10:16:34.414 [main            ] INFO  MarketNode             - 拼团商品查询试算服务-MarketNode userId:rem requestParameter:{"userId":"rem","goodsId":"9890001","source":"s01","channel":"c01"}
+25-03-05.10:16:34.414 [main            ] INFO  ZJCalculateService     - 折扣优惠服务- 直减计算， 原始价格: 100.00
+25-03-05.10:16:34.414 [main            ] INFO  EndNode                - 拼团商品查询试算服务-EndNode userId:rem requestParameter:{"userId":"rem","goodsId":"9890001","source":"s01","channel":"c01"}
+25-03-05.10:16:34.414 [main            ] INFO  IIndexGroupBuyingServiceTest - 请求参数: MarketProductEntity(userId=rem, goodsId=9890001, source=s01, channel=c01)
+25-03-05.10:16:34.414 [main            ] INFO  IIndexGroupBuyingServiceTest - 返回结果: TrialBalanceEntity(goodsId=9890001, goodsName=《手写MyBatis：渐进式源码实践》, originalPrice=100.00, discountPrice=80.00, targetCount=1, startTime=Sat Dec 07 10:19:40 CST 2024, endTime=Sat Dec 07 10:19:40 CST 2024, isVisible=false, isEnable=false)
+25-03-05.10:16:34.493 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-03-05.10:16:34.893 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-03-05.10:17:40.382 [main            ] INFO  IIndexGroupBuyingServiceTest - Starting IIndexGroupBuyingServiceTest using Java 1.8.0_151 on mile with PID 3860 (started by aaa in D:\Develop\project\group-buying-platform\group-buying-platform-app)
+25-03-05.10:17:40.383 [main            ] INFO  IIndexGroupBuyingServiceTest - The following 1 profile is active: "dev"
+25-03-05.10:17:41.133 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-03-05.10:17:41.137 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-03-05.10:17:41.179 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 32 ms. Found 0 Redis repository interfaces.
+25-03-05.10:17:44.503 [main            ] INFO  Version                - Redisson 3.26.0
+25-03-05.10:17:45.234 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
+25-03-05.10:17:45.243 [redisson-netty-1-14] INFO  ConnectionsHolder      - 5 connections initialized for localhost/127.0.0.1:6379
+25-03-05.10:17:46.573 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-03-05.10:17:46.630 [main            ] INFO  IIndexGroupBuyingServiceTest - Started IIndexGroupBuyingServiceTest in 6.643 seconds (JVM running for 7.769)
+25-03-05.10:17:46.942 [pool-2-thread-2 ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-03-05.10:17:50.199 [pool-2-thread-2 ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-03-05.10:17:51.025 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-03-05.10:17:52.044 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-03-05.10:24:58.297 [main            ] INFO  IIndexGroupBuyingServiceTest - Starting IIndexGroupBuyingServiceTest using Java 1.8.0_151 on mile with PID 20136 (started by aaa in D:\Develop\project\group-buying-platform\group-buying-platform-app)
+25-03-05.10:24:58.297 [main            ] INFO  IIndexGroupBuyingServiceTest - The following 1 profile is active: "dev"
+25-03-05.10:24:59.005 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-03-05.10:24:59.009 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-03-05.10:24:59.049 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 32 ms. Found 0 Redis repository interfaces.
+25-03-05.10:25:02.298 [main            ] INFO  Version                - Redisson 3.26.0
+25-03-05.10:25:03.073 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
+25-03-05.10:25:03.085 [redisson-netty-1-14] INFO  ConnectionsHolder      - 5 connections initialized for localhost/127.0.0.1:6379
+25-03-05.10:25:04.475 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-03-05.10:25:04.526 [main            ] INFO  IIndexGroupBuyingServiceTest - Started IIndexGroupBuyingServiceTest in 6.609 seconds (JVM running for 7.672)
+25-03-05.10:25:04.814 [pool-2-thread-1 ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-03-05.10:25:07.765 [pool-2-thread-1 ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-03-05.10:25:08.045 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-03-05.10:25:09.354 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-03-05.11:08:05.033 [main            ] INFO  IIndexGroupBuyingServiceTest - Starting IIndexGroupBuyingServiceTest using Java 1.8.0_151 on mile with PID 17796 (started by aaa in D:\Develop\project\group-buying-platform\group-buying-platform-app)
+25-03-05.11:08:05.033 [main            ] INFO  IIndexGroupBuyingServiceTest - The following 1 profile is active: "dev"
+25-03-05.11:08:05.792 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-03-05.11:08:05.794 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-03-05.11:08:05.837 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 31 ms. Found 0 Redis repository interfaces.
+25-03-05.11:08:09.196 [main            ] INFO  Version                - Redisson 3.26.0
+25-03-05.11:08:09.914 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
+25-03-05.11:08:09.926 [redisson-netty-1-14] INFO  ConnectionsHolder      - 5 connections initialized for localhost/127.0.0.1:6379
+25-03-05.11:08:11.435 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-03-05.11:08:11.493 [main            ] INFO  IIndexGroupBuyingServiceTest - Started IIndexGroupBuyingServiceTest in 6.893 seconds (JVM running for 8.038)
+25-03-05.11:08:11.804 [pool-2-thread-1 ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-03-05.11:08:14.771 [pool-2-thread-1 ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-03-05.11:08:15.157 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-03-05.11:08:16.304 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-03-05.11:08:50.477 [main            ] INFO  IIndexGroupBuyingServiceTest - Starting IIndexGroupBuyingServiceTest using Java 1.8.0_151 on mile with PID 10032 (started by aaa in D:\Develop\project\group-buying-platform\group-buying-platform-app)
+25-03-05.11:08:50.478 [main            ] INFO  IIndexGroupBuyingServiceTest - The following 1 profile is active: "dev"
+25-03-05.11:08:51.473 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-03-05.11:08:51.476 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-03-05.11:08:51.523 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 33 ms. Found 0 Redis repository interfaces.
+25-03-05.11:08:55.137 [main            ] INFO  Version                - Redisson 3.26.0
+25-03-05.11:08:55.930 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
+25-03-05.11:08:55.947 [redisson-netty-1-14] INFO  ConnectionsHolder      - 5 connections initialized for localhost/127.0.0.1:6379
+25-03-05.11:08:57.600 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-03-05.11:08:57.659 [main            ] INFO  IIndexGroupBuyingServiceTest - Started IIndexGroupBuyingServiceTest in 7.721 seconds (JVM running for 9.249)
+25-03-05.11:08:58.018 [pool-2-thread-2 ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-03-05.11:09:00.440 [pool-2-thread-2 ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-03-05.11:09:00.846 [main            ] INFO  MarketNode             - 拼团活动查询试算服务-MarketNode userId:rem 异步线程加载数据[GroupBuyingActivityDiscountVO、 SkuVO] 完成
+25-03-05.11:09:00.851 [main            ] INFO  MarketNode             - 拼团商品查询试算服务-MarketNode userId:rem requestParameter:{"userId":"rem","goodsId":"9890002","source":"s01","channel":"c01"}
+25-03-05.11:09:00.851 [main            ] INFO  ErrorNode              - 拼团商品查询试算服务-MarketNode userId:rem requestParameter:{"userId":"rem","goodsId":"9890002","source":"s01","channel":"c01"}
+25-03-05.11:09:00.851 [main            ] INFO  ErrorNode              - 无营销配置 goodsId: 9890002
+25-03-05.11:09:00.902 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-03-05.11:09:01.609 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.

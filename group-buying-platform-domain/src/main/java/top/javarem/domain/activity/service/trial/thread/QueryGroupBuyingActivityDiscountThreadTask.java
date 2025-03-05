@@ -1,6 +1,7 @@
 package top.javarem.domain.activity.service.trial.thread;
 
 import top.javarem.domain.activity.adapter.repository.IActivityRepository;
+import top.javarem.domain.activity.model.entity.ScSkuActivityEntity;
 import top.javarem.domain.activity.model.vo.GroupBuyingActivityDiscountVO;
 
 import java.util.concurrent.Callable;
@@ -23,18 +24,26 @@ public class QueryGroupBuyingActivityDiscountThreadTask implements Callable<Grou
     private final String channel;
 
     /**
+     * 商品Id
+     */
+    private String goodsId;
+
+    /**
      * 活动仓储
      */
     private final IActivityRepository activityRepository;
 
-    public QueryGroupBuyingActivityDiscountThreadTask(String source, String channel, IActivityRepository activityRepository) {
+    public QueryGroupBuyingActivityDiscountThreadTask(String source, String channel, String goodsId, IActivityRepository activityRepository) {
         this.source = source;
         this.channel = channel;
+        this.goodsId = goodsId;
         this.activityRepository = activityRepository;
     }
 
     @Override
     public GroupBuyingActivityDiscountVO call() throws Exception {
-        return activityRepository.queryGroupBuyingActivityDiscount(source, channel);
+        ScSkuActivityEntity scSkuActivity = activityRepository.queryScSkuActivityByGoodsId(source, channel, goodsId);
+        if (scSkuActivity == null) return null;
+        return activityRepository.queryGroupBuyingActivityDiscount(scSkuActivity.getActivityId());
     }
 }
