@@ -65,6 +65,21 @@ public class IIndexGroupBuyingServiceTest {
     }
 
     @Test
+    public void test_indexMarketTrial_no_tag() throws Exception {
+
+        MarketProductEntity marketProductEntity = new MarketProductEntity();
+        marketProductEntity.setUserId("atri");
+        marketProductEntity.setSource("s01");
+        marketProductEntity.setChannel("c01");
+        marketProductEntity.setGoodsId("9890001");
+
+        TrialBalanceEntity trialBalanceEntity = indexGroupBuyingService.indexMarketTrial(marketProductEntity);
+        log.info("请求参数: {}", marketProductEntity);
+        log.info("返回结果: {}", trialBalanceEntity.toString());
+
+    }
+
+    @Test
     public void test_indexMarketTrial_error() throws Exception {
 
         MarketProductEntity marketProductEntity = new MarketProductEntity();

@@ -1,5 +1,7 @@
 package top.javarem.infrastructure.adapter.repository;
 
+import org.redisson.api.RBitSet;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import top.javarem.domain.activity.adapter.repository.IActivityRepository;
 import top.javarem.domain.activity.model.entity.ScSkuActivityEntity;
@@ -10,10 +12,9 @@ import top.javarem.infrastructure.dao.po.GroupBuyingActivity;
 import top.javarem.infrastructure.dao.po.GroupBuyingDiscount;
 import top.javarem.infrastructure.dao.po.ScSkuActivity;
 import top.javarem.infrastructure.dao.po.Sku;
-import top.javarem.infrastructure.dao.service.GroupBuyingActivityService;
-import top.javarem.infrastructure.dao.service.GroupBuyingDiscountService;
-import top.javarem.infrastructure.dao.service.ScSkuActivityService;
-import top.javarem.infrastructure.dao.service.SkuService;
+import top.javarem.infrastructure.dao.service.*;
+import top.javarem.infrastructure.redis.IRedisService;
+import top.javarem.types.common.constants.Constants;
 
 import javax.annotation.Resource;
 
@@ -33,14 +34,16 @@ public class ActivityRepository implements IActivityRepository {
     private SkuService skuService;
     @Resource
     private ScSkuActivityService scSkuActivityService;
+    @Autowired
+    private IRedisService redisService;
 
     @Override
-    public GroupBuyingActivityDiscountVO queryGroupBuyingActivityDiscount(String source, String channel) {
+    public GroupBuyingActivityDiscountVO queryGroupBuyingActivityDiscount(Long activityId) {
+
         // 根据SC渠道值查询配置中最新的1个有效的活动
-        GroupBuyingActivity groupBuyingActivityRes = groupBuyingActivityService.queryValidGroupBuyingActivity(source, channel);
+        GroupBuyingActivity groupBuyingActivityRes = groupBuyingActivityService.queryValidGroupBuyingActivityByActivityId(activityId);
         if (groupBuyingActivityRes == null) return null;
-        String discountId = groupBuyingActivityRes.getDiscountId();
-        GroupBuyingDiscount groupBuyingDiscountRes = groupBuyingDiscountService.queryGroupBuyingDiscountByDiscountId(discountId);
+        GroupBuyingDiscount groupBuyingDiscountRes = groupBuyingDiscountService.queryGroupBuyingDiscountByDiscountId(groupBuyingActivityRes.getDiscountId());
         if (groupBuyingDiscountRes == null) return null;
         GroupBuyingActivityDiscountVO.GroupBuyingDiscount groupBuyingDiscount = GroupBuyingActivityDiscountVO.GroupBuyingDiscount.builder()
                 .discountName(groupBuyingDiscountRes.getDiscountName())
@@ -79,41 +82,6 @@ public class ActivityRepository implements IActivityRepository {
     }
 
     @Override
-    public GroupBuyingActivityDiscountVO queryGroupBuyingActivityDiscount(Long activityId) {
-
-        // 根据SC渠道值查询配置中最新的1个有效的活动
-        GroupBuyingActivity groupBuyingActivityRes = groupBuyingActivityService.queryValidGroupBuyingActivityByActivityId(activityId);
-        if (groupBuyingActivityRes == null) return null;
-        GroupBuyingDiscount groupBuyingDiscountRes = groupBuyingDiscountService.queryGroupBuyingDiscountByDiscountId(groupBuyingActivityRes.getDiscountId());
-        if (groupBuyingDiscountRes == null) return null;
-        GroupBuyingActivityDiscountVO.GroupBuyingDiscount groupBuyingDiscount = GroupBuyingActivityDiscountVO.GroupBuyingDiscount.builder()
-                .discountName(groupBuyingDiscountRes.getDiscountName())
-                .discountDesc(groupBuyingDiscountRes.getDiscountDesc())
-                .discountType(DiscountTypeEnum.get(groupBuyingDiscountRes.getDiscountType()))
-                .marketingPlan(groupBuyingDiscountRes.getMarketingPlan())
-                .marketingExpr(groupBuyingDiscountRes.getMarketingExpr())
-                .tagId(groupBuyingDiscountRes.getTagId())
-                .build();
-        return GroupBuyingActivityDiscountVO.builder()
-                .activityId(groupBuyingActivityRes.getActivityId())
-                .activityName(groupBuyingActivityRes.getActivityName())
-                .goodsId(groupBuyingActivityRes.getGoodsId())
-                .groupBuyingDiscount(groupBuyingDiscount)
-                .groupType(groupBuyingActivityRes.getGroupType())
-                .takeLimitCount(groupBuyingActivityRes.getTakeLimitCount())
-                .target(groupBuyingActivityRes.getTarget())
-                .validTime(groupBuyingActivityRes.getValidTime())
-                .status(groupBuyingActivityRes.getStatus())
-                .beginTime(groupBuyingActivityRes.getBeginTime())
-                .endTime(groupBuyingActivityRes.getEndTime())
-                .tagId(groupBuyingActivityRes.getTagId())
-                .tagScope(groupBuyingActivityRes.getTagScope())
-                .build();
-
-
-    }
-
-    @Override
     public ScSkuActivityEntity queryScSkuActivityByGoodsId(String source, String channel, String goodsId) {
 
         ScSkuActivity scSkuActivity = scSkuActivityService.getScSkuActivity(source, channel, goodsId);
@@ -124,6 +92,20 @@ public class ActivityRepository implements IActivityRepository {
                 .channel(scSkuActivity.getChannel())
                 .source(scSkuActivity.getSource())
                 .build();
+
+    }
+
+    @Override
+    public boolean isTagCrowdRange(String tagId, String userId) {
+
+        String cacheKey = Constants.RedisKey.BIT_SET_KEY + tagId;
+        RBitSet bitSet = redisService.getBitSet(cacheKey);
+        System.out.println(bitSet.isExists());
+//        if (!bitSet.isExists()) {
+//            return false;
+//        }
+        return bitSet.get(redisService.getIndexFromUserId(userId));
+
 
     }
 }

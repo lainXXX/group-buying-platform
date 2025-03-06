@@ -1,8 +1,11 @@
 package top.javarem.domain.activity.model.vo;
 
 import lombok.*;
+import org.apache.commons.lang3.StringUtils;
+import top.javarem.types.common.constants.Constants;
 
 import java.util.Date;
+import java.util.Objects;
 
 /**
  * @Author: rem
@@ -89,6 +92,35 @@ public class GroupBuyingActivityDiscountVO {
      * 人群标签规则范围【多选】
      */
     private String tagScope;
+
+    /**
+     * 判断活动是否可见
+     *
+     * @return boolean
+     */
+    public boolean isVisible() {
+
+        String[] split = tagScope.split(Constants.COMMA);
+        if (split.length > 0 && Objects.equals(split[0], "1")) {
+            return false;
+        }
+        return true;
+
+    }
+
+    /**
+     * 判断活动是否能参与
+     *
+     * @return boolean
+     */
+    public boolean isEnable() {
+        String[] split = tagScope.split(Constants.COMMA);
+        if (split.length == 2 && Objects.equals(split[1], "2")) {
+            return false;
+        }
+        return true;
+
+    }
 
     @Getter
     @Builder

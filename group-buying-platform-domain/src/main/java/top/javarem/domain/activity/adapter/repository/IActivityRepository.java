@@ -12,12 +12,11 @@ import top.javarem.domain.activity.model.vo.SkuVO;
 public interface IActivityRepository {
 
     /**
-     * 查询拼团活动折扣
-     * @param source 来源
-     * @param channel 渠道
+     * 查询拼团活动折扣通过活动Id
+     * @param activityId 活动Id
      * @return
      */
-    GroupBuyingActivityDiscountVO queryGroupBuyingActivityDiscount(String source, String channel);
+    GroupBuyingActivityDiscountVO queryGroupBuyingActivityDiscount(Long activityId);
 
     /**
      * 查询商品信息通过商品Id
@@ -26,12 +25,6 @@ public interface IActivityRepository {
      */
     SkuVO querySkuByGoodsId(String goodsId);
 
-    /**
-     * 查询拼团活动折扣通过活动Id
-     * @param activityId 活动Id
-     * @return
-     */
-    GroupBuyingActivityDiscountVO queryGroupBuyingActivityDiscount(Long activityId);
 
     /**
      * 查询渠道商品活动配置关联信息
@@ -41,4 +34,12 @@ public interface IActivityRepository {
      * @return
      */
     ScSkuActivityEntity queryScSkuActivityByGoodsId(String source, String channel, String goodsId);
+
+    /**
+     * 判断用户是否属于对应标签人群
+     * @param tagId 标签Id
+     * @param userId 用户Id
+     * @return
+     */
+    boolean isTagCrowdRange(String tagId, String userId);
 }

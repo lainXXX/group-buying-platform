@@ -1,80 +1,232 @@
-25-03-05.10:16:24.693 [main            ] INFO  IIndexGroupBuyingServiceTest - Starting IIndexGroupBuyingServiceTest using Java 1.8.0_151 on mile with PID 8004 (started by aaa in D:\Develop\project\group-buying-platform\group-buying-platform-app)
-25-03-05.10:16:24.693 [main            ] INFO  IIndexGroupBuyingServiceTest - The following 1 profile is active: "dev"
-25-03-05.10:16:25.573 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-25-03-05.10:16:25.574 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-25-03-05.10:16:25.614 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 29 ms. Found 0 Redis repository interfaces.
-25-03-05.10:16:28.564 [main            ] INFO  Version                - Redisson 3.26.0
-25-03-05.10:16:29.343 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
-25-03-05.10:16:29.363 [redisson-netty-1-14] INFO  ConnectionsHolder      - 5 connections initialized for localhost/127.0.0.1:6379
-25-03-05.10:16:30.764 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-25-03-05.10:16:30.813 [main            ] INFO  IIndexGroupBuyingServiceTest - Started IIndexGroupBuyingServiceTest in 6.527 seconds (JVM running for 8.005)
-25-03-05.10:16:31.179 [pool-2-thread-2 ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-25-03-05.10:16:33.814 [pool-2-thread-2 ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-25-03-05.10:16:34.407 [main            ] INFO  MarketNode             - 拼团活动查询试算服务-MarketNode userId:rem 异步线程加载数据[GroupBuyingActivityDiscountVO、 SkuVO] 完成
-25-03-05.10:16:34.414 [main            ] INFO  MarketNode             - 拼团商品查询试算服务-MarketNode userId:rem requestParameter:{"userId":"rem","goodsId":"9890001","source":"s01","channel":"c01"}
-25-03-05.10:16:34.414 [main            ] INFO  ZJCalculateService     - 折扣优惠服务- 直减计算， 原始价格: 100.00
-25-03-05.10:16:34.414 [main            ] INFO  EndNode                - 拼团商品查询试算服务-EndNode userId:rem requestParameter:{"userId":"rem","goodsId":"9890001","source":"s01","channel":"c01"}
-25-03-05.10:16:34.414 [main            ] INFO  IIndexGroupBuyingServiceTest - 请求参数: MarketProductEntity(userId=rem, goodsId=9890001, source=s01, channel=c01)
-25-03-05.10:16:34.414 [main            ] INFO  IIndexGroupBuyingServiceTest - 返回结果: TrialBalanceEntity(goodsId=9890001, goodsName=《手写MyBatis：渐进式源码实践》, originalPrice=100.00, discountPrice=80.00, targetCount=1, startTime=Sat Dec 07 10:19:40 CST 2024, endTime=Sat Dec 07 10:19:40 CST 2024, isVisible=false, isEnable=false)
-25-03-05.10:16:34.493 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-25-03-05.10:16:34.893 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-25-03-05.10:17:40.382 [main            ] INFO  IIndexGroupBuyingServiceTest - Starting IIndexGroupBuyingServiceTest using Java 1.8.0_151 on mile with PID 3860 (started by aaa in D:\Develop\project\group-buying-platform\group-buying-platform-app)
-25-03-05.10:17:40.383 [main            ] INFO  IIndexGroupBuyingServiceTest - The following 1 profile is active: "dev"
-25-03-05.10:17:41.133 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-25-03-05.10:17:41.137 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-25-03-05.10:17:41.179 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 32 ms. Found 0 Redis repository interfaces.
-25-03-05.10:17:44.503 [main            ] INFO  Version                - Redisson 3.26.0
-25-03-05.10:17:45.234 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
-25-03-05.10:17:45.243 [redisson-netty-1-14] INFO  ConnectionsHolder      - 5 connections initialized for localhost/127.0.0.1:6379
-25-03-05.10:17:46.573 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-25-03-05.10:17:46.630 [main            ] INFO  IIndexGroupBuyingServiceTest - Started IIndexGroupBuyingServiceTest in 6.643 seconds (JVM running for 7.769)
-25-03-05.10:17:46.942 [pool-2-thread-2 ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-25-03-05.10:17:50.199 [pool-2-thread-2 ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-25-03-05.10:17:51.025 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-25-03-05.10:17:52.044 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-25-03-05.10:24:58.297 [main            ] INFO  IIndexGroupBuyingServiceTest - Starting IIndexGroupBuyingServiceTest using Java 1.8.0_151 on mile with PID 20136 (started by aaa in D:\Develop\project\group-buying-platform\group-buying-platform-app)
-25-03-05.10:24:58.297 [main            ] INFO  IIndexGroupBuyingServiceTest - The following 1 profile is active: "dev"
-25-03-05.10:24:59.005 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-25-03-05.10:24:59.009 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-25-03-05.10:24:59.049 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 32 ms. Found 0 Redis repository interfaces.
-25-03-05.10:25:02.298 [main            ] INFO  Version                - Redisson 3.26.0
-25-03-05.10:25:03.073 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
-25-03-05.10:25:03.085 [redisson-netty-1-14] INFO  ConnectionsHolder      - 5 connections initialized for localhost/127.0.0.1:6379
-25-03-05.10:25:04.475 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-25-03-05.10:25:04.526 [main            ] INFO  IIndexGroupBuyingServiceTest - Started IIndexGroupBuyingServiceTest in 6.609 seconds (JVM running for 7.672)
-25-03-05.10:25:04.814 [pool-2-thread-1 ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-25-03-05.10:25:07.765 [pool-2-thread-1 ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-25-03-05.10:25:08.045 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-25-03-05.10:25:09.354 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-25-03-05.11:08:05.033 [main            ] INFO  IIndexGroupBuyingServiceTest - Starting IIndexGroupBuyingServiceTest using Java 1.8.0_151 on mile with PID 17796 (started by aaa in D:\Develop\project\group-buying-platform\group-buying-platform-app)
-25-03-05.11:08:05.033 [main            ] INFO  IIndexGroupBuyingServiceTest - The following 1 profile is active: "dev"
-25-03-05.11:08:05.792 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-25-03-05.11:08:05.794 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-25-03-05.11:08:05.837 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 31 ms. Found 0 Redis repository interfaces.
-25-03-05.11:08:09.196 [main            ] INFO  Version                - Redisson 3.26.0
-25-03-05.11:08:09.914 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
-25-03-05.11:08:09.926 [redisson-netty-1-14] INFO  ConnectionsHolder      - 5 connections initialized for localhost/127.0.0.1:6379
-25-03-05.11:08:11.435 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-25-03-05.11:08:11.493 [main            ] INFO  IIndexGroupBuyingServiceTest - Started IIndexGroupBuyingServiceTest in 6.893 seconds (JVM running for 8.038)
-25-03-05.11:08:11.804 [pool-2-thread-1 ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-25-03-05.11:08:14.771 [pool-2-thread-1 ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-25-03-05.11:08:15.157 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-25-03-05.11:08:16.304 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-25-03-05.11:08:50.477 [main            ] INFO  IIndexGroupBuyingServiceTest - Starting IIndexGroupBuyingServiceTest using Java 1.8.0_151 on mile with PID 10032 (started by aaa in D:\Develop\project\group-buying-platform\group-buying-platform-app)
-25-03-05.11:08:50.478 [main            ] INFO  IIndexGroupBuyingServiceTest - The following 1 profile is active: "dev"
-25-03-05.11:08:51.473 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-25-03-05.11:08:51.476 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-25-03-05.11:08:51.523 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 33 ms. Found 0 Redis repository interfaces.
-25-03-05.11:08:55.137 [main            ] INFO  Version                - Redisson 3.26.0
-25-03-05.11:08:55.930 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
-25-03-05.11:08:55.947 [redisson-netty-1-14] INFO  ConnectionsHolder      - 5 connections initialized for localhost/127.0.0.1:6379
-25-03-05.11:08:57.600 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-25-03-05.11:08:57.659 [main            ] INFO  IIndexGroupBuyingServiceTest - Started IIndexGroupBuyingServiceTest in 7.721 seconds (JVM running for 9.249)
-25-03-05.11:08:58.018 [pool-2-thread-2 ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-25-03-05.11:09:00.440 [pool-2-thread-2 ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-25-03-05.11:09:00.846 [main            ] INFO  MarketNode             - 拼团活动查询试算服务-MarketNode userId:rem 异步线程加载数据[GroupBuyingActivityDiscountVO、 SkuVO] 完成
-25-03-05.11:09:00.851 [main            ] INFO  MarketNode             - 拼团商品查询试算服务-MarketNode userId:rem requestParameter:{"userId":"rem","goodsId":"9890002","source":"s01","channel":"c01"}
-25-03-05.11:09:00.851 [main            ] INFO  ErrorNode              - 拼团商品查询试算服务-MarketNode userId:rem requestParameter:{"userId":"rem","goodsId":"9890002","source":"s01","channel":"c01"}
-25-03-05.11:09:00.851 [main            ] INFO  ErrorNode              - 无营销配置 goodsId: 9890002
-25-03-05.11:09:00.902 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-25-03-05.11:09:01.609 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-03-06.17:31:54.060 [main            ] INFO  IIndexGroupBuyingServiceTest - Starting IIndexGroupBuyingServiceTest using Java 1.8.0_151 on mile with PID 12048 (started by aaa in D:\Develop\project\group-buying-platform\group-buying-platform-app)
+25-03-06.17:31:54.060 [main            ] INFO  IIndexGroupBuyingServiceTest - The following 1 profile is active: "dev"
+25-03-06.17:31:55.054 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-03-06.17:31:55.058 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-03-06.17:31:55.103 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 30 ms. Found 0 Redis repository interfaces.
+25-03-06.17:31:58.795 [main            ] INFO  Version                - Redisson 3.26.0
+25-03-06.17:31:59.585 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
+25-03-06.17:31:59.597 [redisson-netty-1-14] INFO  ConnectionsHolder      - 5 connections initialized for localhost/127.0.0.1:6379
+25-03-06.17:32:01.191 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-03-06.17:32:01.245 [main            ] INFO  IIndexGroupBuyingServiceTest - Started IIndexGroupBuyingServiceTest in 7.604 seconds (JVM running for 8.913)
+25-03-06.17:32:01.596 [pool-2-thread-2 ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-03-06.17:32:03.219 [pool-2-thread-2 ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-03-06.17:32:03.581 [main            ] INFO  MarketNode             - 拼团活动查询试算服务-MarketNode userId:rem 异步线程加载数据[GroupBuyingActivityDiscountVO、 SkuVO] 完成
+25-03-06.17:32:03.587 [main            ] INFO  MarketNode             - 拼团商品查询试算服务-MarketNode userId:rem requestParameter:{"userId":"rem","goodsId":"9890001","source":"s01","channel":"c01"}
+25-03-06.17:32:03.587 [main            ] INFO  ZJCalculateService     - 折扣优惠服务- 直减计算， 原始价格: 100.00
+25-03-06.17:32:03.597 [main            ] INFO  EndNode                - 拼团商品查询试算服务-EndNode userId:rem requestParameter:{"userId":"rem","goodsId":"9890001","source":"s01","channel":"c01"}
+25-03-06.17:32:03.598 [main            ] INFO  IIndexGroupBuyingServiceTest - 请求参数: MarketProductEntity(userId=rem, goodsId=9890001, source=s01, channel=c01)
+25-03-06.17:32:03.598 [main            ] INFO  IIndexGroupBuyingServiceTest - 返回结果: TrialBalanceEntity(goodsId=9890001, goodsName=《手写MyBatis：渐进式源码实践》, originalPrice=100.00, discountPrice=80.00, targetCount=1, startTime=Sat Dec 07 10:19:40 CST 2024, endTime=Sat Dec 07 10:19:40 CST 2024, isVisible=false, isEnable=false)
+25-03-06.17:32:03.631 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-03-06.17:32:03.866 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-03-06.17:33:05.693 [main            ] INFO  IIndexGroupBuyingServiceTest - Starting IIndexGroupBuyingServiceTest using Java 1.8.0_151 on mile with PID 15488 (started by aaa in D:\Develop\project\group-buying-platform\group-buying-platform-app)
+25-03-06.17:33:05.693 [main            ] INFO  IIndexGroupBuyingServiceTest - The following 1 profile is active: "dev"
+25-03-06.17:33:06.465 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-03-06.17:33:06.465 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-03-06.17:33:06.496 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 31 ms. Found 0 Redis repository interfaces.
+25-03-06.17:33:09.800 [main            ] INFO  Version                - Redisson 3.26.0
+25-03-06.17:33:10.523 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
+25-03-06.17:33:10.539 [redisson-netty-1-14] INFO  ConnectionsHolder      - 5 connections initialized for localhost/127.0.0.1:6379
+25-03-06.17:33:11.983 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-03-06.17:33:12.031 [main            ] INFO  IIndexGroupBuyingServiceTest - Started IIndexGroupBuyingServiceTest in 6.705 seconds (JVM running for 7.761)
+25-03-06.17:33:12.362 [pool-2-thread-2 ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-03-06.17:33:14.027 [pool-2-thread-2 ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-03-06.17:33:14.359 [main            ] INFO  MarketNode             - 拼团活动查询试算服务-MarketNode userId:rem 异步线程加载数据[GroupBuyingActivityDiscountVO、 SkuVO] 完成
+25-03-06.17:33:14.377 [main            ] INFO  MarketNode             - 拼团商品查询试算服务-MarketNode userId:rem requestParameter:{"userId":"rem","goodsId":"9890001","source":"s01","channel":"c01"}
+25-03-06.17:33:14.378 [main            ] INFO  ZJCalculateService     - 折扣优惠服务- 直减计算， 原始价格: 100.00
+25-03-06.17:33:14.386 [main            ] INFO  EndNode                - 拼团商品查询试算服务-EndNode userId:rem requestParameter:{"userId":"rem","goodsId":"9890001","source":"s01","channel":"c01"}
+25-03-06.17:33:14.387 [main            ] INFO  IIndexGroupBuyingServiceTest - 请求参数: MarketProductEntity(userId=rem, goodsId=9890001, source=s01, channel=c01)
+25-03-06.17:33:14.387 [main            ] INFO  IIndexGroupBuyingServiceTest - 返回结果: TrialBalanceEntity(goodsId=9890001, goodsName=《手写MyBatis：渐进式源码实践》, originalPrice=100.00, discountPrice=80.00, targetCount=1, startTime=Sat Dec 07 10:19:40 CST 2024, endTime=Sat Dec 07 10:19:40 CST 2024, isVisible=false, isEnable=true)
+25-03-06.17:33:14.409 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-03-06.17:33:14.782 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-03-06.17:35:34.657 [main            ] INFO  IIndexGroupBuyingServiceTest - Starting IIndexGroupBuyingServiceTest using Java 1.8.0_151 on mile with PID 5956 (started by aaa in D:\Develop\project\group-buying-platform\group-buying-platform-app)
+25-03-06.17:35:34.657 [main            ] INFO  IIndexGroupBuyingServiceTest - The following 1 profile is active: "dev"
+25-03-06.17:35:35.421 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-03-06.17:35:35.421 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-03-06.17:35:35.468 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 36 ms. Found 0 Redis repository interfaces.
+25-03-06.17:35:38.838 [main            ] INFO  Version                - Redisson 3.26.0
+25-03-06.17:35:39.584 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
+25-03-06.17:35:39.596 [redisson-netty-1-14] INFO  ConnectionsHolder      - 5 connections initialized for localhost/127.0.0.1:6379
+25-03-06.17:35:41.221 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-03-06.17:35:41.284 [main            ] INFO  IIndexGroupBuyingServiceTest - Started IIndexGroupBuyingServiceTest in 7.041 seconds (JVM running for 8.529)
+25-03-06.17:35:41.625 [pool-2-thread-1 ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-03-06.17:35:43.358 [pool-2-thread-1 ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-03-06.17:35:43.674 [main            ] INFO  MarketNode             - 拼团活动查询试算服务-MarketNode userId:rem 异步线程加载数据[GroupBuyingActivityDiscountVO、 SkuVO] 完成
+25-03-06.17:35:43.674 [main            ] INFO  MarketNode             - 拼团商品查询试算服务-MarketNode userId:rem requestParameter:{"userId":"rem","goodsId":"9890001","source":"s01","channel":"c01"}
+25-03-06.17:35:43.674 [main            ] INFO  ZJCalculateService     - 折扣优惠服务- 直减计算， 原始价格: 100.00
+25-03-06.17:38:37.789 [HikariPool-1 housekeeper] WARN  HikariPool             - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m24s290ms426µs500ns).
+25-03-06.17:38:37.789 [main            ] INFO  EndNode                - 拼团商品查询试算服务-EndNode userId:rem requestParameter:{"userId":"rem","goodsId":"9890001","source":"s01","channel":"c01"}
+25-03-06.17:38:37.789 [main            ] INFO  IIndexGroupBuyingServiceTest - 请求参数: MarketProductEntity(userId=rem, goodsId=9890001, source=s01, channel=c01)
+25-03-06.17:38:37.789 [main            ] INFO  IIndexGroupBuyingServiceTest - 返回结果: TrialBalanceEntity(goodsId=9890001, goodsName=《手写MyBatis：渐进式源码实践》, originalPrice=100.00, discountPrice=80.00, targetCount=1, startTime=Sat Dec 07 10:19:40 CST 2024, endTime=Sat Dec 07 10:19:40 CST 2024, isVisible=false, isEnable=true)
+25-03-06.17:38:37.887 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-03-06.17:38:38.250 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-03-06.17:39:00.995 [main            ] INFO  ITagTest               - Starting ITagTest using Java 1.8.0_151 on mile with PID 15644 (started by aaa in D:\Develop\project\group-buying-platform\group-buying-platform-app)
+25-03-06.17:39:01.003 [main            ] INFO  ITagTest               - The following 1 profile is active: "dev"
+25-03-06.17:39:01.781 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-03-06.17:39:01.781 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-03-06.17:39:01.813 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 27 ms. Found 0 Redis repository interfaces.
+25-03-06.17:39:05.186 [main            ] INFO  Version                - Redisson 3.26.0
+25-03-06.17:39:05.925 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
+25-03-06.17:39:05.944 [redisson-netty-1-14] INFO  ConnectionsHolder      - 5 connections initialized for localhost/127.0.0.1:6379
+25-03-06.17:39:07.449 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-03-06.17:39:07.496 [main            ] INFO  ITagTest               - Started ITagTest in 6.947 seconds (JVM running for 8.271)
+25-03-06.17:39:17.275 [main            ] INFO  ITagTest               - rem 存在，预期结果为 true，测试结果:true
+25-03-06.17:39:24.687 [main            ] INFO  ITagTest               - gudebai 不存在，预期结果为 false，测试结果:false
+25-03-06.17:41:32.237 [main            ] INFO  IIndexGroupBuyingServiceTest - Starting IIndexGroupBuyingServiceTest using Java 1.8.0_151 on mile with PID 24224 (started by aaa in D:\Develop\project\group-buying-platform\group-buying-platform-app)
+25-03-06.17:41:32.237 [main            ] INFO  IIndexGroupBuyingServiceTest - The following 1 profile is active: "dev"
+25-03-06.17:41:33.017 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-03-06.17:41:33.020 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-03-06.17:41:33.050 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 27 ms. Found 0 Redis repository interfaces.
+25-03-06.17:41:36.397 [main            ] INFO  Version                - Redisson 3.26.0
+25-03-06.17:41:37.138 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
+25-03-06.17:41:37.138 [redisson-netty-1-14] INFO  ConnectionsHolder      - 5 connections initialized for localhost/127.0.0.1:6379
+25-03-06.17:41:38.747 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-03-06.17:41:38.810 [main            ] INFO  IIndexGroupBuyingServiceTest - Started IIndexGroupBuyingServiceTest in 7.017 seconds (JVM running for 8.337)
+25-03-06.17:41:39.157 [pool-2-thread-2 ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-03-06.17:41:40.831 [pool-2-thread-2 ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-03-06.17:41:41.131 [main            ] INFO  MarketNode             - 拼团活动查询试算服务-MarketNode userId:rem 异步线程加载数据[GroupBuyingActivityDiscountVO、 SkuVO] 完成
+25-03-06.17:41:41.131 [main            ] INFO  MarketNode             - 拼团商品查询试算服务-MarketNode userId:rem requestParameter:{"userId":"rem","goodsId":"9890001","source":"s01","channel":"c01"}
+25-03-06.17:41:41.131 [main            ] INFO  ZJCalculateService     - 折扣优惠服务- 直减计算， 原始价格: 100.00
+25-03-06.17:42:30.687 [main            ] INFO  EndNode                - 拼团商品查询试算服务-EndNode userId:rem requestParameter:{"userId":"rem","goodsId":"9890001","source":"s01","channel":"c01"}
+25-03-06.17:42:30.687 [main            ] INFO  IIndexGroupBuyingServiceTest - 请求参数: MarketProductEntity(userId=rem, goodsId=9890001, source=s01, channel=c01)
+25-03-06.17:42:30.687 [main            ] INFO  IIndexGroupBuyingServiceTest - 返回结果: TrialBalanceEntity(goodsId=9890001, goodsName=《手写MyBatis：渐进式源码实践》, originalPrice=100.00, discountPrice=80.00, targetCount=1, startTime=Sat Dec 07 10:19:40 CST 2024, endTime=Sat Dec 07 10:19:40 CST 2024, isVisible=false, isEnable=true)
+25-03-06.17:42:30.739 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-03-06.17:42:30.755 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-03-06.17:43:08.521 [main            ] INFO  IIndexGroupBuyingServiceTest - Starting IIndexGroupBuyingServiceTest using Java 1.8.0_151 on mile with PID 21888 (started by aaa in D:\Develop\project\group-buying-platform\group-buying-platform-app)
+25-03-06.17:43:08.521 [main            ] INFO  IIndexGroupBuyingServiceTest - The following 1 profile is active: "dev"
+25-03-06.17:43:09.245 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-03-06.17:43:09.261 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-03-06.17:43:09.292 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 26 ms. Found 0 Redis repository interfaces.
+25-03-06.17:43:12.462 [main            ] INFO  Version                - Redisson 3.26.0
+25-03-06.17:43:13.184 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
+25-03-06.17:43:13.200 [redisson-netty-1-14] INFO  ConnectionsHolder      - 5 connections initialized for localhost/127.0.0.1:6379
+25-03-06.17:43:14.608 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-03-06.17:43:14.658 [main            ] INFO  IIndexGroupBuyingServiceTest - Started IIndexGroupBuyingServiceTest in 6.534 seconds (JVM running for 7.584)
+25-03-06.17:43:14.962 [pool-2-thread-1 ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-03-06.17:43:16.964 [pool-2-thread-1 ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-03-06.17:43:17.393 [main            ] INFO  MarketNode             - 拼团活动查询试算服务-MarketNode userId:rem 异步线程加载数据[GroupBuyingActivityDiscountVO、 SkuVO] 完成
+25-03-06.17:43:17.393 [main            ] INFO  MarketNode             - 拼团商品查询试算服务-MarketNode userId:rem requestParameter:{"userId":"rem","goodsId":"9890001","source":"s01","channel":"c01"}
+25-03-06.17:43:17.393 [main            ] INFO  ZJCalculateService     - 折扣优惠服务- 直减计算， 原始价格: 100.00
+25-03-06.17:43:17.408 [main            ] INFO  EndNode                - 拼团商品查询试算服务-EndNode userId:rem requestParameter:{"userId":"rem","goodsId":"9890001","source":"s01","channel":"c01"}
+25-03-06.17:43:17.408 [main            ] INFO  IIndexGroupBuyingServiceTest - 请求参数: MarketProductEntity(userId=rem, goodsId=9890001, source=s01, channel=c01)
+25-03-06.17:43:17.408 [main            ] INFO  IIndexGroupBuyingServiceTest - 返回结果: TrialBalanceEntity(goodsId=9890001, goodsName=《手写MyBatis：渐进式源码实践》, originalPrice=100.00, discountPrice=80.00, targetCount=1, startTime=Sat Dec 07 10:19:40 CST 2024, endTime=Sat Dec 07 10:19:40 CST 2024, isVisible=false, isEnable=true)
+25-03-06.17:43:17.456 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-03-06.17:43:17.974 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-03-06.19:52:21.343 [main            ] INFO  IIndexGroupBuyingServiceTest - Starting IIndexGroupBuyingServiceTest using Java 1.8.0_151 on mile with PID 2980 (started by aaa in D:\Develop\project\group-buying-platform\group-buying-platform-app)
+25-03-06.19:52:21.359 [main            ] INFO  IIndexGroupBuyingServiceTest - The following 1 profile is active: "dev"
+25-03-06.19:52:22.183 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-03-06.19:52:22.183 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-03-06.19:52:22.230 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 28 ms. Found 0 Redis repository interfaces.
+25-03-06.19:52:25.670 [main            ] INFO  Version                - Redisson 3.26.0
+25-03-06.19:52:26.446 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
+25-03-06.19:52:26.462 [redisson-netty-1-14] INFO  ConnectionsHolder      - 5 connections initialized for localhost/127.0.0.1:6379
+25-03-06.19:52:28.156 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-03-06.19:52:28.219 [main            ] INFO  IIndexGroupBuyingServiceTest - Started IIndexGroupBuyingServiceTest in 7.298 seconds (JVM running for 9.149)
+25-03-06.19:52:28.593 [pool-2-thread-2 ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-03-06.19:52:29.949 [pool-2-thread-2 ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-03-06.19:52:30.203 [main            ] INFO  MarketNode             - 拼团活动查询试算服务-MarketNode userId:rem 异步线程加载数据[GroupBuyingActivityDiscountVO、 SkuVO] 完成
+25-03-06.19:52:30.203 [main            ] INFO  MarketNode             - 拼团商品查询试算服务-MarketNode userId:rem requestParameter:{"userId":"rem","goodsId":"9890001","source":"s01","channel":"c01"}
+25-03-06.19:52:30.203 [main            ] INFO  ZJCalculateService     - 折扣优惠服务- 直减计算， 原始价格: 100.00
+25-03-06.19:53:48.094 [HikariPool-1 housekeeper] WARN  HikariPool             - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=47s281ms395µs600ns).
+25-03-06.19:53:48.094 [main            ] INFO  EndNode                - 拼团商品查询试算服务-EndNode userId:rem requestParameter:{"userId":"rem","goodsId":"9890001","source":"s01","channel":"c01"}
+25-03-06.19:53:48.094 [main            ] INFO  IIndexGroupBuyingServiceTest - 请求参数: MarketProductEntity(userId=rem, goodsId=9890001, source=s01, channel=c01)
+25-03-06.19:53:48.094 [main            ] INFO  IIndexGroupBuyingServiceTest - 返回结果: TrialBalanceEntity(goodsId=9890001, goodsName=《手写MyBatis：渐进式源码实践》, originalPrice=100.00, discountPrice=80.00, targetCount=1, startTime=Sat Dec 07 10:19:40 CST 2024, endTime=Sat Dec 07 10:19:40 CST 2024, isVisible=false, isEnable=true)
+25-03-06.19:53:48.135 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-03-06.19:53:48.595 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-03-06.20:01:50.242 [main            ] INFO  IIndexGroupBuyingServiceTest - Starting IIndexGroupBuyingServiceTest using Java 1.8.0_151 on mile with PID 22816 (started by aaa in D:\Develop\project\group-buying-platform\group-buying-platform-app)
+25-03-06.20:01:50.242 [main            ] INFO  IIndexGroupBuyingServiceTest - The following 1 profile is active: "dev"
+25-03-06.20:01:51.041 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-03-06.20:01:51.041 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-03-06.20:01:51.072 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 27 ms. Found 0 Redis repository interfaces.
+25-03-06.20:01:54.403 [main            ] INFO  Version                - Redisson 3.26.0
+25-03-06.20:01:55.227 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
+25-03-06.20:01:55.243 [redisson-netty-1-14] INFO  ConnectionsHolder      - 5 connections initialized for localhost/127.0.0.1:6379
+25-03-06.20:01:56.934 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-03-06.20:01:57.017 [main            ] INFO  IIndexGroupBuyingServiceTest - Started IIndexGroupBuyingServiceTest in 7.22 seconds (JVM running for 8.597)
+25-03-06.20:01:57.401 [pool-2-thread-1 ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-03-06.20:01:58.618 [pool-2-thread-1 ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-03-06.20:05:43.623 [HikariPool-1 housekeeper] WARN  HikariPool             - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m41s327ms356µs500ns).
+25-03-06.20:05:43.677 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-03-06.20:05:43.709 [main            ] INFO  MarketNode             - 拼团活动查询试算服务-MarketNode userId:rem 异步线程加载数据[GroupBuyingActivityDiscountVO、 SkuVO] 完成
+25-03-06.20:05:43.709 [main            ] INFO  MarketNode             - 拼团商品查询试算服务-MarketNode userId:rem requestParameter:{"userId":"rem","goodsId":"9890001","source":"s01","channel":"c01"}
+25-03-06.20:05:43.709 [main            ] INFO  ZJCalculateService     - 折扣优惠服务- 直减计算， 原始价格: 100.00
+25-03-06.20:05:43.725 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-03-06.20:14:50.591 [main            ] INFO  IIndexGroupBuyingServiceTest - Starting IIndexGroupBuyingServiceTest using Java 1.8.0_151 on mile with PID 7476 (started by aaa in D:\Develop\project\group-buying-platform\group-buying-platform-app)
+25-03-06.20:14:50.592 [main            ] INFO  IIndexGroupBuyingServiceTest - The following 1 profile is active: "dev"
+25-03-06.20:14:51.412 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-03-06.20:14:51.415 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-03-06.20:14:51.463 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 35 ms. Found 0 Redis repository interfaces.
+25-03-06.20:14:54.316 [main            ] INFO  Version                - Redisson 3.26.0
+25-03-06.20:14:55.087 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
+25-03-06.20:14:55.098 [redisson-netty-1-14] INFO  ConnectionsHolder      - 5 connections initialized for localhost/127.0.0.1:6379
+25-03-06.20:14:56.525 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-03-06.20:14:56.587 [main            ] INFO  IIndexGroupBuyingServiceTest - Started IIndexGroupBuyingServiceTest in 6.414 seconds (JVM running for 7.67)
+25-03-06.20:14:56.887 [pool-2-thread-2 ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-03-06.20:14:58.103 [pool-2-thread-2 ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-03-06.20:14:58.312 [main            ] INFO  MarketNode             - 拼团活动查询试算服务-MarketNode userId:rem 异步线程加载数据[GroupBuyingActivityDiscountVO、 SkuVO] 完成
+25-03-06.20:14:58.316 [main            ] INFO  MarketNode             - 拼团商品查询试算服务-MarketNode userId:rem requestParameter:{"userId":"rem","goodsId":"9890001","source":"s01","channel":"c01"}
+25-03-06.20:14:58.317 [main            ] INFO  ZJCalculateService     - 折扣优惠服务- 直减计算， 原始价格: 100.00
+25-03-06.20:14:58.327 [main            ] INFO  EndNode                - 拼团商品查询试算服务-EndNode userId:rem requestParameter:{"userId":"rem","goodsId":"9890001","source":"s01","channel":"c01"}
+25-03-06.20:14:58.328 [main            ] INFO  IIndexGroupBuyingServiceTest - 请求参数: MarketProductEntity(userId=rem, goodsId=9890001, source=s01, channel=c01)
+25-03-06.20:14:58.328 [main            ] INFO  IIndexGroupBuyingServiceTest - 返回结果: TrialBalanceEntity(goodsId=9890001, goodsName=《手写MyBatis：渐进式源码实践》, originalPrice=100.00, discountPrice=80.00, targetCount=1, startTime=Sat Dec 07 10:19:40 CST 2024, endTime=Sat Dec 07 10:19:40 CST 2024, isVisible=true, isEnable=true)
+25-03-06.20:14:58.361 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-03-06.20:14:58.531 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-03-06.20:15:50.223 [main            ] INFO  IIndexGroupBuyingServiceTest - Starting IIndexGroupBuyingServiceTest using Java 1.8.0_151 on mile with PID 9144 (started by aaa in D:\Develop\project\group-buying-platform\group-buying-platform-app)
+25-03-06.20:15:50.223 [main            ] INFO  IIndexGroupBuyingServiceTest - The following 1 profile is active: "dev"
+25-03-06.20:15:50.928 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-03-06.20:15:50.928 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-03-06.20:15:50.975 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 27 ms. Found 0 Redis repository interfaces.
+25-03-06.20:15:54.248 [main            ] INFO  Version                - Redisson 3.26.0
+25-03-06.20:15:54.981 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
+25-03-06.20:15:54.988 [redisson-netty-1-14] INFO  ConnectionsHolder      - 5 connections initialized for localhost/127.0.0.1:6379
+25-03-06.20:15:56.413 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-03-06.20:15:56.460 [main            ] INFO  IIndexGroupBuyingServiceTest - Started IIndexGroupBuyingServiceTest in 6.614 seconds (JVM running for 7.685)
+25-03-06.20:15:56.777 [pool-2-thread-1 ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-03-06.20:15:58.004 [pool-2-thread-1 ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-03-06.20:15:58.191 [main            ] INFO  MarketNode             - 拼团活动查询试算服务-MarketNode userId:atri 异步线程加载数据[GroupBuyingActivityDiscountVO、 SkuVO] 完成
+25-03-06.20:15:58.191 [main            ] INFO  MarketNode             - 拼团商品查询试算服务-MarketNode userId:atri requestParameter:{"userId":"atri","goodsId":"9890001","source":"s01","channel":"c01"}
+25-03-06.20:15:58.191 [main            ] INFO  ZJCalculateService     - 折扣优惠服务- 直减计算， 原始价格: 100.00
+25-03-06.20:15:58.207 [main            ] INFO  EndNode                - 拼团商品查询试算服务-EndNode userId:atri requestParameter:{"userId":"atri","goodsId":"9890001","source":"s01","channel":"c01"}
+25-03-06.20:15:58.207 [main            ] INFO  IIndexGroupBuyingServiceTest - 请求参数: MarketProductEntity(userId=atri, goodsId=9890001, source=s01, channel=c01)
+25-03-06.20:15:58.207 [main            ] INFO  IIndexGroupBuyingServiceTest - 返回结果: TrialBalanceEntity(goodsId=9890001, goodsName=《手写MyBatis：渐进式源码实践》, originalPrice=100.00, discountPrice=80.00, targetCount=1, startTime=Sat Dec 07 10:19:40 CST 2024, endTime=Sat Dec 07 10:19:40 CST 2024, isVisible=false, isEnable=true)
+25-03-06.20:15:58.239 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-03-06.20:15:58.395 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-03-06.20:19:01.306 [main            ] INFO  IIndexGroupBuyingServiceTest - Starting IIndexGroupBuyingServiceTest using Java 1.8.0_151 on mile with PID 4292 (started by aaa in D:\Develop\project\group-buying-platform\group-buying-platform-app)
+25-03-06.20:19:01.306 [main            ] INFO  IIndexGroupBuyingServiceTest - The following 1 profile is active: "dev"
+25-03-06.20:19:01.994 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-03-06.20:19:01.994 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-03-06.20:19:02.025 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 27 ms. Found 0 Redis repository interfaces.
+25-03-06.20:19:05.279 [main            ] INFO  Version                - Redisson 3.26.0
+25-03-06.20:19:06.010 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
+25-03-06.20:19:06.020 [redisson-netty-1-14] INFO  ConnectionsHolder      - 5 connections initialized for localhost/127.0.0.1:6379
+25-03-06.20:19:07.417 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-03-06.20:19:07.464 [main            ] INFO  IIndexGroupBuyingServiceTest - Started IIndexGroupBuyingServiceTest in 6.546 seconds (JVM running for 7.57)
+25-03-06.20:19:07.765 [pool-2-thread-1 ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-03-06.20:19:09.056 [pool-2-thread-1 ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-03-06.20:19:09.264 [main            ] INFO  MarketNode             - 拼团活动查询试算服务-MarketNode userId:atri 异步线程加载数据[GroupBuyingActivityDiscountVO、 SkuVO] 完成
+25-03-06.20:19:09.269 [main            ] INFO  MarketNode             - 拼团商品查询试算服务-MarketNode userId:atri requestParameter:{"userId":"atri","goodsId":"9890001","source":"s01","channel":"c01"}
+25-03-06.20:19:09.269 [main            ] INFO  ZJCalculateService     - 折扣优惠服务- 直减计算， 原始价格: 100.00
+25-03-06.20:19:09.279 [main            ] INFO  EndNode                - 拼团商品查询试算服务-EndNode userId:atri requestParameter:{"userId":"atri","goodsId":"9890001","source":"s01","channel":"c01"}
+25-03-06.20:19:09.280 [main            ] INFO  IIndexGroupBuyingServiceTest - 请求参数: MarketProductEntity(userId=atri, goodsId=9890001, source=s01, channel=c01)
+25-03-06.20:19:09.280 [main            ] INFO  IIndexGroupBuyingServiceTest - 返回结果: TrialBalanceEntity(goodsId=9890001, goodsName=《手写MyBatis：渐进式源码实践》, originalPrice=100.00, discountPrice=80.00, targetCount=1, startTime=Sat Dec 07 10:19:40 CST 2024, endTime=Sat Dec 07 10:19:40 CST 2024, isVisible=false, isEnable=false)
+25-03-06.20:19:09.311 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-03-06.20:19:09.453 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-03-06.20:19:24.618 [main            ] INFO  IIndexGroupBuyingServiceTest - Starting IIndexGroupBuyingServiceTest using Java 1.8.0_151 on mile with PID 4636 (started by aaa in D:\Develop\project\group-buying-platform\group-buying-platform-app)
+25-03-06.20:19:24.618 [main            ] INFO  IIndexGroupBuyingServiceTest - The following 1 profile is active: "dev"
+25-03-06.20:19:25.338 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-03-06.20:19:25.338 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-03-06.20:19:25.385 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 31 ms. Found 0 Redis repository interfaces.
+25-03-06.20:19:28.652 [main            ] INFO  Version                - Redisson 3.26.0
+25-03-06.20:19:29.359 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
+25-03-06.20:19:29.359 [redisson-netty-1-14] INFO  ConnectionsHolder      - 5 connections initialized for localhost/127.0.0.1:6379
+25-03-06.20:19:30.732 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-03-06.20:19:30.782 [main            ] INFO  IIndexGroupBuyingServiceTest - Started IIndexGroupBuyingServiceTest in 6.558 seconds (JVM running for 7.655)
+25-03-06.20:19:31.088 [pool-2-thread-1 ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-03-06.20:19:32.273 [pool-2-thread-1 ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-03-06.20:19:32.459 [main            ] INFO  MarketNode             - 拼团活动查询试算服务-MarketNode userId:atri 异步线程加载数据[GroupBuyingActivityDiscountVO、 SkuVO] 完成
+25-03-06.20:19:32.464 [main            ] INFO  MarketNode             - 拼团商品查询试算服务-MarketNode userId:atri requestParameter:{"userId":"atri","goodsId":"9890001","source":"s01","channel":"c01"}
+25-03-06.20:19:32.464 [main            ] INFO  ZJCalculateService     - 折扣优惠服务- 直减计算， 原始价格: 100.00
+25-03-06.20:19:32.472 [main            ] INFO  EndNode                - 拼团商品查询试算服务-EndNode userId:atri requestParameter:{"userId":"atri","goodsId":"9890001","source":"s01","channel":"c01"}
+25-03-06.20:19:32.472 [main            ] INFO  IIndexGroupBuyingServiceTest - 请求参数: MarketProductEntity(userId=atri, goodsId=9890001, source=s01, channel=c01)
+25-03-06.20:19:32.472 [main            ] INFO  IIndexGroupBuyingServiceTest - 返回结果: TrialBalanceEntity(goodsId=9890001, goodsName=《手写MyBatis：渐进式源码实践》, originalPrice=100.00, discountPrice=80.00, targetCount=1, startTime=Sat Dec 07 10:19:40 CST 2024, endTime=Sat Dec 07 10:19:40 CST 2024, isVisible=true, isEnable=true)
+25-03-06.20:19:32.501 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-03-06.20:19:32.657 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.

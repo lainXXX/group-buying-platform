@@ -35,7 +35,7 @@ public class MarketNode extends AbstractGroupBuyingSupport<MarketProductEntity, 
     @Resource
     private ThreadPoolExecutor threadPoolExecutor;
     @Resource
-    private EndNode endNode;
+    private TagNode tagNode;
     @Resource
     private ErrorNode errorNode;
     @Resource
@@ -52,7 +52,6 @@ public class MarketNode extends AbstractGroupBuyingSupport<MarketProductEntity, 
         QuerySkuVOFromDBThreadTask querySkuVOFromDBThreadTask = new QuerySkuVOFromDBThreadTask(requestParameter.getGoodsId(), repository);
         FutureTask<SkuVO> skuVOFutureTask = new FutureTask<>(querySkuVOFromDBThreadTask);
         threadPoolExecutor.execute(skuVOFutureTask);
-
 
         dynamicContext.setGroupBuyingActivityDiscountVO(groupBuyingActivityDiscountVOFutureTask.get(timeout, TimeUnit.MINUTES));
         dynamicContext.setSkuVO(skuVOFutureTask.get(timeout, TimeUnit.MINUTES));
@@ -95,7 +94,7 @@ public class MarketNode extends AbstractGroupBuyingSupport<MarketProductEntity, 
         if (dynamicContext.getSkuVO() == null || dynamicContext.getGroupBuyingActivityDiscountVO() == null || dynamicContext.getDiscountPrice() == null) {
             return errorNode;
         }
-        return endNode;
+        return tagNode;
 
     }
 }

@@ -99,7 +99,7 @@ CREATE TABLE `group_buying_activity`  (
   `status` tinyint(1) NOT NULL DEFAULT 0 COMMENT '活动状态【0-创建、 1-生效、 2-过期、 3-废弃】',
   `begin_time` datetime NOT NULL COMMENT '开始时间',
   `end_time` datetime NOT NULL COMMENT '结束时间',
-  `tag_id` varchar(8) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '人群标签规则标识',
+  `tag_id` varchar(24) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '人群标签规则标识',
   `tag_scope` varchar(4) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '人群标签规则范围【多选】',
   `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   `update_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
@@ -110,7 +110,7 @@ CREATE TABLE `group_buying_activity`  (
 -- ----------------------------
 -- Records of group_buying_activity
 -- ----------------------------
-INSERT INTO `group_buying_activity` VALUES (1, 100123, '测试活动', '9890001', '25120207', 0, 1, 1, 15, 0, '2024-12-07 10:19:40', '2024-12-07 10:19:40', '1', '1', '2024-12-07 10:19:40', '2025-02-27 20:27:21');
+INSERT INTO `group_buying_activity` VALUES (1, 100123, '测试活动', '9890001', '25120207', 0, 1, 1, 15, 0, '2024-12-07 10:19:40', '2024-12-07 10:19:40', 'RQ_KJHKL98UU78H66554GFDV', '1', '2024-12-07 10:19:40', '2025-02-27 20:27:21');
 
 -- ----------------------------
 -- Table structure for group_buying_discount
