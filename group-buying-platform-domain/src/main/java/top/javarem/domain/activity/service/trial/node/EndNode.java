@@ -8,7 +8,7 @@ import top.javarem.domain.activity.model.vo.GroupBuyingActivityDiscountVO;
 import top.javarem.domain.activity.model.vo.SkuVO;
 import top.javarem.domain.activity.service.trial.AbstractGroupBuyingSupport;
 import top.javarem.domain.activity.service.trial.factory.DefaultActivityStrategyFactory;
-import top.javarem.types.common.gson.GsonUtils;
+import top.javarem.types.common.GsonUtils;
 import top.javarem.types.design.framework.tree.StrategyHandler;
 
 

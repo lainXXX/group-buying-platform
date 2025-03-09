@@ -4,7 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import top.javarem.domain.activity.model.vo.GroupBuyingActivityDiscountVO;
 import top.javarem.domain.activity.service.discount.AbstractDiscountCalculateService;
-import top.javarem.types.common.constants.Constants;
+import top.javarem.types.common.Constants;
 import top.javarem.types.enums.ResponseCode;
 import top.javarem.types.exception.AppException;
 

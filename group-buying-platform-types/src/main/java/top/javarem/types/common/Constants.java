@@ -1,4 +1,4 @@
-package top.javarem.types.common.constants;
+package top.javarem.types.common;
 
 /**
  * @Author: rem

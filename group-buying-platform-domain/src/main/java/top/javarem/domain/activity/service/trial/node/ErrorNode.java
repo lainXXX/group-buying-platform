@@ -6,7 +6,7 @@ import top.javarem.domain.activity.model.entity.MarketProductEntity;
 import top.javarem.domain.activity.model.entity.TrialBalanceEntity;
 import top.javarem.domain.activity.service.trial.AbstractGroupBuyingSupport;
 import top.javarem.domain.activity.service.trial.factory.DefaultActivityStrategyFactory;
-import top.javarem.types.common.gson.GsonUtils;
+import top.javarem.types.common.GsonUtils;
 import top.javarem.types.design.framework.tree.StrategyHandler;
 import top.javarem.types.enums.ResponseCode;
 import top.javarem.types.exception.AppException;

@@ -44,10 +44,17 @@ public class TagNode extends AbstractGroupBuyingSupport<MarketProductEntity, Def
 //        3.判断用户是否属于该标签人群 visible、enable 如果值为 ture 则表示没有配置拼团限制，那么就直接保证为 true 即可
         boolean isWithin = repository.isTagCrowdRange(tagId, requestParameter.getUserId());
         boolean isVisible = groupBuyingActivityDiscountVO.isVisible();
-        boolean isEnable = groupBuyingActivityDiscountVO.isEnable();
         dynamicContext.setVisible(isVisible || isWithin);
-        dynamicContext.setEnable(isEnable || isWithin);
-
+        /**
+         * 如果运算后的拼团结果不可见 那么这个拼团一定是不可用的
+         * 如果拼团可见 那么再运算拼团是否可用
+         */
+        if (!dynamicContext.isVisible()) {
+            dynamicContext.setEnable(false);
+        } else {
+            boolean isEnable = groupBuyingActivityDiscountVO.isEnable();
+            dynamicContext.setEnable(isEnable || isWithin);
+        }
         return router(requestParameter, dynamicContext);
 
     }

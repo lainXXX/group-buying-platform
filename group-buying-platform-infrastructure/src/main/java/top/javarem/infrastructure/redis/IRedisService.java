@@ -1,6 +1,7 @@
 package top.javarem.infrastructure.redis;
 
 import org.redisson.api.RBitSet;
+import org.redisson.api.RTopic;
 
 import java.math.BigInteger;
 import java.security.MessageDigest;

@@ -1,4 +1,4 @@
-package top.javarem.types.common.gson;
+package top.javarem.types.common;
 
 import com.google.gson.Gson;
 

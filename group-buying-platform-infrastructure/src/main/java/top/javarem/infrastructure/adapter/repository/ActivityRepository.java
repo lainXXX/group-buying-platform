@@ -14,7 +14,7 @@ import top.javarem.infrastructure.dao.po.ScSkuActivity;
 import top.javarem.infrastructure.dao.po.Sku;
 import top.javarem.infrastructure.dao.service.*;
 import top.javarem.infrastructure.redis.IRedisService;
-import top.javarem.types.common.constants.Constants;
+import top.javarem.types.common.Constants;
 
 import javax.annotation.Resource;
 

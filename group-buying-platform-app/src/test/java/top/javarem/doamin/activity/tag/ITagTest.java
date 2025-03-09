@@ -6,7 +6,7 @@ import org.redisson.api.RBitSet;
 import org.springframework.boot.test.context.SpringBootTest;
 import top.javarem.domain.tag.service.TagService;
 import top.javarem.infrastructure.redis.IRedisService;
-import top.javarem.types.common.constants.Constants;
+import top.javarem.types.common.Constants;
 
 import javax.annotation.Resource;
 

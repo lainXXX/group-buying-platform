@@ -1,155 +1,141 @@
-25-02-26.09:27:18.742 [main            ] INFO  Application            - Starting Application using Java 1.8.0_151 on mile with PID 20860 (D:\Develop\project\group-buying-platform\group-buying-platform-app\target\classes started by aaa in D:\Develop\project\group-buying-platform)
-25-02-26.09:27:18.744 [main            ] INFO  Application            - The following 1 profile is active: "dev"
-25-02-26.09:27:19.370 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-25-02-26.09:27:19.373 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-25-02-26.09:27:19.394 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
-25-02-26.09:27:19.460 [main            ] WARN  ClassPathMapperScanner - No MyBatis mapper was found in '[top.javarem]' package. Please check your configuration.
-25-02-26.09:27:19.567 [main            ] WARN  AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.aop.config.internalAutoProxyCreator': Initialization of bean failed; nested exception is java.lang.NoClassDefFoundError: org/aspectj/lang/annotation/Pointcut
-25-02-26.09:27:19.577 [main            ] INFO  ConditionEvaluationReportLoggingListener - 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-25-02-26.09:27:19.601 [main            ] ERROR SpringApplication      - Application run failed
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.aop.config.internalAutoProxyCreator': Initialization of bean failed; nested exception is java.lang.NoClassDefFoundError: org/aspectj/lang/annotation/Pointcut
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:628)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.registerBeanPostProcessors(PostProcessorRegistrationDelegate.java:258)
-	at org.springframework.context.support.AbstractApplicationContext.registerBeanPostProcessors(AbstractApplicationContext.java:764)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:567)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
-	at top.javarem.Application.main(Application.java:17)
-Caused by: java.lang.NoClassDefFoundError: org/aspectj/lang/annotation/Pointcut
-	at org.springframework.aop.aspectj.annotation.AbstractAspectJAdvisorFactory.<clinit>(AbstractAspectJAdvisorFactory.java:62)
-	at org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator.initBeanFactory(AnnotationAwareAspectJAutoProxyCreator.java:82)
-	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.setBeanFactory(AbstractAdvisorAutoProxyCreator.java:65)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeAwareMethods(AbstractAutowireCapableBeanFactory.java:1826)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1791)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
-	... 15 common frames omitted
-Caused by: java.lang.ClassNotFoundException: org.aspectj.lang.annotation.Pointcut
-	at java.net.URLClassLoader.findClass(URLClassLoader.java:381)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
-	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:335)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
-	... 21 common frames omitted
-25-02-26.09:27:51.490 [main            ] INFO  Application            - Starting Application using Java 1.8.0_151 on mile with PID 11044 (D:\Develop\project\group-buying-platform\group-buying-platform-app\target\classes started by aaa in D:\Develop\project\group-buying-platform)
-25-02-26.09:27:51.492 [main            ] INFO  Application            - The following 1 profile is active: "dev"
-25-02-26.09:27:52.064 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-25-02-26.09:27:52.065 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-25-02-26.09:27:52.085 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
-25-02-26.09:27:52.150 [main            ] WARN  ClassPathMapperScanner - No MyBatis mapper was found in '[top.javarem]' package. Please check your configuration.
-25-02-26.09:27:52.248 [main            ] WARN  AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.aop.config.internalAutoProxyCreator': Initialization of bean failed; nested exception is java.lang.NoClassDefFoundError: org/aspectj/lang/annotation/Pointcut
-25-02-26.09:27:52.259 [main            ] INFO  ConditionEvaluationReportLoggingListener - 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-25-02-26.09:27:52.279 [main            ] ERROR SpringApplication      - Application run failed
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.aop.config.internalAutoProxyCreator': Initialization of bean failed; nested exception is java.lang.NoClassDefFoundError: org/aspectj/lang/annotation/Pointcut
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:628)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.registerBeanPostProcessors(PostProcessorRegistrationDelegate.java:258)
-	at org.springframework.context.support.AbstractApplicationContext.registerBeanPostProcessors(AbstractApplicationContext.java:764)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:567)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
-	at top.javarem.Application.main(Application.java:17)
-Caused by: java.lang.NoClassDefFoundError: org/aspectj/lang/annotation/Pointcut
-	at org.springframework.aop.aspectj.annotation.AbstractAspectJAdvisorFactory.<clinit>(AbstractAspectJAdvisorFactory.java:62)
-	at org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator.initBeanFactory(AnnotationAwareAspectJAutoProxyCreator.java:82)
-	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.setBeanFactory(AbstractAdvisorAutoProxyCreator.java:65)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeAwareMethods(AbstractAutowireCapableBeanFactory.java:1826)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1791)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
-	... 15 common frames omitted
-Caused by: java.lang.ClassNotFoundException: org.aspectj.lang.annotation.Pointcut
-	at java.net.URLClassLoader.findClass(URLClassLoader.java:381)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
-	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:335)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
-	... 21 common frames omitted
-25-02-26.09:28:22.197 [main            ] INFO  Application            - Starting Application using Java 1.8.0_151 on mile with PID 336 (D:\Develop\project\group-buying-platform\group-buying-platform-app\target\classes started by aaa in D:\Develop\project\group-buying-platform)
-25-02-26.09:28:22.198 [main            ] INFO  Application            - The following 1 profile is active: "dev"
-25-02-26.09:28:22.714 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-25-02-26.09:28:22.715 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-25-02-26.09:28:22.733 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 7 ms. Found 0 Redis repository interfaces.
-25-02-26.09:28:22.794 [main            ] WARN  ClassPathMapperScanner - No MyBatis mapper was found in '[top.javarem]' package. Please check your configuration.
-25-02-26.09:28:23.154 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8090 (http)
-25-02-26.09:28:23.227 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8090"]
-25-02-26.09:28:23.233 [main            ] INFO  StandardService        - Starting service [Tomcat]
-25-02-26.09:28:23.233 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
-25-02-26.09:28:23.412 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
-25-02-26.09:28:23.412 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1184 ms
-25-02-26.09:28:23.548 [main            ] WARN  AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'groupBuyingActivityServiceImpl': Unsatisfied dependency expressed through field 'baseMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'top.javarem.infrastructure.dao.mapper.GroupBuyingActivityMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-25-02-26.09:28:23.550 [main            ] INFO  StandardService        - Stopping service [Tomcat]
-25-02-26.09:28:23.561 [main            ] INFO  ConditionEvaluationReportLoggingListener - 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-25-02-26.09:28:23.579 [main            ] ERROR SpringApplication      - Application run failed
-org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'groupBuyingActivityServiceImpl': Unsatisfied dependency expressed through field 'baseMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'top.javarem.infrastructure.dao.mapper.GroupBuyingActivityMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:660)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:920)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
-	at top.javarem.Application.main(Application.java:15)
-Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'top.javarem.infrastructure.dao.mapper.GroupBuyingActivityMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1801)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1357)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:657)
-	... 20 common frames omitted
-25-02-26.09:30:20.915 [main            ] INFO  Application            - Starting Application using Java 1.8.0_151 on mile with PID 21608 (D:\Develop\project\group-buying-platform\group-buying-platform-app\target\classes started by aaa in D:\Develop\project\group-buying-platform)
-25-02-26.09:30:20.917 [main            ] INFO  Application            - The following 1 profile is active: "dev"
-25-02-26.09:30:21.440 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-25-02-26.09:30:21.441 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-25-02-26.09:30:21.459 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
-25-02-26.09:30:21.822 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8090 (http)
-25-02-26.09:30:21.891 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8090"]
-25-02-26.09:30:21.897 [main            ] INFO  StandardService        - Starting service [Tomcat]
-25-02-26.09:30:21.897 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
-25-02-26.09:30:22.067 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
-25-02-26.09:30:22.067 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1122 ms
-25-02-26.09:30:23.892 [main            ] INFO  Version                - Redisson 3.26.0
-25-02-26.09:30:24.594 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
-25-02-26.09:30:24.605 [redisson-netty-1-14] INFO  ConnectionsHolder      - 5 connections initialized for localhost/127.0.0.1:6379
-25-02-26.09:30:25.105 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-25-02-26.09:30:25.127 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8090"]
-25-02-26.09:30:25.136 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8090 (http) with context path ''
-25-02-26.09:30:25.148 [main            ] INFO  Application            - Started Application in 4.605 seconds (JVM running for 5.733)
-25-02-26.09:30:25.665 [RMI TCP Connection(1)-192.168.137.1] INFO  [/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet'
-25-02-26.09:30:25.665 [RMI TCP Connection(1)-192.168.137.1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
-25-02-26.09:30:25.666 [RMI TCP Connection(1)-192.168.137.1] INFO  DispatcherServlet      - Completed initialization in 1 ms
-25-02-26.09:30:26.520 [RMI TCP Connection(3)-192.168.137.1] INFO  HikariDataSource       - HikariPool-1 - Starting...
-25-02-26.09:30:28.312 [RMI TCP Connection(3)-192.168.137.1] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-25-02-26.09:30:38.548 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-25-02-26.09:30:38.555 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-03-09.15:03:01.010 [main            ] INFO  Application            - Starting Application using Java 1.8.0_151 on mile with PID 5756 (D:\Develop\project\group-buying-platform\group-buying-platform-app\target\classes started by aaa in D:\Develop\project\group-buying-platform)
+25-03-09.15:03:01.013 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+25-03-09.15:03:01.851 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-03-09.15:03:01.852 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-03-09.15:03:01.895 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 28 ms. Found 0 Redis repository interfaces.
+25-03-09.15:03:02.098 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisClientConfig' of type [top.javarem.config.RedisClientConfig$$EnhancerBySpringCGLIB$$f18af34b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-03-09.15:03:02.149 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redis.sdk.config-top.javarem.config.RedisClientConfigProperties' of type [top.javarem.config.RedisClientConfigProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-03-09.15:03:02.296 [main            ] INFO  Version                - Redisson 3.26.0
+25-03-09.15:03:03.030 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
+25-03-09.15:03:03.038 [redisson-netty-1-14] INFO  ConnectionsHolder      - 5 connections initialized for localhost/127.0.0.1:6379
+25-03-09.15:03:03.098 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redissonClient' of type [org.redisson.Redisson] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-03-09.15:03:03.326 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8090 (http)
+25-03-09.15:03:03.418 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8090"]
+25-03-09.15:03:03.424 [main            ] INFO  StandardService        - Starting service [Tomcat]
+25-03-09.15:03:03.425 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
+25-03-09.15:03:03.574 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+25-03-09.15:03:03.575 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2521 ms
+25-03-09.15:03:06.047 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-03-09.15:03:06.072 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8090"]
+25-03-09.15:03:06.082 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8090 (http) with context path ''
+25-03-09.15:03:06.095 [main            ] INFO  Application            - Started Application in 5.535 seconds (JVM running for 6.709)
+25-03-09.15:03:06.175 [RMI TCP Connection(1)-192.168.137.1] INFO  [/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet'
+25-03-09.15:03:06.176 [RMI TCP Connection(1)-192.168.137.1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
+25-03-09.15:03:06.177 [RMI TCP Connection(1)-192.168.137.1] INFO  DispatcherServlet      - Completed initialization in 1 ms
+25-03-09.15:03:06.179 [RMI TCP Connection(2)-192.168.137.1] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-03-09.15:03:07.566 [RMI TCP Connection(2)-192.168.137.1] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-03-09.15:03:14.998 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-03-09.15:03:15.005 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-03-09.15:03:19.392 [main            ] INFO  Application            - Starting Application using Java 1.8.0_151 on mile with PID 17924 (D:\Develop\project\group-buying-platform\group-buying-platform-app\target\classes started by aaa in D:\Develop\project\group-buying-platform)
+25-03-09.15:03:19.393 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+25-03-09.15:03:20.179 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-03-09.15:03:20.180 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-03-09.15:03:20.217 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 25 ms. Found 0 Redis repository interfaces.
+25-03-09.15:03:20.412 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisClientConfig' of type [top.javarem.config.RedisClientConfig$$EnhancerBySpringCGLIB$$9bbe8af0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-03-09.15:03:20.467 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redis.sdk.config-top.javarem.config.RedisClientConfigProperties' of type [top.javarem.config.RedisClientConfigProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-03-09.15:03:20.627 [main            ] INFO  Version                - Redisson 3.26.0
+25-03-09.15:03:21.327 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
+25-03-09.15:03:21.336 [redisson-netty-1-14] INFO  ConnectionsHolder      - 5 connections initialized for localhost/127.0.0.1:6379
+25-03-09.15:03:21.396 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redissonClient' of type [org.redisson.Redisson] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-03-09.15:06:07.295 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8090 (http)
+25-03-09.15:06:07.517 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 168095 ms
+25-03-09.15:06:09.917 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-03-09.15:06:09.961 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8090 (http) with context path ''
+25-03-09.15:06:09.976 [main            ] INFO  Application            - Started Application in 171.008 seconds (JVM running for 172.281)
+25-03-09.15:06:18.981 [main            ] INFO  Application            - Starting Application using Java 1.8.0_151 on mile with PID 7144 (D:\Develop\project\group-buying-platform\group-buying-platform-app\target\classes started by aaa in D:\Develop\project\group-buying-platform)
+25-03-09.15:06:18.982 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+25-03-09.15:06:19.769 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-03-09.15:06:19.771 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-03-09.15:06:19.809 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 26 ms. Found 0 Redis repository interfaces.
+25-03-09.15:06:20.021 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisClientConfig' of type [top.javarem.config.RedisClientConfig$$EnhancerBySpringCGLIB$$fcdc154b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-03-09.15:06:20.077 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redis.sdk.config-top.javarem.config.RedisClientConfigProperties' of type [top.javarem.config.RedisClientConfigProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-03-09.15:06:20.241 [main            ] INFO  Version                - Redisson 3.26.0
+25-03-09.15:06:20.957 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
+25-03-09.15:06:20.966 [redisson-netty-1-14] INFO  ConnectionsHolder      - 5 connections initialized for localhost/127.0.0.1:6379
+25-03-09.15:06:21.028 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redissonClient' of type [org.redisson.Redisson] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-03-09.15:06:42.648 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8090 (http)
+25-03-09.15:06:42.962 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 23951 ms
+25-03-09.15:06:45.495 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-03-09.15:06:45.537 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8090 (http) with context path ''
+25-03-09.15:06:45.551 [main            ] INFO  Application            - Started Application in 26.997 seconds (JVM running for 28.264)
+25-03-09.15:06:51.423 [main            ] INFO  Application            - Starting Application using Java 1.8.0_151 on mile with PID 2724 (D:\Develop\project\group-buying-platform\group-buying-platform-app\target\classes started by aaa in D:\Develop\project\group-buying-platform)
+25-03-09.15:06:51.424 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+25-03-09.15:06:52.163 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-03-09.15:06:52.164 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-03-09.15:06:52.201 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 25 ms. Found 0 Redis repository interfaces.
+25-03-09.15:06:52.399 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisClientConfig' of type [top.javarem.config.RedisClientConfig$$EnhancerBySpringCGLIB$$81abab6c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-03-09.15:06:52.455 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redis.sdk.config-top.javarem.config.RedisClientConfigProperties' of type [top.javarem.config.RedisClientConfigProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-03-09.15:06:52.615 [main            ] INFO  Version                - Redisson 3.26.0
+25-03-09.15:06:53.333 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
+25-03-09.15:06:53.343 [redisson-netty-1-14] INFO  ConnectionsHolder      - 5 connections initialized for localhost/127.0.0.1:6379
+25-03-09.15:06:53.406 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redissonClient' of type [org.redisson.Redisson] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-03-09.15:06:53.605 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8090 (http)
+25-03-09.15:06:53.688 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8090"]
+25-03-09.15:06:53.694 [main            ] INFO  StandardService        - Starting service [Tomcat]
+25-03-09.15:06:53.694 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
+25-03-09.15:06:53.840 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+25-03-09.15:06:53.840 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2387 ms
+25-03-09.15:07:36.465 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-03-09.15:07:36.528 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8090 (http) with context path ''
+25-03-09.15:07:36.544 [main            ] INFO  Application            - Started Application in 45.539 seconds (JVM running for 46.853)
+25-03-09.15:13:39.217 [main            ] INFO  Application            - Starting Application using Java 1.8.0_151 on mile with PID 5444 (D:\Develop\project\group-buying-platform\group-buying-platform-app\target\classes started by aaa in D:\Develop\project\group-buying-platform)
+25-03-09.15:13:39.219 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+25-03-09.15:13:39.856 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-03-09.15:13:39.858 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-03-09.15:13:39.893 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 25 ms. Found 0 Redis repository interfaces.
+25-03-09.15:13:40.062 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisClientConfig' of type [top.javarem.config.RedisClientConfig$$EnhancerBySpringCGLIB$$2b86b823] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-03-09.15:13:40.110 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redis.sdk.config-top.javarem.config.RedisClientConfigProperties' of type [top.javarem.config.RedisClientConfigProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-03-09.15:13:40.242 [main            ] INFO  Version                - Redisson 3.26.0
+25-03-09.15:13:40.921 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
+25-03-09.15:13:40.930 [redisson-netty-1-14] INFO  ConnectionsHolder      - 5 connections initialized for localhost/127.0.0.1:6379
+25-03-09.15:13:40.985 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redissonClient' of type [org.redisson.Redisson] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-03-09.15:13:41.158 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8090 (http)
+25-03-09.15:13:41.231 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8090"]
+25-03-09.15:13:41.237 [main            ] INFO  StandardService        - Starting service [Tomcat]
+25-03-09.15:13:41.237 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
+25-03-09.15:13:41.372 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+25-03-09.15:13:41.372 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2124 ms
+25-03-09.15:13:43.938 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-03-09.15:13:43.968 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8090"]
+25-03-09.15:13:43.979 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8090 (http) with context path ''
+25-03-09.15:13:43.995 [main            ] INFO  Application            - Started Application in 5.14 seconds (JVM running for 6.309)
+25-03-09.15:13:44.931 [RMI TCP Connection(1)-192.168.137.1] INFO  [/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet'
+25-03-09.15:13:44.931 [RMI TCP Connection(1)-192.168.137.1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
+25-03-09.15:13:44.932 [RMI TCP Connection(1)-192.168.137.1] INFO  DispatcherServlet      - Completed initialization in 1 ms
+25-03-09.15:13:44.936 [RMI TCP Connection(2)-192.168.137.1] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-03-09.15:13:46.524 [RMI TCP Connection(2)-192.168.137.1] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-03-09.15:16:37.300 [http-nio-8090-exec-1] INFO  DCCController          - 动态更新配置 key: degradeSwitch value: 1
+25-03-09.15:17:56.684 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-03-09.15:17:56.700 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-03-09.15:18:03.011 [main            ] INFO  Application            - Starting Application using Java 1.8.0_151 on mile with PID 5632 (D:\Develop\project\group-buying-platform\group-buying-platform-app\target\classes started by aaa in D:\Develop\project\group-buying-platform)
+25-03-09.15:18:03.013 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+25-03-09.15:18:03.639 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-03-09.15:18:03.640 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-03-09.15:18:03.675 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 26 ms. Found 0 Redis repository interfaces.
+25-03-09.15:18:03.838 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisClientConfig' of type [top.javarem.config.RedisClientConfig$$EnhancerBySpringCGLIB$$24b939a8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-03-09.15:18:03.883 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redis.sdk.config-top.javarem.config.RedisClientConfigProperties' of type [top.javarem.config.RedisClientConfigProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-03-09.15:18:04.011 [main            ] INFO  Version                - Redisson 3.26.0
+25-03-09.15:18:04.682 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
+25-03-09.15:18:04.691 [redisson-netty-1-14] INFO  ConnectionsHolder      - 5 connections initialized for localhost/127.0.0.1:6379
+25-03-09.15:18:04.742 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redissonClient' of type [org.redisson.Redisson] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-03-09.15:18:04.908 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8090 (http)
+25-03-09.15:18:04.981 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8090"]
+25-03-09.15:18:04.987 [main            ] INFO  StandardService        - Starting service [Tomcat]
+25-03-09.15:18:04.987 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
+25-03-09.15:18:05.119 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+25-03-09.15:18:05.119 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2077 ms
+25-03-09.15:18:07.404 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-03-09.15:18:07.429 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8090"]
+25-03-09.15:18:07.438 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8090 (http) with context path ''
+25-03-09.15:18:07.452 [main            ] INFO  Application            - Started Application in 4.809 seconds (JVM running for 5.996)
+25-03-09.15:18:08.177 [RMI TCP Connection(2)-192.168.137.1] INFO  [/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet'
+25-03-09.15:18:08.177 [RMI TCP Connection(2)-192.168.137.1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
+25-03-09.15:18:08.178 [RMI TCP Connection(2)-192.168.137.1] INFO  DispatcherServlet      - Completed initialization in 1 ms
+25-03-09.15:18:08.180 [RMI TCP Connection(1)-192.168.137.1] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-03-09.15:18:09.792 [RMI TCP Connection(1)-192.168.137.1] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-03-09.15:18:14.011 [http-nio-8090-exec-3] INFO  DCCController          - 动态更新配置 key: degradeSwitch value: 1
+25-03-09.15:18:14.015 [redisson-3-7    ] INFO  DCCValueBeanFactory    - DCC节点监听 key : group_buying_dcc_degradeSwitch, value : 1
+25-03-09.15:18:39.494 [http-nio-8090-exec-4] INFO  DCCController          - 动态更新配置 key: cutRange value: 1
+25-03-09.15:18:39.499 [redisson-3-8    ] INFO  DCCValueBeanFactory    - DCC节点监听 key : group_buying_dcc_cutRange, value : 1
+25-03-09.15:19:01.074 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-03-09.15:19:01.074 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.

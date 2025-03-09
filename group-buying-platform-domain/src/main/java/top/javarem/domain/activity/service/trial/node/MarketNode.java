@@ -11,7 +11,7 @@ import top.javarem.domain.activity.service.trial.AbstractGroupBuyingSupport;
 import top.javarem.domain.activity.service.trial.factory.DefaultActivityStrategyFactory;
 import top.javarem.domain.activity.service.trial.thread.QueryGroupBuyingActivityDiscountThreadTask;
 import top.javarem.domain.activity.service.trial.thread.QuerySkuVOFromDBThreadTask;
-import top.javarem.types.common.gson.GsonUtils;
+import top.javarem.types.common.GsonUtils;
 import top.javarem.types.design.framework.tree.StrategyHandler;
 import top.javarem.types.enums.ResponseCode;
 import top.javarem.types.exception.AppException;
