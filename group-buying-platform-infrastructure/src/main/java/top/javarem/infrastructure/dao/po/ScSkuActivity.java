@@ -26,12 +26,12 @@ public class ScSkuActivity implements Serializable {
     private Long activityId;
 
     /**
-     * 
+     * 来源
      */
     private String source;
 
     /**
-     * 
+     * 渠道
      */
     private String channel;
 

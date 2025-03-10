@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import top.javarem.domain.activity.model.vo.GroupBuyingActivityDiscountVO;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -37,5 +38,7 @@ public class TrialBalanceEntity {
     private Boolean isVisible;
     /** 是否可参与进团 */
     private Boolean isEnable;
+
+    private GroupBuyingActivityDiscountVO groupBuyingActivityDiscountVO;
 
 }

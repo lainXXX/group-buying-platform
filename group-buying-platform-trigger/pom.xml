@@ -34,6 +34,10 @@
             <groupId>top.javarem.api</groupId>
             <artifactId>group-buying-platform-api</artifactId>
         </dependency>
+        <dependency>
+            <groupId>top.javarem.domain</groupId>
+            <artifactId>group-buying-platform-domain</artifactId>
+        </dependency>
 
     </dependencies>
 

@@ -17,7 +17,7 @@ import javax.annotation.Resource;
  * @Description: 动态客户端配置
  */
 @RestController
-@RequestMapping("/dcc")
+@RequestMapping("/api/v1/dcc")
 @Slf4j
 public class DCCController implements DCCService {
 
