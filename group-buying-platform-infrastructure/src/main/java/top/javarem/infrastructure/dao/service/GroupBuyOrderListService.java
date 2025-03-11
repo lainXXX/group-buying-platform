@@ -2,7 +2,6 @@ package top.javarem.infrastructure.dao.service;
 
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import top.javarem.domain.trade.model.entity.MarketPayOrderEntity;
 import top.javarem.infrastructure.dao.po.GroupBuyOrderList;
 
 /**

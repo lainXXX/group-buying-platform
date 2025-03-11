@@ -1,4 +1,4 @@
-package top.javarem.doamin.activity.trial;
+package top.javarem.test.doamin.activity.trial;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;

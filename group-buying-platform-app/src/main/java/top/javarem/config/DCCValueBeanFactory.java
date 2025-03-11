@@ -14,7 +14,6 @@ import org.springframework.stereotype.Component;
 import top.javarem.types.annotation.DCCValue;
 import top.javarem.types.common.Constants;
 
-import javax.annotation.Resource;
 import java.lang.reflect.Field;
 import java.util.HashMap;
 import java.util.Map;

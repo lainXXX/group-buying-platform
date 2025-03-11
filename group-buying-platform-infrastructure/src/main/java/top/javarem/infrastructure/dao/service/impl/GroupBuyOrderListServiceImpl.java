@@ -3,7 +3,6 @@ package top.javarem.infrastructure.dao.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
-import top.javarem.domain.trade.model.entity.MarketPayOrderEntity;
 import top.javarem.infrastructure.dao.mapper.GroupBuyOrderListMapper;
 import top.javarem.infrastructure.dao.po.GroupBuyOrderList;
 import top.javarem.infrastructure.dao.service.GroupBuyOrderListService;

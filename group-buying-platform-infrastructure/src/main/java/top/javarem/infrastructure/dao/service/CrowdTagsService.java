@@ -3,7 +3,6 @@ package top.javarem.infrastructure.dao.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import top.javarem.infrastructure.dao.po.CrowdTags;
-import top.javarem.infrastructure.dao.po.CrowdTagsJob;
 
 /**
 * @author aaa

@@ -1,4 +1,4 @@
-package top.javarem.doamin.activity.tag;
+package top.javarem.test.doamin.activity.tag;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
@@ -28,7 +28,6 @@ public class ITagTest {
     public void test_execCrowdTagJob() throws Exception {
 
         tagService.execCrowdTagJob("RQ_KJHKL98UU78H66554GFDV", "10001");
-
     }
 
     @Test

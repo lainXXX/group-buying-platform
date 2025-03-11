@@ -1,8 +1,9 @@
-package top.javarem.trigger.http;
+package top.javarem.test.trigger.http;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
+import top.javarem.trigger.http.DCCController;
 
 import javax.annotation.Resource;
 

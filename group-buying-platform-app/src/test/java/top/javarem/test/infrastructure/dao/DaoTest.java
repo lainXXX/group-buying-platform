@@ -1,4 +1,4 @@
-package top.javarem.infrastructure.dao;
+package top.javarem.test.infrastructure.dao;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;

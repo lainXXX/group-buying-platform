@@ -5,7 +5,6 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 import top.javarem.infrastructure.dao.mapper.CrowdTagsMapper;
 import top.javarem.infrastructure.dao.po.CrowdTags;
-import top.javarem.infrastructure.dao.po.CrowdTagsJob;
 import top.javarem.infrastructure.dao.service.CrowdTagsService;
 
 /**
