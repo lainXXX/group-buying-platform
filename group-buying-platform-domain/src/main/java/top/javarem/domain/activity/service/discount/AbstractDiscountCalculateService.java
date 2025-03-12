@@ -1,8 +1,11 @@
 package top.javarem.domain.activity.service.discount;
 
+import lombok.extern.slf4j.Slf4j;
+import top.javarem.domain.activity.adapter.repository.IActivityRepository;
 import top.javarem.domain.activity.model.vo.DiscountTypeEnum;
 import top.javarem.domain.activity.model.vo.GroupBuyingActivityDiscountVO;
 
+import javax.annotation.Resource;
 import java.math.BigDecimal;
 
 /**
@@ -10,7 +13,11 @@ import java.math.BigDecimal;
  * @Date: 2025/03/02/10:43
  * @Description: 折扣计算服务抽象类
  */
+@Slf4j
 public abstract class AbstractDiscountCalculateService implements IDiscountCalculateService {
+
+    @Resource
+    protected IActivityRepository repository;
 
 //    定义的折扣优惠后的商品最低价格
     private static final BigDecimal LOWEST_PRICE = new BigDecimal("0.01");
@@ -23,7 +30,10 @@ public abstract class AbstractDiscountCalculateService implements IDiscountCalcu
 
             boolean isTagRange = filterTagId(userId, groupBuyingDiscount.getTagId());
 //            如果不是目标标签用户 则直接返回原始价格
-            if (!isTagRange) return originPrice;
+            if (!isTagRange) {
+                log.info("折扣计算拦截 : userId:{}", userId );
+                return originPrice;
+            }
 
         }
 //        2.优惠折扣计算
@@ -41,9 +51,8 @@ public abstract class AbstractDiscountCalculateService implements IDiscountCalcu
      */
     private boolean filterTagId(String userId, String tagId) {
 
-//        TODO 后续开发
+        return repository.isTagCrowdRange(userId, tagId);
 
-        return true;
     }
 
     /**

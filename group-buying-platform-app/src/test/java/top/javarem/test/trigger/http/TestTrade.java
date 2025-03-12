@@ -49,5 +49,19 @@ public class TestTrade {
 
     }
 
+    @Test
+    public void test_lockPayOrder_trade_order_filter() {
+        LockMarketPayOrderRequestDTO lockMarketPayOrderRequestDTO = new LockMarketPayOrderRequestDTO();
+        lockMarketPayOrderRequestDTO.setActivityId(100123L);
+        lockMarketPayOrderRequestDTO.setChannel("c01");
+        lockMarketPayOrderRequestDTO.setSource("s01");
+        lockMarketPayOrderRequestDTO.setGoodsId("9890001");
+        lockMarketPayOrderRequestDTO.setTeamId("80557358");
+        lockMarketPayOrderRequestDTO.setUserId("rem01");
+        lockMarketPayOrderRequestDTO.setOutTradeNo(RandomStringUtils.randomNumeric(12));
+        tradeService.lockPayOrder(lockMarketPayOrderRequestDTO);
+
+    }
+
 
 }

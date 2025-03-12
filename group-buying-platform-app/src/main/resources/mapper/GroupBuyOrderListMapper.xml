@@ -19,6 +19,7 @@
             <result property="discountPrice" column="discount_price" jdbcType="DECIMAL"/>
             <result property="status" column="status" jdbcType="TINYINT"/>
             <result property="outTradeNo" column="out_trade_no" jdbcType="VARCHAR"/>
+            <result property="bizId" column="biz_id" jdbcType="VARCHAR"/>
             <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
             <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
     </resultMap>
@@ -28,7 +29,7 @@
         order_id,activity_id,begin_time,
         end_time,goods_id,source,
         channel,original_price,discount_price,
-        status,out_trade_no,create_time,
-        update_time
+        status,out_trade_no,biz_id,
+        create_time,update_time
     </sql>
 </mapper>

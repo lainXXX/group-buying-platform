@@ -79,9 +79,10 @@ public class MarketNode extends AbstractGroupBuyingSupport<MarketProductEntity, 
             throw new AppException(ResponseCode.E0001.getCode(), ResponseCode.E0001.getInfo());
         }
 //        3.计算折扣优惠
-        BigDecimal discountPrice = discountCalculateService.calculate(requestParameter.getUserId(), skuVO.getOriginalPrice(), groupBuyingDiscount);
+        BigDecimal payPrice = discountCalculateService.calculate(requestParameter.getUserId(), skuVO.getOriginalPrice(), groupBuyingDiscount);
 //        4.填充折扣优惠后的价格到动态上下文信息中
-        dynamicContext.setDiscountPrice(discountPrice);
+        dynamicContext.setDiscountPrice(skuVO.getOriginalPrice().subtract(payPrice));
+        dynamicContext.setPayPrice(payPrice);
 //        5.路由传递到下一节点
         return router(requestParameter, dynamicContext);
 

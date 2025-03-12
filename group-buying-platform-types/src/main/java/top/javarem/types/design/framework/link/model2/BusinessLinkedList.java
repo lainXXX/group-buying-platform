@@ -23,7 +23,8 @@ public class BusinessLinkedList<T, D, R> extends LinkedList<ILinkHandler<T, D, R
         Node<ILinkHandler<T, D, R>> current = first;
         do {
             ILinkHandler<T, D, R> element = current.element;
-            element.apply(requestParameter, dynamicContext);
+            R apply = element.apply(requestParameter, dynamicContext);
+            if (apply != null) return apply;
             current = current.next;
         } while (current != null);
         return null;

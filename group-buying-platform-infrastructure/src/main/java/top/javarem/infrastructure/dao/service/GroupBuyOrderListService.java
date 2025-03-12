@@ -12,4 +12,6 @@ import top.javarem.infrastructure.dao.po.GroupBuyOrderList;
 public interface GroupBuyOrderListService extends IService<GroupBuyOrderList> {
 
     GroupBuyOrderList queryNoPayOrderByOutTradeNo(String userId, String outTradeNo);
+
+    int queryUserActivityPartakeCount(Long activityId, String userId);
 }

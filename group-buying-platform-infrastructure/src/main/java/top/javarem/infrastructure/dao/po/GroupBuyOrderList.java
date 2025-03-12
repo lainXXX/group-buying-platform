@@ -89,6 +89,11 @@ public class GroupBuyOrderList implements Serializable {
     private String outTradeNo;
 
     /**
+     * 业务唯一ID
+     */
+    private String bizId;
+
+    /**
      * 创建时间
      */
     private Date createTime;

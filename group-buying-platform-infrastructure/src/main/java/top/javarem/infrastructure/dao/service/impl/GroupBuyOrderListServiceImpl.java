@@ -7,6 +7,8 @@ import top.javarem.infrastructure.dao.mapper.GroupBuyOrderListMapper;
 import top.javarem.infrastructure.dao.po.GroupBuyOrderList;
 import top.javarem.infrastructure.dao.service.GroupBuyOrderListService;
 
+import javax.annotation.Resource;
+
 /**
 * @author aaa
 * @description 针对表【group_buy_order_list(拼团订单详情)】的数据库操作Service实现
@@ -15,6 +17,9 @@ import top.javarem.infrastructure.dao.service.GroupBuyOrderListService;
 @Service
 public class GroupBuyOrderListServiceImpl extends ServiceImpl<GroupBuyOrderListMapper, GroupBuyOrderList>
 implements GroupBuyOrderListService {
+
+    @Resource
+    private GroupBuyOrderListMapper mapper;
 
     @Override
     public GroupBuyOrderList queryNoPayOrderByOutTradeNo(String userId, String outTradeNo) {
@@ -25,6 +30,13 @@ implements GroupBuyOrderListService {
                 .eq(GroupBuyOrderList::getOutTradeNo, outTradeNo)
                 .eq(GroupBuyOrderList::getStatus, 0)
                 .one();
+
+    }
+
+    @Override
+    public int queryUserActivityPartakeCount(Long activityId, String userId) {
+
+        return mapper.queryUserActivityPartakeCount(activityId, userId);
 
     }
 }

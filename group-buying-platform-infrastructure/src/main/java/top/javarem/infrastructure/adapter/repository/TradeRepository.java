@@ -2,21 +2,22 @@ package top.javarem.infrastructure.adapter.repository;
 
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.BeanUtils;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import top.javarem.domain.trade.adapter.repository.ITradeRepository;
 import top.javarem.domain.trade.model.aggregate.GroupBuyingOrderAggregate;
-import top.javarem.domain.trade.model.entity.MarketPayOrderEntity;
-import top.javarem.domain.trade.model.entity.PayActivityEntity;
-import top.javarem.domain.trade.model.entity.PayDiscountEntity;
-import top.javarem.domain.trade.model.entity.UserEntity;
+import top.javarem.domain.trade.model.entity.*;
 import top.javarem.domain.trade.model.vo.GroupBuyingProgressVO;
 import top.javarem.domain.trade.model.vo.TradeOrderStatusEnumVO;
 import top.javarem.infrastructure.dao.po.GroupBuyOrderList;
+import top.javarem.infrastructure.dao.po.GroupBuyingActivity;
 import top.javarem.infrastructure.dao.po.GroupBuyingOrder;
 import top.javarem.infrastructure.dao.service.GroupBuyOrderListService;
+import top.javarem.infrastructure.dao.service.GroupBuyingActivityService;
 import top.javarem.infrastructure.dao.service.GroupBuyingOrderService;
+import top.javarem.types.common.Constants;
 import top.javarem.types.enums.ResponseCode;
 import top.javarem.types.exception.AppException;
 
@@ -36,6 +37,8 @@ public class TradeRepository implements ITradeRepository {
 
     @Resource
     private GroupBuyOrderListService groupBuyOrderListService;
+    @Resource
+    private GroupBuyingActivityService groupBuyingActivityService;
 
     @Override
     public MarketPayOrderEntity queryNoPayOrderByOutTradeNo(String userId, String outTradeNo) {
@@ -78,7 +81,7 @@ public class TradeRepository implements ITradeRepository {
                     .source(payDiscountEntity.getSource())
                     .originalPrice(payDiscountEntity.getOriginalPrice())
                     .discountPrice(payDiscountEntity.getDiscountPrice())
-                    .payPrice(payDiscountEntity.getDiscountPrice())
+                    .payPrice(payDiscountEntity.getPayPrice())
                     .targetCount(payActivityEntity.getTargetCount())
                     .completeCount(0)
                     .lockCount(1)
@@ -97,6 +100,8 @@ public class TradeRepository implements ITradeRepository {
         }
 
         String orderId = RandomStringUtils.randomNumeric(12);
+//        业务Id拼接 activityId_teamId_userId_orderId
+        String bizId = payActivityEntity.getActivityId() + Constants.UNDERLINE + payActivityEntity.getTeamId() + Constants.UNDERLINE + userEntity.getUserId() + Constants.UNDERLINE + orderId;
         GroupBuyOrderList groupBuyOrderList = GroupBuyOrderList.builder()
                 .userId(userEntity.getUserId())
                 .teamId(teamId)
@@ -111,6 +116,7 @@ public class TradeRepository implements ITradeRepository {
                 .discountPrice(payDiscountEntity.getDiscountPrice())
                 .status(TradeOrderStatusEnumVO.CREATE.getCode())
                 .outTradeNo(payDiscountEntity.getOutTradeNo())
+                .bizId(bizId)
                 .createTime(new Date())
                 .updateTime(new Date())
                 .build();
@@ -127,6 +133,23 @@ public class TradeRepository implements ITradeRepository {
                 .discountPrice(payDiscountEntity.getDiscountPrice())
                 .tradeOrderStatusEnumVO(TradeOrderStatusEnumVO.CREATE)
                 .build();
+    }
+
+    @Override
+    public GroupBuyingActivityEntity queryActivity(Long activityId) {
+
+        GroupBuyingActivity groupBuyingActivity = groupBuyingActivityService.queryGroupBuyingActivityByActivityId(activityId);
+        GroupBuyingActivityEntity groupBuyingActivityEntity = new GroupBuyingActivityEntity();
+        BeanUtils.copyProperties(groupBuyingActivity, groupBuyingActivityEntity);
+        return groupBuyingActivityEntity;
+
+    }
+
+    @Override
+    public Integer queryUserActivityPartakeCount(Long activityId, String userId) {
+
+        return groupBuyOrderListService.queryUserActivityPartakeCount(activityId, userId);
+
     }
 
 }

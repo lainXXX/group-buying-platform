@@ -2,6 +2,7 @@ package top.javarem.infrastructure.dao.service;
 
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import top.javarem.domain.trade.model.entity.GroupBuyingActivityEntity;
 import top.javarem.infrastructure.dao.po.GroupBuyingActivity;
 
 /**
@@ -25,4 +26,7 @@ public interface GroupBuyingActivityService extends IService<GroupBuyingActivity
      * @return 拼团活动
      */
     GroupBuyingActivity queryValidGroupBuyingActivityByActivityId(Long activityId);
+
+
+    GroupBuyingActivity queryGroupBuyingActivityByActivityId(Long activityId);
 }

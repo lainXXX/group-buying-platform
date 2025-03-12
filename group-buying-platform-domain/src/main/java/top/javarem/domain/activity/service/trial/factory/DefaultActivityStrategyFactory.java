@@ -53,6 +53,11 @@ public class DefaultActivityStrategyFactory {
         private BigDecimal discountPrice;
 
         /**
+         * 支付金额
+         */
+        private BigDecimal payPrice;
+
+        /**
          * 可见性
          */
         private boolean visible;
