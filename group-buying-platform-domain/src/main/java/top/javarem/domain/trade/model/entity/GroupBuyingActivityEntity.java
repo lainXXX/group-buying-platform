@@ -68,14 +68,4 @@ public class GroupBuyingActivityEntity {
      */
     private Date endTime;
 
-    /**
-     * 人群标签规则标识
-     */
-    private String tagId;
-
-    /**
-     * 人群标签规则范围【多选】
-     */
-    private String tagScope;
-
 }

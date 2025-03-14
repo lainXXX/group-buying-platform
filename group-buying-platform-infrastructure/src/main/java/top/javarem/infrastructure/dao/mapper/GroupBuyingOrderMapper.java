@@ -3,7 +3,11 @@ package top.javarem.infrastructure.dao.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
 import top.javarem.infrastructure.dao.po.GroupBuyingOrder;
+
+import java.util.List;
 
 /**
 * @author aaa
@@ -13,6 +17,5 @@ import top.javarem.infrastructure.dao.po.GroupBuyingOrder;
 */
 @Mapper
 public interface GroupBuyingOrderMapper extends BaseMapper<GroupBuyingOrder> {
-
 
 }

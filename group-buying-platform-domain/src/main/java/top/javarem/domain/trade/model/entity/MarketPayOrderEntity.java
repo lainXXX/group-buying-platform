@@ -19,10 +19,16 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 public class MarketPayOrderEntity {
 
+    private String teamId;
+
+    private Long activityId;
+
     /** 预购订单ID */
     private String orderId;
     /** 折扣金额 */
     private BigDecimal discountPrice;
+
+    private String outTradeNo;
     /** 交易订单状态枚举 */
     private TradeOrderStatusEnumVO tradeOrderStatusEnumVO;
 

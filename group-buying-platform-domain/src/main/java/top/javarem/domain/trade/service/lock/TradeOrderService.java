@@ -1,4 +1,4 @@
-package top.javarem.domain.trade.service;
+package top.javarem.domain.trade.service.lock;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -6,7 +6,8 @@ import top.javarem.domain.trade.adapter.repository.ITradeRepository;
 import top.javarem.domain.trade.model.aggregate.GroupBuyingOrderAggregate;
 import top.javarem.domain.trade.model.entity.*;
 import top.javarem.domain.trade.model.vo.GroupBuyingProgressVO;
-import top.javarem.domain.trade.service.factory.TradeRuleFilterFactory;
+import top.javarem.domain.trade.service.ITradeOrderService;
+import top.javarem.domain.trade.service.lock.factory.TradeRuleFilterFactory;
 import top.javarem.types.design.framework.link.model2.BusinessLinkedList;
 
 import javax.annotation.Resource;

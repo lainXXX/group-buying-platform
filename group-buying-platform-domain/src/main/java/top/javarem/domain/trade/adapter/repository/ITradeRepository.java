@@ -1,6 +1,8 @@
 package top.javarem.domain.trade.adapter.repository;
 
 import top.javarem.domain.trade.model.aggregate.GroupBuyingOrderAggregate;
+import top.javarem.domain.trade.model.aggregate.GroupBuyingSettleOrderAggregate;
+import top.javarem.domain.trade.model.entity.GroupBuyingTeamEntity;
 import top.javarem.domain.trade.model.entity.GroupBuyingActivityEntity;
 import top.javarem.domain.trade.model.entity.MarketPayOrderEntity;
 import top.javarem.domain.trade.model.vo.GroupBuyingProgressVO;
@@ -11,7 +13,6 @@ import top.javarem.domain.trade.model.vo.GroupBuyingProgressVO;
  * @Description: 交易仓储接口
  */
 public interface ITradeRepository {
-
 
     MarketPayOrderEntity queryNoPayOrderByOutTradeNo(String userId, String outTradeNo);
 
@@ -33,4 +34,17 @@ public interface ITradeRepository {
      * @return 次数
      */
     Integer queryUserActivityPartakeCount(Long activityId, String userId);
+
+    /**
+     * 查询拼团组队信息
+     * @param teamId 组队ID
+     * @return 组队信息
+     */
+    GroupBuyingTeamEntity queryGroupBuyingTeam(String teamId, Long activityId);
+
+    /**
+     * 更新订单详情状态为交易完成 更新拼团组队进度
+     * @param groupBuyingSettleOrderAggregate
+     */
+    void updateTradeOrder(GroupBuyingSettleOrderAggregate groupBuyingSettleOrderAggregate);
 }

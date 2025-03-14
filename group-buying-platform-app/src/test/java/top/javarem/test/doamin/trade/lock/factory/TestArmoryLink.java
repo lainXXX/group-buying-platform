@@ -1,11 +1,11 @@
-package top.javarem.test.doamin.trade.factory;
+package top.javarem.test.doamin.trade.lock.factory;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import top.javarem.domain.trade.model.entity.TradeRuleFilterBackEntity;
 import top.javarem.domain.trade.model.entity.TradeRuleFilterEntity;
-import top.javarem.domain.trade.service.factory.TradeRuleFilterFactory;
+import top.javarem.domain.trade.service.lock.factory.TradeRuleFilterFactory;
 import top.javarem.types.design.framework.link.model2.BusinessLinkedList;
 
 import javax.annotation.Resource;
