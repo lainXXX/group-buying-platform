@@ -1,6 +1,7 @@
 package top.javarem.infrastructure.redis;
 
 import org.redisson.api.RBitSet;
+import org.redisson.api.RLock;
 import org.redisson.api.RTopic;
 
 import java.math.BigInteger;
@@ -13,6 +14,13 @@ import java.security.NoSuchAlgorithmException;
  * @Description: 自定义Redisson服务接口
  */
 public interface IRedisService {
+
+    /**
+     * 获取锁
+     * @param key 键
+     * @return 锁
+     */
+    RLock getLock(String key);
 
     /**
      * 获取RBitSet

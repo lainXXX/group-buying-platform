@@ -33,7 +33,7 @@ public class UserPartakeLimitFilter implements ILinkHandler<TradeRuleFilterEntit
         log.info("交易规则过滤- [用户参与限制过滤服务] userId:{}, activityId;{}", userId, activityId);
         Integer userPartakeCount = repository.queryUserActivityPartakeCount(activityId, userId);
         if (userPartakeCount >= groupBuyingActivityEntity.getTakeLimitCount()) {
-            log.info("用户参与限制过滤服务 用户拼团次数已达上限 userId:{}, activityId", userId, activityId);
+            log.error("用户参与限制过滤服务 用户拼团次数已达上限 userId:{}, activityId", userId, activityId);
             throw new AppException(ResponseCode.E0007);
         }
         return TradeRuleFilterBackEntity.builder()

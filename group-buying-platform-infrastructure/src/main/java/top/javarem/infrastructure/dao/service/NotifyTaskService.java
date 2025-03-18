@@ -4,6 +4,8 @@ package top.javarem.infrastructure.dao.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import top.javarem.infrastructure.dao.po.NotifyTask;
 
+import java.util.List;
+
 /**
 * @author aaa
 * @description 针对表【notify_task(任务回调表)】的数据库操作Service
@@ -11,4 +13,13 @@ import top.javarem.infrastructure.dao.po.NotifyTask;
 */
 public interface NotifyTaskService extends IService<NotifyTask> {
 
+    List<NotifyTask> queryUnExecutedNotifyTask();
+
+    int updateNotifyTaskStatusSuccess(String teamId);
+
+    int updateNotifyTaskStatusError(String teamId);
+
+    int updateNotifyTaskStatusRetry(String teamId);
+
+    List<NotifyTask> queryUnExecutedNotifyTask(String teamId);
 }

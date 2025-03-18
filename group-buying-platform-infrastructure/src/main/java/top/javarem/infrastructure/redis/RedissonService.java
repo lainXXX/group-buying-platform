@@ -1,6 +1,7 @@
 package top.javarem.infrastructure.redis;
 
 import org.redisson.api.RBitSet;
+import org.redisson.api.RLock;
 import org.redisson.api.RedissonClient;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +17,11 @@ public class RedissonService implements IRedisService {
 
     @Resource
     private RedissonClient redissonClient;
+
+    @Override
+    public RLock getLock(String key) {
+        return redissonClient.getLock(key);
+    }
 
     @Override
     public RBitSet getBitSet(String key) {

@@ -1,22 +1,21 @@
 package top.javarem.trigger.http;
 
-import io.micrometer.core.instrument.util.StringUtils;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.bind.annotation.*;
 import top.javarem.api.IMarketTradeService;
 import top.javarem.api.dto.LockMarketPayOrderRequestDTO;
 import top.javarem.api.dto.LockMarketPayOrderResponseDTO;
+import top.javarem.api.dto.PaySuccessRequestDTO;
 import top.javarem.api.response.Response;
 import top.javarem.domain.activity.model.entity.MarketProductEntity;
 import top.javarem.domain.activity.model.entity.TrialBalanceEntity;
 import top.javarem.domain.activity.model.vo.GroupBuyingActivityDiscountVO;
 import top.javarem.domain.activity.service.IIndexGroupBuyingService;
-import top.javarem.domain.trade.model.entity.MarketPayOrderEntity;
-import top.javarem.domain.trade.model.entity.PayActivityEntity;
-import top.javarem.domain.trade.model.entity.PayDiscountEntity;
-import top.javarem.domain.trade.model.entity.UserEntity;
+import top.javarem.domain.trade.model.entity.*;
 import top.javarem.domain.trade.model.vo.GroupBuyingProgressVO;
 import top.javarem.domain.trade.service.ITradeOrderService;
+import top.javarem.domain.trade.service.ITradeSettleOrderService;
 import top.javarem.types.common.GsonUtils;
 import top.javarem.types.enums.ResponseCode;
 import top.javarem.types.exception.AppException;
@@ -41,7 +40,10 @@ public class MarketTradeController implements IMarketTradeService {
     @Resource
     private IIndexGroupBuyingService indexGroupBuyingService;
 
-    @PostMapping("/lock")
+    @Resource
+    private ITradeSettleOrderService tradeSettleOrderService;
+
+    @PostMapping("/lock_pay_order")
     @Override
     public Response<LockMarketPayOrderResponseDTO> lockPayOrder(@RequestBody LockMarketPayOrderRequestDTO lockMarketPayOrderRequestDTO) {
         try {
@@ -53,8 +55,9 @@ public class MarketTradeController implements IMarketTradeService {
             Long activityId = lockMarketPayOrderRequestDTO.getActivityId();
             String outTradeNo = lockMarketPayOrderRequestDTO.getOutTradeNo();
             String teamId = lockMarketPayOrderRequestDTO.getTeamId();
+            String notifyUrl = lockMarketPayOrderRequestDTO.getNotifyUrl();
             log.info("营销交易锁单:{} LockMarketPayOrderRequestDTO:{}", userId, GsonUtils.gson.toJson(lockMarketPayOrderRequestDTO));
-            if (StringUtils.isBlank(userId) || StringUtils.isBlank(source) || StringUtils.isBlank(channel) || StringUtils.isBlank(goodsId) || StringUtils.isBlank(goodsId) || null == activityId) {
+            if (StringUtils.isBlank(userId) || StringUtils.isBlank(source) || StringUtils.isBlank(channel) || StringUtils.isBlank(goodsId) || StringUtils.isBlank(goodsId) || null == activityId || StringUtils.isBlank(notifyUrl)) {
                 return Response.<LockMarketPayOrderResponseDTO>builder()
                         .code(ResponseCode.ILLEGAL_PARAMETER.getCode())
                         .info(ResponseCode.ILLEGAL_PARAMETER.getInfo())
@@ -120,6 +123,7 @@ public class MarketTradeController implements IMarketTradeService {
                             .discountPrice(trialBalanceEntity.getDiscountPrice())
                             .payPrice(trialBalanceEntity.getPayPrice())
                             .outTradeNo(outTradeNo)
+                            .notifyUrl(notifyUrl)
                             .build());
 
             log.info("交易锁单记录(新):{} marketPayOrderEntity:{}", userId, GsonUtils.gson.toJson(marketPayOrderEntity));
@@ -147,6 +151,38 @@ public class MarketTradeController implements IMarketTradeService {
                     .info(ResponseCode.UN_ERROR.getInfo())
                     .build();
         }
+
+    }
+
+    @PostMapping("/settle_pay_order")
+    @Override
+    public Response<Boolean> settlePayOrder(@RequestBody PaySuccessRequestDTO paySuccessRequestDTO) {
+        try {
+            String userId = paySuccessRequestDTO.getUserId();
+            String outTradeNo = paySuccessRequestDTO.getOutTradeNo();
+            String goodId = paySuccessRequestDTO.getGoodId();
+            String channel = paySuccessRequestDTO.getChannel();
+            String source = paySuccessRequestDTO.getSource();
+            if (StringUtils.isAnyBlank(userId, outTradeNo, goodId, channel, source)) {
+                throw new AppException(ResponseCode.ILLEGAL_PARAMETER);
+            }
+            log.info("营销交易结算支付订单 userId:{}, outTradeNo:{}", userId, outTradeNo);
+            TradePaySettleEntity tradePaySettleEntity = tradeSettleOrderService.settlePayOrder(PaySuccessEntity.builder()
+                    .userId(userId)
+                    .outTradeNo(outTradeNo)
+                    .goodId(goodId)
+                    .channel(channel)
+                    .source(source)
+                    .build());
+            return Response.success();
+        } catch (AppException e) {
+            log.error("营销交易结算支付订单 -非法参数 userId:{}, outTradeNo:{}", paySuccessRequestDTO.getUserId(), paySuccessRequestDTO.getOutTradeNo(), e);
+            return Response.error();
+        } catch (Exception e) {
+            log.error("营销交易结算支付订单 -结算订单失败 userId:{}, outTradeNo:{}", paySuccessRequestDTO.getUserId(), paySuccessRequestDTO.getOutTradeNo(), e);
+            return Response.error();
+        }
+
 
     }
 }

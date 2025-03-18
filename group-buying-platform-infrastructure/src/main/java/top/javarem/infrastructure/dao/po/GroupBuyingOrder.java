@@ -74,6 +74,11 @@ public class GroupBuyingOrder implements Serializable {
     private Integer lockCount;
 
     /**
+     * 回调url
+     */
+    private String notifyUrl;
+
+    /**
      * 状态（0-拼单中、1-完成、2-失败）
      */
     private Integer status;

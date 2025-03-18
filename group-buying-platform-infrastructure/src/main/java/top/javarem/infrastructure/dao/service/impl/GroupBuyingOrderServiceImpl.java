@@ -51,7 +51,7 @@ public class GroupBuyingOrderServiceImpl extends ServiceImpl<GroupBuyingOrderMap
     public GroupBuyingOrder queryGroupBuyingTeam(String teamId, Long activityId) {
 
         return lambdaQuery()
-                .select(GroupBuyingOrder::getTeamId, GroupBuyingOrder::getActivityId, GroupBuyingOrder::getTargetCount, GroupBuyingOrder::getCompleteCount, GroupBuyingOrder::getLockCount, GroupBuyingOrder::getStatus)
+                .select(GroupBuyingOrder::getTeamId, GroupBuyingOrder::getActivityId, GroupBuyingOrder::getTargetCount, GroupBuyingOrder::getCompleteCount, GroupBuyingOrder::getLockCount, GroupBuyingOrder::getNotifyUrl, GroupBuyingOrder::getStatus)
                 .eq(GroupBuyingOrder::getTeamId, teamId)
                 .eq(GroupBuyingOrder::getActivityId, activityId)
                 .one();

@@ -5,7 +5,10 @@ import top.javarem.domain.trade.model.aggregate.GroupBuyingSettleOrderAggregate;
 import top.javarem.domain.trade.model.entity.GroupBuyingTeamEntity;
 import top.javarem.domain.trade.model.entity.GroupBuyingActivityEntity;
 import top.javarem.domain.trade.model.entity.MarketPayOrderEntity;
+import top.javarem.domain.trade.model.entity.NotifyTaskEntity;
 import top.javarem.domain.trade.model.vo.GroupBuyingProgressVO;
+
+import java.util.List;
 
 /**
  * @Author: rem
@@ -47,4 +50,14 @@ public interface ITradeRepository {
      * @param groupBuyingSettleOrderAggregate
      */
     void updateTradeOrder(GroupBuyingSettleOrderAggregate groupBuyingSettleOrderAggregate);
+
+    List<NotifyTaskEntity> queryUnExecutedNotifyTask();
+
+    int updateNotifyTaskStatusSuccess(String teamId);
+
+    int updateNotifyTaskStatusError(String teamId);
+
+    int updateNotifyTaskStatusRetry(String teamId);
+
+    List<NotifyTaskEntity> queryUnExecutedNotifyTask(String teamId);
 }

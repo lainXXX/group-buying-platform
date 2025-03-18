@@ -16,16 +16,10 @@
             <result property="targetCount" column="target_count" jdbcType="INTEGER"/>
             <result property="completeCount" column="complete_count" jdbcType="INTEGER"/>
             <result property="lockCount" column="lock_count" jdbcType="INTEGER"/>
+            <result property="notifyUrl" column="notify_url" jdbcType="INTEGER"/>
             <result property="status" column="status" jdbcType="TINYINT"/>
             <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
             <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
     </resultMap>
 
-    <sql id="Base_Column_List">
-        id,team_id,activity_id,
-        channel,source,original_price,
-        discount_price,pay_price,target_count,
-        complete_count,lock_count,status,
-        create_time,update_time
-    </sql>
 </mapper>

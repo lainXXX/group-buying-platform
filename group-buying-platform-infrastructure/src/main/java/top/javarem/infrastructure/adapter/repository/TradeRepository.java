@@ -29,9 +29,7 @@ import top.javarem.types.enums.ResponseCode;
 import top.javarem.types.exception.AppException;
 
 import javax.annotation.Resource;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 /**
  * @Author: rem
@@ -98,6 +96,7 @@ public class TradeRepository implements ITradeRepository {
                     .targetCount(payActivityEntity.getTargetCount())
                     .completeCount(0)
                     .lockCount(1)
+                    .notifyUrl(payDiscountEntity.getNotifyUrl())
                     .status(TradeOrderStatusEnumVO.CREATE.getCode())
                     .createTime(new Date())
                     .updateTime(new Date())
@@ -176,6 +175,7 @@ public class TradeRepository implements ITradeRepository {
                 .targetCount(groupBuyingOrder.getTargetCount())
                 .completeCount(groupBuyingOrder.getCompleteCount())
                 .lockCount(groupBuyingOrder.getLockCount())
+                .notifyUrl(groupBuyingOrder.getNotifyUrl())
                 .status(TradeOrderStatusEnumVO.getByCode(groupBuyingOrder.getStatus()))
                 .build();
 
@@ -211,7 +211,7 @@ public class TradeRepository implements ITradeRepository {
             NotifyTask notifyTask = new NotifyTask();
             notifyTask.setTeamId(groupBuyingTeamEntity.getTeamId());
             notifyTask.setActivityId(groupBuyingTeamEntity.getActivityId());
-            notifyTask.setNotifyUrl("暂无");
+            notifyTask.setNotifyUrl(groupBuyingTeamEntity.getNotifyUrl());
             notifyTask.setNotifyCount(0);
             notifyTask.setNotifyStatus(0);
             HashMap<String, Object> hashMap = new HashMap<>();
@@ -222,6 +222,50 @@ public class TradeRepository implements ITradeRepository {
         }
 
 
+    }
+
+    @Override
+    public List<NotifyTaskEntity> queryUnExecutedNotifyTask() {
+
+        List<NotifyTask> notifyTaskList = notifyTaskService.queryUnExecutedNotifyTask();
+        List<NotifyTaskEntity> notifyTaskEntityList = new ArrayList<>(notifyTaskList.size());
+        for (NotifyTask notifyTask : notifyTaskList) {
+            NotifyTaskEntity notifyTaskEntity = new NotifyTaskEntity();
+            BeanUtils.copyProperties(notifyTask, notifyTaskEntity);
+            notifyTaskEntityList.add(notifyTaskEntity);
+        }
+        return notifyTaskEntityList;
+    }
+
+    @Override
+    public List<NotifyTaskEntity> queryUnExecutedNotifyTask(String teamId) {
+        List<NotifyTask> notifyTaskList = notifyTaskService.queryUnExecutedNotifyTask(teamId);
+        List<NotifyTaskEntity> notifyTaskEntityList = new ArrayList<>(notifyTaskList.size());
+        for (NotifyTask notifyTask : notifyTaskList) {
+            NotifyTaskEntity notifyTaskEntity = new NotifyTaskEntity();
+            BeanUtils.copyProperties(notifyTask, notifyTaskEntity);
+            notifyTaskEntityList.add(notifyTaskEntity);
+        }
+        return notifyTaskEntityList;
+    }
+
+    @Override
+    public int updateNotifyTaskStatusSuccess(String teamId) {
+
+        return notifyTaskService.updateNotifyTaskStatusSuccess(teamId);
+
+    }
+
+    @Override
+    public int updateNotifyTaskStatusError(String teamId) {
+
+        return notifyTaskService.updateNotifyTaskStatusError(teamId);
+
+    }
+
+    @Override
+    public int updateNotifyTaskStatusRetry(String teamId) {
+        return notifyTaskService.updateNotifyTaskStatusRetry(teamId);
     }
 
 }

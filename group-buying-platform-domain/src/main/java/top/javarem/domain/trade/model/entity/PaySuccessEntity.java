@@ -18,7 +18,7 @@ public class PaySuccessEntity {
 
     private String userId;
 
-    private String outTradeNO;
+    private String outTradeNo;
 
     private String goodId;
 
