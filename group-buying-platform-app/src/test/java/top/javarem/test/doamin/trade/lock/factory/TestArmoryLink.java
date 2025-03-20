@@ -20,12 +20,11 @@ import javax.annotation.Resource;
 public class TestArmoryLink {
 
     @Resource
-    private TradeRuleFilterFactory tradeRuleFilterFactory;
+    private BusinessLinkedList<TradeRuleFilterEntity, TradeRuleFilterFactory.DynamicContext, TradeRuleFilterBackEntity> tradeRuleFilter;
 
     @Test
     public void test_armory_link() throws Exception {
 
-        BusinessLinkedList<TradeRuleFilterEntity, TradeRuleFilterFactory.DynamicContext, TradeRuleFilterBackEntity> tradeRuleFilter = tradeRuleFilterFactory.getTradeRuleFilter();
         TradeRuleFilterEntity tradeRuleFilterEntity = TradeRuleFilterEntity.builder()
                 .activityId(100123L)
                 .userId("rem01")

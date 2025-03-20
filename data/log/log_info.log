@@ -318,7 +318,7 @@ top.javarem.types.exception.AppException: null
 25-03-19.23:08:00.277 [scheduling-1    ] INFO  GroupBuyingNotifyJob   - 定时任务- 支付回调通知拼团完成 result:{"retryCount":0,"successCount":0,"waitCount":0,"errorCount":0}
 25-03-19.23:09:00.006 [scheduling-1    ] INFO  TradeTradeSettleOrderService - 拼团交易-执行交易回调任务
 25-03-19.23:09:00.097 [scheduling-1    ] INFO  GroupBuyingNotifyJob   - 定时任务- 支付回调通知拼团完成 result:{"retryCount":0,"successCount":0,"waitCount":0,"errorCount":0}
-25-03-19.23:09:36.555 [http-nio-8090-exec-2] WARN  DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `java.util.Date` from String "Wed Mar 19 23:09:01 CST 2025": not a valid representation (error: Failed to parse Date value 'Wed Mar 19 23:09:01 CST 2025': Cannot parse date "Wed Mar 19 23:09:01 CST 2025": not compatible with any of standard forms ("yyyy-MM-dd'T'HH:mm:ss.SSSX", "yyyy-MM-dd'T'HH:mm:ss.SSS", "EEE, dd MMM yyyy HH:mm:ss zzz", "yyyy-MM-dd")); nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.util.Date` from String "Wed Mar 19 23:09:01 CST 2025": not a valid representation (error: Failed to parse Date value 'Wed Mar 19 23:09:01 CST 2025': Cannot parse date "Wed Mar 19 23:09:01 CST 2025": not compatible with any of standard forms ("yyyy-MM-dd'T'HH:mm:ss.SSSX", "yyyy-MM-dd'T'HH:mm:ss.SSS", "EEE, dd MMM yyyy HH:mm:ss zzz", "yyyy-MM-dd"))<EOL> at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 7, column: 20] (through reference chain: top.javarem.api.dto.PaySuccessRequestDTO["outTradeTime"])]
+25-03-19.23:09:36.555 [http-nio-8090-exec-2] WARN  DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `java.util.Date` from String "Wed Mar 19 23:09:01 CST 2025": not a valid representation (error: Failed to parse Date value 'Wed Mar 19 23:09:01 CST 2025': Cannot parse date "Wed Mar 19 23:09:01 CST 2025": not compatible with any of standard forms ("yyyy-MM-dd'T'HH:mm:ss.SSSX", "yyyy-MM-dd'T'HH:mm:ss.SSS", "EEE, dd MMM yyyy HH:mm:ss zzz", "yyyy-MM-dd")); nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.util.Date` from String "Wed Mar 19 23:09:01 CST 2025": not a valid representation (error: Failed to parse Date value 'Wed Mar 19 23:09:01 CST 2025': Cannot parse date "Wed Mar 19 23:09:01 CST 2025": not compatible with any of standard forms ("yyyy-MM-dd'T'HH:mm:ss.SSSX", "yyyy-MM-dd'T'HH:mm:ss.SSS", "EEE, dd MMM yyyy HH:mm:ss zzz", "yyyy-MM-dd"))<EOL> at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 7, column: 20] (through reference chain: top.javarem.api.dto.SettleMarketPayOrderRequestDTO["outTradeTime"])]
 25-03-19.23:10:00.007 [scheduling-1    ] INFO  TradeTradeSettleOrderService - 拼团交易-执行交易回调任务
 25-03-19.23:10:00.086 [scheduling-1    ] INFO  GroupBuyingNotifyJob   - 定时任务- 支付回调通知拼团完成 result:{"retryCount":0,"successCount":0,"waitCount":0,"errorCount":0}
 25-03-19.23:11:00.022 [scheduling-1    ] INFO  TradeTradeSettleOrderService - 拼团交易-执行交易回调任务
@@ -1804,3 +1804,615 @@ java.net.SocketException: Software caused connection abort: recv failed
 25-03-19.23:58:28.731 [http-nio-8090-exec-4] INFO  TradeTradeSettleOrderService - 回调通知拼团完结 result:{"retryCount":0,"successCount":0,"waitCount":2,"errorCount":0}
 25-03-19.23:58:49.387 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
 25-03-19.23:58:49.394 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-03-20.21:58:48.156 [main            ] INFO  Application            - Starting Application using Java 1.8.0_151 on mile with PID 3280 (D:\Develop\project\group-buying-platform\group-buying-platform-app\target\classes started by aaa in D:\Develop\project\group-buying-platform)
+25-03-20.21:58:48.160 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+25-03-20.21:58:49.113 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-03-20.21:58:49.116 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-03-20.21:58:49.176 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 44 ms. Found 0 Redis repository interfaces.
+25-03-20.21:58:49.423 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisClientConfig' of type [top.javarem.config.RedisClientConfig$$EnhancerBySpringCGLIB$$acb6d0ca] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-03-20.21:58:49.470 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redis.sdk.config-top.javarem.config.RedisClientConfigProperties' of type [top.javarem.config.RedisClientConfigProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-03-20.21:58:49.641 [main            ] INFO  Version                - Redisson 3.26.0
+25-03-20.21:58:50.480 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
+25-03-20.21:58:50.489 [redisson-netty-1-14] INFO  ConnectionsHolder      - 5 connections initialized for localhost/127.0.0.1:6379
+25-03-20.21:58:50.554 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redissonClient' of type [org.redisson.Redisson] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-03-20.21:58:50.783 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8090 (http)
+25-03-20.21:58:50.870 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8090"]
+25-03-20.21:58:50.876 [main            ] INFO  StandardService        - Starting service [Tomcat]
+25-03-20.21:58:50.877 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
+25-03-20.21:58:51.031 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+25-03-20.21:58:51.031 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2827 ms
+25-03-20.21:58:55.009 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-03-20.21:58:55.038 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8090"]
+25-03-20.21:58:55.049 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8090 (http) with context path ''
+25-03-20.21:58:55.063 [main            ] INFO  Application            - Started Application in 7.375 seconds (JVM running for 8.839)
+25-03-20.21:58:55.212 [RMI TCP Connection(3)-192.168.8.1] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-03-20.21:58:56.189 [RMI TCP Connection(5)-192.168.8.1] INFO  [/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet'
+25-03-20.21:58:56.189 [RMI TCP Connection(5)-192.168.8.1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
+25-03-20.21:58:56.190 [RMI TCP Connection(5)-192.168.8.1] INFO  DispatcherServlet      - Completed initialization in 1 ms
+25-03-20.21:58:56.203 [RMI TCP Connection(3)-192.168.8.1] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-03-20.21:59:00.006 [scheduling-1    ] INFO  TradeTradeSettleOrderService - 拼团交易-执行交易回调任务
+25-03-20.21:59:00.361 [scheduling-1    ] INFO  GroupBuyingNotifyJob   - 定时任务- 支付回调通知拼团完成 result:{"retryCount":0,"successCount":0,"waitCount":0,"errorCount":0}
+25-03-20.22:00:00.015 [scheduling-1    ] INFO  TradeTradeSettleOrderService - 拼团交易-执行交易回调任务
+25-03-20.22:00:00.099 [scheduling-1    ] INFO  GroupBuyingNotifyJob   - 定时任务- 支付回调通知拼团完成 result:{"retryCount":0,"successCount":0,"waitCount":0,"errorCount":0}
+25-03-20.22:00:47.707 [http-nio-8090-exec-3] INFO  MarketIndexController  - 查询营销拼团配置开始:rem goods:9890001
+25-03-20.22:00:47.935 [http-nio-8090-exec-3] INFO  MarketNode             - 拼团活动查询试算服务-MarketNode userId:rem 异步线程加载数据[GroupBuyingActivityDiscountVO、 SkuVO] 完成
+25-03-20.22:00:47.938 [http-nio-8090-exec-3] INFO  MarketNode             - 拼团商品查询试算服务-MarketNode userId:rem requestParameter:{"userId":"rem","goodsId":"9890001","source":"s01","channel":"c01"}
+25-03-20.22:00:47.939 [http-nio-8090-exec-3] INFO  ZJCalculateService     - 折扣优惠服务- 直减计算， 原始价格: 100.00
+25-03-20.22:00:47.985 [http-nio-8090-exec-3] INFO  EndNode                - 拼团商品查询试算服务-EndNode userId:rem requestParameter:{"userId":"rem","goodsId":"9890001","source":"s01","channel":"c01"}
+25-03-20.22:00:48.217 [http-nio-8090-exec-3] ERROR MarketIndexController  - 查询拼团营销配置失败:rem goodsId:9890001
+org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '))' at line 1
+### The error may exist in top/javarem/infrastructure/dao/mapper/GroupBuyingOrderMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT   team_id,activity_id,target_count,complete_count,lock_count,status,valid_begin_time,valid_end_time,notify_url   FROM group_buying_order      WHERE  (status = ? AND target_count > lock_count AND team_id IN ())
+### Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '))' at line 1
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '))' at line 1
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:239)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:92)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:439)
+	at com.sun.proxy.$Proxy97.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:224)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.executeForMany(MybatisMapperMethod.java:164)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:77)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:152)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89)
+	at com.sun.proxy.$Proxy103.selectList(Unknown Source)
+	at com.baomidou.mybatisplus.extension.conditions.query.ChainQuery.lambda$list$1d3f6527$1(ChainQuery.java:39)
+	at com.baomidou.mybatisplus.extension.conditions.ChainWrapper.execute(ChainWrapper.java:63)
+	at com.baomidou.mybatisplus.extension.conditions.query.ChainQuery.list(ChainQuery.java:39)
+	at top.javarem.infrastructure.dao.service.impl.GroupBuyingOrderServiceImpl.queryInProgressGroupBuyingTeam(GroupBuyingOrderServiceImpl.java:102)
+	at top.javarem.infrastructure.dao.service.impl.GroupBuyingOrderServiceImpl$$FastClassBySpringCGLIB$$9c1bb805.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy.invokeMethod(CglibAopProxy.java:386)
+	at org.springframework.aop.framework.CglibAopProxy.access$000(CglibAopProxy.java:85)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:704)
+	at top.javarem.infrastructure.dao.service.impl.GroupBuyingOrderServiceImpl$$EnhancerBySpringCGLIB$$385f41ff.queryInProgressGroupBuyingTeam(<generated>)
+	at top.javarem.infrastructure.adapter.repository.ActivityRepository.queryOwnerGroupBuyingTeamOrderDetailList(ActivityRepository.java:131)
+	at top.javarem.infrastructure.adapter.repository.ActivityRepository$$FastClassBySpringCGLIB$$ae16c582.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at top.javarem.infrastructure.adapter.repository.ActivityRepository$$EnhancerBySpringCGLIB$$3a9eee17.queryOwnerGroupBuyingTeamOrderDetailList(<generated>)
+	at top.javarem.domain.activity.service.IndexGroupBuyingService.queryInProgressTeamList(IndexGroupBuyingService.java:49)
+	at top.javarem.trigger.http.MarketIndexController.queryGroupBuyingMarketConfig(MarketIndexController.java:57)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '))' at line 1
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:65)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:80)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:65)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:336)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:158)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:110)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:90)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:154)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:142)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:425)
+	... 84 common frames omitted
+25-03-20.22:01:00.001 [scheduling-1    ] INFO  TradeTradeSettleOrderService - 拼团交易-执行交易回调任务
+25-03-20.22:01:00.108 [scheduling-1    ] INFO  GroupBuyingNotifyJob   - 定时任务- 支付回调通知拼团完成 result:{"retryCount":0,"successCount":0,"waitCount":0,"errorCount":0}
+25-03-20.22:02:00.009 [scheduling-1    ] INFO  TradeTradeSettleOrderService - 拼团交易-执行交易回调任务
+25-03-20.22:02:00.089 [scheduling-1    ] INFO  GroupBuyingNotifyJob   - 定时任务- 支付回调通知拼团完成 result:{"retryCount":0,"successCount":0,"waitCount":0,"errorCount":0}
+25-03-20.22:03:00.018 [scheduling-1    ] INFO  TradeTradeSettleOrderService - 拼团交易-执行交易回调任务
+25-03-20.22:03:00.101 [scheduling-1    ] INFO  GroupBuyingNotifyJob   - 定时任务- 支付回调通知拼团完成 result:{"retryCount":0,"successCount":0,"waitCount":0,"errorCount":0}
+25-03-20.22:04:00.004 [scheduling-1    ] INFO  TradeTradeSettleOrderService - 拼团交易-执行交易回调任务
+25-03-20.22:04:00.081 [scheduling-1    ] INFO  GroupBuyingNotifyJob   - 定时任务- 支付回调通知拼团完成 result:{"retryCount":0,"successCount":0,"waitCount":0,"errorCount":0}
+25-03-20.22:05:00.013 [scheduling-1    ] INFO  TradeTradeSettleOrderService - 拼团交易-执行交易回调任务
+25-03-20.22:05:00.097 [scheduling-1    ] INFO  GroupBuyingNotifyJob   - 定时任务- 支付回调通知拼团完成 result:{"retryCount":0,"successCount":0,"waitCount":0,"errorCount":0}
+25-03-20.22:06:00.002 [scheduling-1    ] INFO  TradeTradeSettleOrderService - 拼团交易-执行交易回调任务
+25-03-20.22:06:00.090 [scheduling-1    ] INFO  GroupBuyingNotifyJob   - 定时任务- 支付回调通知拼团完成 result:{"retryCount":0,"successCount":0,"waitCount":0,"errorCount":0}
+25-03-20.22:06:25.331 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-03-20.22:06:25.340 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-03-20.22:06:32.268 [main            ] INFO  Application            - Starting Application using Java 1.8.0_151 on mile with PID 21288 (D:\Develop\project\group-buying-platform\group-buying-platform-app\target\classes started by aaa in D:\Develop\project\group-buying-platform)
+25-03-20.22:06:32.270 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+25-03-20.22:06:33.648 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-03-20.22:06:33.649 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-03-20.22:06:33.709 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 46 ms. Found 0 Redis repository interfaces.
+25-03-20.22:06:33.999 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisClientConfig' of type [top.javarem.config.RedisClientConfig$$EnhancerBySpringCGLIB$$873255e9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-03-20.22:06:34.082 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redis.sdk.config-top.javarem.config.RedisClientConfigProperties' of type [top.javarem.config.RedisClientConfigProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-03-20.22:06:34.286 [main            ] INFO  Version                - Redisson 3.26.0
+25-03-20.22:06:35.098 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
+25-03-20.22:06:35.109 [redisson-netty-1-14] INFO  ConnectionsHolder      - 5 connections initialized for localhost/127.0.0.1:6379
+25-03-20.22:06:35.177 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redissonClient' of type [org.redisson.Redisson] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-03-20.22:06:35.409 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8090 (http)
+25-03-20.22:06:35.507 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8090"]
+25-03-20.22:06:35.515 [main            ] INFO  StandardService        - Starting service [Tomcat]
+25-03-20.22:06:35.515 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
+25-03-20.22:06:35.676 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+25-03-20.22:06:35.677 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3351 ms
+25-03-20.22:06:39.315 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-03-20.22:06:39.347 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8090"]
+25-03-20.22:06:39.359 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8090 (http) with context path ''
+25-03-20.22:06:39.375 [main            ] INFO  Application            - Started Application in 7.846 seconds (JVM running for 10.796)
+25-03-20.22:06:40.934 [RMI TCP Connection(1)-192.168.8.1] INFO  [/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet'
+25-03-20.22:06:40.935 [RMI TCP Connection(1)-192.168.8.1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
+25-03-20.22:06:40.937 [RMI TCP Connection(1)-192.168.8.1] INFO  DispatcherServlet      - Completed initialization in 2 ms
+25-03-20.22:06:40.961 [RMI TCP Connection(2)-192.168.8.1] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-03-20.22:06:41.794 [RMI TCP Connection(2)-192.168.8.1] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-03-20.22:06:47.311 [http-nio-8090-exec-2] INFO  MarketIndexController  - 查询营销拼团配置开始:rem goods:9890001
+25-03-20.22:06:47.800 [http-nio-8090-exec-2] INFO  MarketNode             - 拼团活动查询试算服务-MarketNode userId:rem 异步线程加载数据[GroupBuyingActivityDiscountVO、 SkuVO] 完成
+25-03-20.22:06:47.810 [http-nio-8090-exec-2] INFO  MarketNode             - 拼团商品查询试算服务-MarketNode userId:rem requestParameter:{"userId":"rem","goodsId":"9890001","source":"s01","channel":"c01"}
+25-03-20.22:06:47.811 [http-nio-8090-exec-2] INFO  ZJCalculateService     - 折扣优惠服务- 直减计算， 原始价格: 100.00
+25-03-20.22:06:47.817 [http-nio-8090-exec-2] INFO  EndNode                - 拼团商品查询试算服务-EndNode userId:rem requestParameter:{"userId":"rem","goodsId":"9890001","source":"s01","channel":"c01"}
+25-03-20.22:07:13.815 [scheduling-1    ] INFO  TradeTradeSettleOrderService - 拼团交易-执行交易回调任务
+25-03-20.22:08:17.515 [HikariPool-1 housekeeper] WARN  HikariPool             - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m3s699ms354µs).
+25-03-20.22:08:17.729 [scheduling-1    ] INFO  GroupBuyingNotifyJob   - 定时任务- 支付回调通知拼团完成 result:{"retryCount":0,"successCount":0,"waitCount":0,"errorCount":0}
+25-03-20.22:08:17.805 [http-nio-8090-exec-2] ERROR MarketIndexController  - 查询拼团营销配置失败:rem goodsId:9890001
+org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '))' at line 1
+### The error may exist in top/javarem/infrastructure/dao/mapper/GroupBuyingOrderMapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT   team_id,activity_id,target_count,complete_count,lock_count,status,valid_begin_time,valid_end_time,notify_url   FROM group_buying_order      WHERE  (status = ? AND target_count > lock_count AND team_id IN ())
+### Cause: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '))' at line 1
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '))' at line 1
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:239)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:92)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:439)
+	at com.sun.proxy.$Proxy97.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:224)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.executeForMany(MybatisMapperMethod.java:164)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:77)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:152)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89)
+	at com.sun.proxy.$Proxy103.selectList(Unknown Source)
+	at com.baomidou.mybatisplus.extension.conditions.query.ChainQuery.lambda$list$1d3f6527$1(ChainQuery.java:39)
+	at com.baomidou.mybatisplus.extension.conditions.ChainWrapper.execute(ChainWrapper.java:63)
+	at com.baomidou.mybatisplus.extension.conditions.query.ChainQuery.list(ChainQuery.java:39)
+	at top.javarem.infrastructure.dao.service.impl.GroupBuyingOrderServiceImpl.queryInProgressGroupBuyingTeam(GroupBuyingOrderServiceImpl.java:102)
+	at top.javarem.infrastructure.dao.service.impl.GroupBuyingOrderServiceImpl$$FastClassBySpringCGLIB$$9c1bb805.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy.invokeMethod(CglibAopProxy.java:386)
+	at org.springframework.aop.framework.CglibAopProxy.access$000(CglibAopProxy.java:85)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:704)
+	at top.javarem.infrastructure.dao.service.impl.GroupBuyingOrderServiceImpl$$EnhancerBySpringCGLIB$$635351b7.queryInProgressGroupBuyingTeam(<generated>)
+	at top.javarem.infrastructure.adapter.repository.ActivityRepository.queryOwnerGroupBuyingTeamOrderDetailList(ActivityRepository.java:131)
+	at top.javarem.infrastructure.adapter.repository.ActivityRepository$$FastClassBySpringCGLIB$$ae16c582.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at top.javarem.infrastructure.adapter.repository.ActivityRepository$$EnhancerBySpringCGLIB$$a86e4694.queryOwnerGroupBuyingTeamOrderDetailList(<generated>)
+	at top.javarem.domain.activity.service.IndexGroupBuyingService.queryInProgressTeamList(IndexGroupBuyingService.java:49)
+	at top.javarem.trigger.http.MarketIndexController.queryGroupBuyingMarketConfig(MarketIndexController.java:57)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '))' at line 1
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:65)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:80)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:65)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:336)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:158)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:110)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:90)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:154)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:142)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:425)
+	... 84 common frames omitted
+25-03-20.22:08:23.134 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-03-20.22:08:23.154 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-03-20.22:08:34.588 [main            ] INFO  Application            - Starting Application using Java 1.8.0_151 on mile with PID 14384 (D:\Develop\project\group-buying-platform\group-buying-platform-app\target\classes started by aaa in D:\Develop\project\group-buying-platform)
+25-03-20.22:08:34.590 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+25-03-20.22:08:35.361 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-03-20.22:08:35.364 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-03-20.22:08:35.413 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 39 ms. Found 0 Redis repository interfaces.
+25-03-20.22:08:35.627 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisClientConfig' of type [top.javarem.config.RedisClientConfig$$EnhancerBySpringCGLIB$$fe3081e9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-03-20.22:08:35.673 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redis.sdk.config-top.javarem.config.RedisClientConfigProperties' of type [top.javarem.config.RedisClientConfigProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-03-20.22:08:35.813 [main            ] INFO  Version                - Redisson 3.26.0
+25-03-20.22:08:36.586 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
+25-03-20.22:08:36.596 [redisson-netty-1-14] INFO  ConnectionsHolder      - 5 connections initialized for localhost/127.0.0.1:6379
+25-03-20.22:08:36.651 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redissonClient' of type [org.redisson.Redisson] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-03-20.22:08:36.846 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8090 (http)
+25-03-20.22:08:36.931 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8090"]
+25-03-20.22:08:36.938 [main            ] INFO  StandardService        - Starting service [Tomcat]
+25-03-20.22:08:36.938 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
+25-03-20.22:08:37.088 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+25-03-20.22:08:37.088 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2464 ms
+25-03-20.22:08:40.361 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-03-20.22:08:40.389 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8090"]
+25-03-20.22:08:40.541 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8090 (http) with context path ''
+25-03-20.22:08:40.555 [main            ] INFO  Application            - Started Application in 6.411 seconds (JVM running for 7.755)
+25-03-20.22:08:41.978 [RMI TCP Connection(2)-192.168.8.1] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-03-20.22:08:41.985 [RMI TCP Connection(3)-192.168.8.1] INFO  [/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet'
+25-03-20.22:08:41.985 [RMI TCP Connection(3)-192.168.8.1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
+25-03-20.22:08:41.987 [RMI TCP Connection(3)-192.168.8.1] INFO  DispatcherServlet      - Completed initialization in 2 ms
+25-03-20.22:08:42.577 [RMI TCP Connection(2)-192.168.8.1] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-03-20.22:08:47.666 [http-nio-8090-exec-2] INFO  MarketIndexController  - 查询营销拼团配置开始:rem goods:9890001
+25-03-20.22:08:48.111 [http-nio-8090-exec-2] INFO  MarketNode             - 拼团活动查询试算服务-MarketNode userId:rem 异步线程加载数据[GroupBuyingActivityDiscountVO、 SkuVO] 完成
+25-03-20.22:08:48.120 [http-nio-8090-exec-2] INFO  MarketNode             - 拼团商品查询试算服务-MarketNode userId:rem requestParameter:{"userId":"rem","goodsId":"9890001","source":"s01","channel":"c01"}
+25-03-20.22:08:48.120 [http-nio-8090-exec-2] INFO  ZJCalculateService     - 折扣优惠服务- 直减计算， 原始价格: 100.00
+25-03-20.22:08:48.127 [http-nio-8090-exec-2] INFO  EndNode                - 拼团商品查询试算服务-EndNode userId:rem requestParameter:{"userId":"rem","goodsId":"9890001","source":"s01","channel":"c01"}
+25-03-20.22:08:48.421 [http-nio-8090-exec-2] ERROR MarketIndexController  - 查询拼团营销配置失败:rem goodsId:9890001
+org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Table 'group_buying_platform.group_buy_order' doesn't exist
+### The error may exist in file [D:\Develop\project\group-buying-platform\group-buying-platform-app\target\classes\mapper\GroupBuyingOrderMapper.xml]
+### The error may involve top.javarem.infrastructure.dao.mapper.GroupBuyingOrderMapper.getAllCompleteCount-Inline
+### The error occurred while setting parameters
+### SQL: select count(id) from group_buy_order                 where status = 1 and team_id in                  (                           ?                  )
+### Cause: java.sql.SQLSyntaxErrorException: Table 'group_buying_platform.group_buy_order' doesn't exist
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Table 'group_buying_platform.group_buy_order' doesn't exist
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:239)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:92)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:439)
+	at com.sun.proxy.$Proxy97.selectOne(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:160)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:87)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:152)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89)
+	at com.sun.proxy.$Proxy103.getAllCompleteCount(Unknown Source)
+	at top.javarem.infrastructure.dao.service.impl.GroupBuyingOrderServiceImpl.getAllCompleteCount(GroupBuyingOrderServiceImpl.java:109)
+	at top.javarem.infrastructure.dao.service.impl.GroupBuyingOrderServiceImpl$$FastClassBySpringCGLIB$$9c1bb805.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy.invokeMethod(CglibAopProxy.java:386)
+	at org.springframework.aop.framework.CglibAopProxy.access$000(CglibAopProxy.java:85)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:704)
+	at top.javarem.infrastructure.dao.service.impl.GroupBuyingOrderServiceImpl$$EnhancerBySpringCGLIB$$1cf7cf4c.getAllCompleteCount(<generated>)
+	at top.javarem.infrastructure.adapter.repository.ActivityRepository.queryTeamStatisticsByActivityId(ActivityRepository.java:231)
+	at top.javarem.infrastructure.adapter.repository.ActivityRepository$$FastClassBySpringCGLIB$$ae16c582.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at top.javarem.infrastructure.adapter.repository.ActivityRepository$$EnhancerBySpringCGLIB$$a5e17181.queryTeamStatisticsByActivityId(<generated>)
+	at top.javarem.domain.activity.service.IndexGroupBuyingService.queryTeamStatisticsByActivityId(IndexGroupBuyingService.java:69)
+	at top.javarem.trigger.http.MarketIndexController.queryGroupBuyingMarketConfig(MarketIndexController.java:59)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.sql.SQLSyntaxErrorException: Table 'group_buying_platform.group_buy_order' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:65)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:80)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:65)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:336)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:158)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:110)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:90)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:154)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:142)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:75)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:425)
+	... 80 common frames omitted
+25-03-20.22:09:00.009 [scheduling-1    ] INFO  TradeTradeSettleOrderService - 拼团交易-执行交易回调任务
+25-03-20.22:09:00.116 [scheduling-1    ] INFO  GroupBuyingNotifyJob   - 定时任务- 支付回调通知拼团完成 result:{"retryCount":0,"successCount":0,"waitCount":0,"errorCount":0}
+25-03-20.22:09:52.049 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-03-20.22:09:52.066 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-03-20.22:09:57.734 [main            ] INFO  Application            - Starting Application using Java 1.8.0_151 on mile with PID 15208 (D:\Develop\project\group-buying-platform\group-buying-platform-app\target\classes started by aaa in D:\Develop\project\group-buying-platform)
+25-03-20.22:09:57.736 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+25-03-20.22:09:58.955 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-03-20.22:09:58.957 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-03-20.22:09:59.046 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 73 ms. Found 0 Redis repository interfaces.
+25-03-20.22:09:59.369 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisClientConfig' of type [top.javarem.config.RedisClientConfig$$EnhancerBySpringCGLIB$$fe3081e9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-03-20.22:09:59.450 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redis.sdk.config-top.javarem.config.RedisClientConfigProperties' of type [top.javarem.config.RedisClientConfigProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-03-20.22:09:59.726 [main            ] INFO  Version                - Redisson 3.26.0
+25-03-20.22:10:00.504 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
+25-03-20.22:10:00.514 [redisson-netty-1-14] INFO  ConnectionsHolder      - 5 connections initialized for localhost/127.0.0.1:6379
+25-03-20.22:10:00.571 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redissonClient' of type [org.redisson.Redisson] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-03-20.22:10:00.769 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8090 (http)
+25-03-20.22:10:00.851 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8090"]
+25-03-20.22:10:00.859 [main            ] INFO  StandardService        - Starting service [Tomcat]
+25-03-20.22:10:00.859 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
+25-03-20.22:10:01.004 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+25-03-20.22:10:01.004 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3216 ms
+25-03-20.22:10:04.562 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-03-20.22:10:04.602 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8090"]
+25-03-20.22:10:04.615 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8090 (http) with context path ''
+25-03-20.22:10:04.628 [main            ] INFO  Application            - Started Application in 7.477 seconds (JVM running for 9.699)
+25-03-20.22:10:05.953 [RMI TCP Connection(2)-192.168.8.1] INFO  [/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet'
+25-03-20.22:10:05.953 [RMI TCP Connection(2)-192.168.8.1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
+25-03-20.22:10:05.957 [RMI TCP Connection(2)-192.168.8.1] INFO  DispatcherServlet      - Completed initialization in 4 ms
+25-03-20.22:10:05.968 [RMI TCP Connection(1)-192.168.8.1] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-03-20.22:10:06.887 [RMI TCP Connection(1)-192.168.8.1] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-03-20.22:10:40.891 [http-nio-8090-exec-1] INFO  MarketIndexController  - 查询营销拼团配置开始:rem goods:9890001
+25-03-20.22:10:41.225 [http-nio-8090-exec-1] INFO  MarketNode             - 拼团活动查询试算服务-MarketNode userId:rem 异步线程加载数据[GroupBuyingActivityDiscountVO、 SkuVO] 完成
+25-03-20.22:10:41.233 [http-nio-8090-exec-1] INFO  MarketNode             - 拼团商品查询试算服务-MarketNode userId:rem requestParameter:{"userId":"rem","goodsId":"9890001","source":"s01","channel":"c01"}
+25-03-20.22:10:41.233 [http-nio-8090-exec-1] INFO  ZJCalculateService     - 折扣优惠服务- 直减计算， 原始价格: 100.00
+25-03-20.22:10:41.239 [http-nio-8090-exec-1] INFO  EndNode                - 拼团商品查询试算服务-EndNode userId:rem requestParameter:{"userId":"rem","goodsId":"9890001","source":"s01","channel":"c01"}
+25-03-20.22:10:41.588 [http-nio-8090-exec-1] INFO  MarketIndexController  - 查询拼团营销配置完成:rem goodsId:9890001 response:{"code":"成功","info":"0000","data":{"goods":{"goodsId":"9890001","originPrice":100.00,"discountPrice":20.00,"payPrice":80.00},"teams":[],"teamStatistic":{"teamCount":1,"teamCompleteCount":1,"userPartakeCount":2}}}
+25-03-20.22:11:00.009 [scheduling-1    ] INFO  TradeTradeSettleOrderService - 拼团交易-执行交易回调任务
+25-03-20.22:11:00.088 [scheduling-1    ] INFO  GroupBuyingNotifyJob   - 定时任务- 支付回调通知拼团完成 result:{"retryCount":0,"successCount":0,"waitCount":0,"errorCount":0}
+25-03-20.22:12:00.007 [scheduling-1    ] INFO  TradeTradeSettleOrderService - 拼团交易-执行交易回调任务
+25-03-20.22:12:00.092 [scheduling-1    ] INFO  GroupBuyingNotifyJob   - 定时任务- 支付回调通知拼团完成 result:{"retryCount":0,"successCount":0,"waitCount":0,"errorCount":0}
+25-03-20.22:12:18.041 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-03-20.22:12:18.053 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-03-20.22:52:50.952 [main            ] INFO  Application            - Starting Application using Java 1.8.0_151 on mile with PID 704 (D:\Develop\project\group-buying-platform\group-buying-platform-app\target\classes started by aaa in D:\Develop\project\group-buying-platform)
+25-03-20.22:52:50.953 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+25-03-20.22:52:51.863 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-03-20.22:52:51.865 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-03-20.22:52:51.919 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 42 ms. Found 0 Redis repository interfaces.
+25-03-20.22:52:52.162 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisClientConfig' of type [top.javarem.config.RedisClientConfig$$EnhancerBySpringCGLIB$$b628ddcb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-03-20.22:52:52.225 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redis.sdk.config-top.javarem.config.RedisClientConfigProperties' of type [top.javarem.config.RedisClientConfigProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-03-20.22:52:52.403 [main            ] INFO  Version                - Redisson 3.26.0
+25-03-20.22:52:53.253 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
+25-03-20.22:52:53.265 [redisson-netty-1-14] INFO  ConnectionsHolder      - 5 connections initialized for localhost/127.0.0.1:6379
+25-03-20.22:52:53.330 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redissonClient' of type [org.redisson.Redisson] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-03-20.22:52:53.566 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8090 (http)
+25-03-20.22:52:53.659 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8090"]
+25-03-20.22:52:53.666 [main            ] INFO  StandardService        - Starting service [Tomcat]
+25-03-20.22:52:53.666 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
+25-03-20.22:52:53.837 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+25-03-20.22:52:53.837 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2849 ms
+25-03-20.22:52:57.517 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-03-20.22:52:57.550 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8090"]
+25-03-20.22:52:57.563 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8090 (http) with context path ''
+25-03-20.22:52:57.577 [main            ] INFO  Application            - Started Application in 7.127 seconds (JVM running for 8.726)
+25-03-20.22:52:58.122 [RMI TCP Connection(1)-192.168.5.6] INFO  [/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet'
+25-03-20.22:52:58.122 [RMI TCP Connection(1)-192.168.5.6] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
+25-03-20.22:52:58.125 [RMI TCP Connection(1)-192.168.5.6] INFO  DispatcherServlet      - Completed initialization in 3 ms
+25-03-20.22:52:59.616 [RMI TCP Connection(3)-192.168.5.6] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-03-20.22:53:00.001 [scheduling-1    ] INFO  TradeTradeSettleOrderService - 拼团交易-执行交易回调任务
+25-03-20.22:53:00.250 [RMI TCP Connection(3)-192.168.5.6] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-03-20.22:53:00.330 [scheduling-1    ] INFO  GroupBuyingNotifyJob   - 定时任务- 支付回调通知拼团完成 result:{"retryCount":0,"successCount":0,"waitCount":0,"errorCount":0}
+25-03-20.22:53:05.354 [http-nio-8090-exec-2] INFO  MarketIndexController  - 查询营销拼团配置开始:rem goods:9890001
+25-03-20.22:53:05.571 [http-nio-8090-exec-2] INFO  MarketNode             - 拼团活动查询试算服务-MarketNode userId:rem 异步线程加载数据[GroupBuyingActivityDiscountVO、 SkuVO] 完成
+25-03-20.22:53:05.575 [http-nio-8090-exec-2] INFO  MarketNode             - 拼团商品查询试算服务-MarketNode userId:rem requestParameter:{"userId":"rem","goodsId":"9890001","source":"s01","channel":"c01"}
+25-03-20.22:53:05.575 [http-nio-8090-exec-2] INFO  ZJCalculateService     - 折扣优惠服务- 直减计算， 原始价格: 100.00
+25-03-20.22:53:05.586 [http-nio-8090-exec-2] INFO  EndNode                - 拼团商品查询试算服务-EndNode userId:rem requestParameter:{"userId":"rem","goodsId":"9890001","source":"s01","channel":"c01"}
+25-03-20.22:55:52.031 [HikariPool-1 housekeeper] WARN  HikariPool             - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m51s677ms60µs300ns).
+25-03-20.22:55:52.031 [scheduling-1    ] INFO  TradeTradeSettleOrderService - 拼团交易-执行交易回调任务
+25-03-20.22:55:52.114 [scheduling-1    ] INFO  GroupBuyingNotifyJob   - 定时任务- 支付回调通知拼团完成 result:{"retryCount":0,"successCount":0,"waitCount":0,"errorCount":0}
+25-03-20.22:55:52.308 [http-nio-8090-exec-2] INFO  MarketIndexController  - 查询拼团营销配置完成:rem goodsId:9890001 response:{"code":"成功","info":"0000","data":{"goods":{"goodsId":"9890001","originPrice":100.00,"discountPrice":20.00,"payPrice":80.00},"teams":[],"teamStatistic":{"teamCount":1,"teamCompleteCount":1,"userPartakeCount":2}}}
+25-03-20.22:56:00.014 [scheduling-1    ] INFO  TradeTradeSettleOrderService - 拼团交易-执行交易回调任务
+25-03-20.22:56:00.095 [scheduling-1    ] INFO  GroupBuyingNotifyJob   - 定时任务- 支付回调通知拼团完成 result:{"retryCount":0,"successCount":0,"waitCount":0,"errorCount":0}
+25-03-20.22:56:11.156 [http-nio-8090-exec-3] INFO  MarketIndexController  - 查询营销拼团配置开始:rem goods:9890001
+25-03-20.22:56:11.318 [http-nio-8090-exec-3] INFO  MarketNode             - 拼团活动查询试算服务-MarketNode userId:rem 异步线程加载数据[GroupBuyingActivityDiscountVO、 SkuVO] 完成
+25-03-20.22:56:11.318 [http-nio-8090-exec-3] INFO  MarketNode             - 拼团商品查询试算服务-MarketNode userId:rem requestParameter:{"userId":"rem","goodsId":"9890001","source":"s01","channel":"c01"}
+25-03-20.22:56:11.318 [http-nio-8090-exec-3] INFO  ZJCalculateService     - 折扣优惠服务- 直减计算， 原始价格: 100.00
+25-03-20.22:56:11.318 [http-nio-8090-exec-3] INFO  EndNode                - 拼团商品查询试算服务-EndNode userId:rem requestParameter:{"userId":"rem","goodsId":"9890001","source":"s01","channel":"c01"}
+25-03-20.22:56:11.604 [http-nio-8090-exec-3] INFO  MarketIndexController  - 查询拼团营销配置完成:rem goodsId:9890001 response:{"code":"成功","info":"0000","data":{"goods":{"goodsId":"9890001","originPrice":100.00,"discountPrice":20.00,"payPrice":80.00},"teams":[],"teamStatistic":{"teamCount":1,"teamCompleteCount":1,"userPartakeCount":2}}}
+25-03-20.22:56:24.735 [http-nio-8090-exec-4] INFO  MarketIndexController  - 查询营销拼团配置开始:rem goods:9890001
+25-03-20.22:56:24.903 [http-nio-8090-exec-4] INFO  MarketNode             - 拼团活动查询试算服务-MarketNode userId:rem 异步线程加载数据[GroupBuyingActivityDiscountVO、 SkuVO] 完成
+25-03-20.22:56:24.903 [http-nio-8090-exec-4] INFO  MarketNode             - 拼团商品查询试算服务-MarketNode userId:rem requestParameter:{"userId":"rem","goodsId":"9890001","source":"s01","channel":"c01"}
+25-03-20.22:56:24.903 [http-nio-8090-exec-4] INFO  ZJCalculateService     - 折扣优惠服务- 直减计算， 原始价格: 100.00
+25-03-20.22:56:24.905 [http-nio-8090-exec-4] INFO  EndNode                - 拼团商品查询试算服务-EndNode userId:rem requestParameter:{"userId":"rem","goodsId":"9890001","source":"s01","channel":"c01"}
+25-03-20.22:56:25.187 [http-nio-8090-exec-4] INFO  MarketIndexController  - 查询拼团营销配置完成:rem goodsId:9890001 response:{"code":"成功","info":"0000","data":{"goods":{"goodsId":"9890001","originPrice":100.00,"discountPrice":20.00,"payPrice":80.00},"teams":[],"teamStatistic":{"teamCount":1,"teamCompleteCount":1,"userPartakeCount":2}}}
+25-03-20.22:56:50.315 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-03-20.22:56:50.334 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-03-20.22:56:56.631 [main            ] INFO  Application            - Starting Application using Java 1.8.0_151 on mile with PID 25240 (D:\Develop\project\group-buying-platform\group-buying-platform-app\target\classes started by aaa in D:\Develop\project\group-buying-platform)
+25-03-20.22:56:56.633 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+25-03-20.22:56:58.034 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-03-20.22:56:58.036 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-03-20.22:56:58.104 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 52 ms. Found 0 Redis repository interfaces.
+25-03-20.22:56:58.396 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisClientConfig' of type [top.javarem.config.RedisClientConfig$$EnhancerBySpringCGLIB$$f65df9b2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-03-20.22:56:58.465 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redis.sdk.config-top.javarem.config.RedisClientConfigProperties' of type [top.javarem.config.RedisClientConfigProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-03-20.22:56:58.649 [main            ] INFO  Version                - Redisson 3.26.0
+25-03-20.22:56:59.471 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for localhost/127.0.0.1:6379
+25-03-20.22:56:59.488 [redisson-netty-1-14] INFO  ConnectionsHolder      - 5 connections initialized for localhost/127.0.0.1:6379
+25-03-20.22:56:59.556 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redissonClient' of type [org.redisson.Redisson] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-03-20.22:56:59.800 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8090 (http)
+25-03-20.22:56:59.890 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8090"]
+25-03-20.22:56:59.899 [main            ] INFO  StandardService        - Starting service [Tomcat]
+25-03-20.22:56:59.899 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
+25-03-20.22:57:00.068 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+25-03-20.22:57:00.068 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3380 ms
+25-03-20.22:57:03.798 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-03-20.22:57:03.829 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8090"]
+25-03-20.22:57:03.841 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8090 (http) with context path ''
+25-03-20.22:57:03.857 [main            ] INFO  Application            - Started Application in 7.989 seconds (JVM running for 10.436)
+25-03-20.22:57:05.009 [RMI TCP Connection(1)-192.168.5.6] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-03-20.22:57:05.140 [RMI TCP Connection(2)-192.168.5.6] INFO  [/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet'
+25-03-20.22:57:05.141 [RMI TCP Connection(2)-192.168.5.6] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
+25-03-20.22:57:05.143 [RMI TCP Connection(2)-192.168.5.6] INFO  DispatcherServlet      - Completed initialization in 2 ms
+25-03-20.22:57:05.856 [RMI TCP Connection(1)-192.168.5.6] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-03-20.22:58:00.005 [scheduling-1    ] INFO  TradeTradeSettleOrderService - 拼团交易-执行交易回调任务
+25-03-20.22:58:00.297 [scheduling-1    ] INFO  GroupBuyingNotifyJob   - 定时任务- 支付回调通知拼团完成 result:{"retryCount":0,"successCount":0,"waitCount":0,"errorCount":0}
+25-03-20.22:59:00.007 [scheduling-1    ] INFO  TradeTradeSettleOrderService - 拼团交易-执行交易回调任务
+25-03-20.22:59:00.087 [scheduling-1    ] INFO  GroupBuyingNotifyJob   - 定时任务- 支付回调通知拼团完成 result:{"retryCount":0,"successCount":0,"waitCount":0,"errorCount":0}
+25-03-20.22:59:22.579 [http-nio-8090-exec-2] INFO  MarketIndexController  - 查询营销拼团配置开始:rem goods:9890001
+25-03-20.22:59:22.822 [http-nio-8090-exec-2] INFO  MarketNode             - 拼团活动查询试算服务-MarketNode userId:rem 异步线程加载数据[GroupBuyingActivityDiscountVO、 SkuVO] 完成
+25-03-20.22:59:22.826 [http-nio-8090-exec-2] INFO  MarketNode             - 拼团商品查询试算服务-MarketNode userId:rem requestParameter:{"userId":"rem","goodsId":"9890001","source":"s01","channel":"c01"}
+25-03-20.22:59:22.826 [http-nio-8090-exec-2] INFO  ZJCalculateService     - 折扣优惠服务- 直减计算， 原始价格: 100.00
+25-03-20.22:59:22.836 [http-nio-8090-exec-2] INFO  EndNode                - 拼团商品查询试算服务-EndNode userId:rem requestParameter:{"userId":"rem","goodsId":"9890001","source":"s01","channel":"c01"}
+25-03-20.23:00:32.405 [HikariPool-1 housekeeper] WARN  HikariPool             - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=48s232ms498µs500ns).
+25-03-20.23:00:32.408 [scheduling-1    ] INFO  TradeTradeSettleOrderService - 拼团交易-执行交易回调任务
+25-03-20.23:00:38.112 [scheduling-1    ] INFO  GroupBuyingNotifyJob   - 定时任务- 支付回调通知拼团完成 result:{"retryCount":0,"successCount":0,"waitCount":0,"errorCount":0}
+25-03-20.23:18:41.579 [HikariPool-1 housekeeper] WARN  HikariPool             - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=18m9s174ms380µs600ns).
+25-03-20.23:18:41.579 [scheduling-1    ] INFO  TradeTradeSettleOrderService - 拼团交易-执行交易回调任务
+25-03-20.23:18:41.693 [scheduling-1    ] INFO  GroupBuyingNotifyJob   - 定时任务- 支付回调通知拼团完成 result:{"retryCount":0,"successCount":0,"waitCount":0,"errorCount":0}
+25-03-20.23:18:41.920 [http-nio-8090-exec-2] INFO  MarketIndexController  - 查询拼团营销配置完成:rem goodsId:9890001 response:{"code":"成功","info":"0000","data":{"goods":{"goodsId":"9890001","originPrice":100.00,"discountPrice":20.00,"payPrice":80.00},"teams":[],"teamStatistic":{"teamCount":1,"teamCompleteCount":1,"userPartakeCount":2}}}
+25-03-20.23:18:42.809 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-03-20.23:18:42.835 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.

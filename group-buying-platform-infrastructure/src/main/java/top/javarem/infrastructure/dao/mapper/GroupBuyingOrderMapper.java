@@ -8,6 +8,7 @@ import org.apache.ibatis.annotations.Select;
 import top.javarem.infrastructure.dao.po.GroupBuyingOrder;
 
 import java.util.List;
+import java.util.Set;
 
 /**
 * @author aaa
@@ -18,4 +19,7 @@ import java.util.List;
 @Mapper
 public interface GroupBuyingOrderMapper extends BaseMapper<GroupBuyingOrder> {
 
+    Integer getAllCompleteCount(Set<String> teamIds);
+
+    Integer queryAllUserCount(Set<String> teamIds);
 }

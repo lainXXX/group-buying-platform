@@ -9,7 +9,6 @@ import top.javarem.infrastructure.dao.po.GroupBuyOrderList;
 import top.javarem.infrastructure.dao.service.GroupBuyOrderListService;
 
 import javax.annotation.Resource;
-import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
@@ -61,6 +60,47 @@ public class GroupBuyOrderListServiceImpl extends ServiceImpl<GroupBuyOrderListM
     public List<String> queryAllOutTradeNoByTeamId(String teamId, Long activityId) {
 
         return mapper.queryAllOutTradeNoByTeamId(teamId, activityId);
+
+    }
+
+    @Override
+    public List<GroupBuyOrderList> queryOwnerGroupBuyingTeamOrderDetailList(String userId, Long activityId, int ownerCount) {
+
+        return this.lambdaQuery()
+                .select(GroupBuyOrderList::getTeamId, GroupBuyOrderList::getUserId, GroupBuyOrderList::getOutTradeNo)
+                .ne(GroupBuyOrderList::getUserId, userId)
+                .eq(GroupBuyOrderList::getActivityId, activityId)
+                .in(GroupBuyOrderList::getStatus, 0, 1)
+                .gt(GroupBuyOrderList::getEndTime, new Date())
+                .orderByDesc(GroupBuyOrderList::getId)
+                .last("limit " + ownerCount)
+                .list();
+
+    }
+
+    @Override
+    public List<GroupBuyOrderList> queryOtherGroupBuyingTeamOrderDetailList(String userId, Long activityId, int randomCount) {
+
+        return this.lambdaQuery()
+                .select(GroupBuyOrderList::getTeamId, GroupBuyOrderList::getUserId, GroupBuyOrderList::getOutTradeNo)
+                .eq(GroupBuyOrderList::getUserId, userId)
+                .eq(GroupBuyOrderList::getActivityId, activityId)
+                .in(GroupBuyOrderList::getStatus, 0, 1)
+                .gt(GroupBuyOrderList::getEndTime, new Date())
+                .orderByDesc(GroupBuyOrderList::getId)
+                .last("limit " + randomCount)
+                .list();
+
+    }
+
+    @Override
+    public List<GroupBuyOrderList> queryActivityUserOrders(Long activityId, String goodsId) {
+
+        return this.lambdaQuery()
+                .select(GroupBuyOrderList::getTeamId, GroupBuyOrderList::getUserId, GroupBuyOrderList::getOutTradeNo)
+                .eq(GroupBuyOrderList::getActivityId, activityId)
+                .eq(GroupBuyOrderList::getGoodsId, goodsId)
+                .list();
 
     }
 }

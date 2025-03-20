@@ -2,6 +2,7 @@ package top.javarem.trigger.http;
 
 import lombok.extern.slf4j.Slf4j;
 import org.redisson.api.RTopic;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,6 +19,7 @@ import javax.annotation.Resource;
  */
 @RestController
 @RequestMapping("/api/v1/dcc")
+@CrossOrigin("*")
 @Slf4j
 public class DCCController implements DCCService {
 

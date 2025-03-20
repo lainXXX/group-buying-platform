@@ -8,7 +8,10 @@ import top.javarem.infrastructure.dao.po.GroupBuyingOrder;
 import top.javarem.infrastructure.dao.service.GroupBuyingOrderService;
 
 import javax.annotation.Resource;
+import java.util.Collections;
 import java.util.Date;
+import java.util.List;
+import java.util.Set;
 
 /**
  * @author aaa
@@ -80,5 +83,39 @@ public class GroupBuyingOrderServiceImpl extends ServiceImpl<GroupBuyingOrderMap
         );
 
     }
+
+    @Override
+    public List<GroupBuyingOrder> queryInProgressGroupBuyingTeam(Set<String> teamIdSet) {
+        return this.lambdaQuery()
+                .select(GroupBuyingOrder::getTeamId,
+                        GroupBuyingOrder::getActivityId,
+                        GroupBuyingOrder::getTargetCount,
+                        GroupBuyingOrder::getCompleteCount,
+                        GroupBuyingOrder::getLockCount,
+                        GroupBuyingOrder::getStatus,
+                        GroupBuyingOrder::getValidBeginTime,
+                        GroupBuyingOrder::getValidEndTime,
+                        GroupBuyingOrder::getNotifyUrl)
+                .eq(GroupBuyingOrder::getStatus, 0)
+                .apply("target_count > lock_count")
+                .in(GroupBuyingOrder::getTeamId, teamIdSet)
+                .list();
+
+    }
+
+    @Override
+    public Integer getAllCompleteCount(Set<String> teamIds) {
+
+        return mapper.getAllCompleteCount(teamIds);
+
+    }
+
+    @Override
+    public Integer getUserCount(Set<String> teamIds) {
+
+        return mapper.queryAllUserCount(teamIds);
+
+    }
+
 
 }

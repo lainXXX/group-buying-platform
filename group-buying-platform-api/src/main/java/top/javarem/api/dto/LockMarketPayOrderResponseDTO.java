@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 /**
  * @Author: rem
  * @Date: 2025/03/09/19:11
- * @Description:
+ * @Description: 锁定营销支付单响应dto
  */
 @Builder
 @Data

@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import top.javarem.infrastructure.dao.po.GroupBuyingOrder;
 
 import java.util.List;
+import java.util.Set;
 
 /**
 * @author aaa
@@ -23,4 +24,9 @@ public interface GroupBuyingOrderService extends IService<GroupBuyingOrder> {
 
     int updateStatusComplete(String teamId, Long activityId);
 
+    List<GroupBuyingOrder> queryInProgressGroupBuyingTeam(Set<String> teamIdSet);
+
+    Integer getAllCompleteCount(Set<String> teamIds);
+
+    Integer getUserCount(Set<String> teamIds);
 }

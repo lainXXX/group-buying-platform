@@ -6,7 +6,8 @@ import org.springframework.web.bind.annotation.*;
 import top.javarem.api.IMarketTradeService;
 import top.javarem.api.dto.LockMarketPayOrderRequestDTO;
 import top.javarem.api.dto.LockMarketPayOrderResponseDTO;
-import top.javarem.api.dto.PaySuccessRequestDTO;
+import top.javarem.api.dto.SettleMarketPayOrderRequestDTO;
+import top.javarem.api.dto.SettleMarketPayOrderResponseDTO;
 import top.javarem.api.response.Response;
 import top.javarem.domain.activity.model.entity.MarketProductEntity;
 import top.javarem.domain.activity.model.entity.TrialBalanceEntity;
@@ -157,32 +158,36 @@ public class MarketTradeController implements IMarketTradeService {
 
     @PostMapping("/settle_pay_order")
     @Override
-    public Response<Boolean> settlePayOrder(@RequestBody PaySuccessRequestDTO paySuccessRequestDTO) {
+    public Response<SettleMarketPayOrderResponseDTO> settlePayOrder(@RequestBody SettleMarketPayOrderRequestDTO settleMarketPayOrderRequestDTO) {
         try {
-            String userId = paySuccessRequestDTO.getUserId();
-            String outTradeNo = paySuccessRequestDTO.getOutTradeNo();
-            String goodId = paySuccessRequestDTO.getGoodId();
-            String channel = paySuccessRequestDTO.getChannel();
-            String source = paySuccessRequestDTO.getSource();
-            Date outTradeTime = paySuccessRequestDTO.getOutTradeTime();
-            if (StringUtils.isAnyBlank(userId, outTradeNo, goodId, channel, source) && null != outTradeTime) {
+            String userId = settleMarketPayOrderRequestDTO.getUserId();
+            String outTradeNo = settleMarketPayOrderRequestDTO.getOutTradeNo();
+            String channel = settleMarketPayOrderRequestDTO.getChannel();
+            String source = settleMarketPayOrderRequestDTO.getSource();
+            Date outTradeTime = settleMarketPayOrderRequestDTO.getOutTradeTime();
+            if (StringUtils.isAnyBlank(userId, outTradeNo, channel, source) && null != outTradeTime) {
                 throw new AppException(ResponseCode.ILLEGAL_PARAMETER);
             }
-            log.info("营销交易结算支付订单 userId:{}, outTradeNo:{}", userId, outTradeNo);
+
             TradePaySettleEntity tradePaySettleEntity = tradeSettleOrderService.settlePayOrder(PaySuccessEntity.builder()
                     .userId(userId)
                     .outTradeNo(outTradeNo)
-                    .goodId(goodId)
                     .channel(channel)
                     .source(source)
                     .outTradeTime(outTradeTime)
                     .build());
-            return Response.success();
+            log.info("营销交易结算支付订单-完成 userId:{}, outTradeNo:{}", userId, outTradeNo);
+            return Response.success(SettleMarketPayOrderResponseDTO.builder()
+                    .userId(tradePaySettleEntity.getUserId())
+                    .teamId(tradePaySettleEntity.getTeamId())
+                    .activityId(tradePaySettleEntity.getActivityId())
+                    .outTradeNo(tradePaySettleEntity.getOutTradeNo())
+                    .build());
         } catch (AppException e) {
-            log.error("营销交易结算支付订单 -非法参数 userId:{}, outTradeNo:{}", paySuccessRequestDTO.getUserId(), paySuccessRequestDTO.getOutTradeNo(), e);
-            return Response.error();
+            log.error("营销交易结算支付订单 -非法参数 userId:{}, outTradeNo:{}", settleMarketPayOrderRequestDTO.getUserId(), settleMarketPayOrderRequestDTO.getOutTradeNo(), e);
+            return Response.error(e);
         } catch (Exception e) {
-            log.error("营销交易结算支付订单 -结算订单失败 userId:{}, outTradeNo:{}", paySuccessRequestDTO.getUserId(), paySuccessRequestDTO.getOutTradeNo(), e);
+            log.error("营销交易结算支付订单 -结算订单失败 userId:{}, outTradeNo:{}", settleMarketPayOrderRequestDTO.getUserId(), settleMarketPayOrderRequestDTO.getOutTradeNo(), e);
             return Response.error();
         }
 

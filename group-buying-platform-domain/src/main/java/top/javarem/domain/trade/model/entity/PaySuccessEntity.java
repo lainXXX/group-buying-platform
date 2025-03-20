@@ -22,8 +22,6 @@ public class PaySuccessEntity {
 
     private String outTradeNo;
 
-    private String goodId;
-
     private String channel;
 
     private String source;

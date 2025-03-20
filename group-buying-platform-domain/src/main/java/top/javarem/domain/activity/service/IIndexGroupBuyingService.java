@@ -1,7 +1,11 @@
 package top.javarem.domain.activity.service;
 
+import top.javarem.domain.activity.model.entity.GroupBuyingTeamOrderDetailEntity;
 import top.javarem.domain.activity.model.entity.MarketProductEntity;
 import top.javarem.domain.activity.model.entity.TrialBalanceEntity;
+import top.javarem.domain.activity.model.vo.TeamStatisticVO;
+
+import java.util.List;
 
 /**
  * @Author: rem
@@ -12,4 +16,14 @@ public interface IIndexGroupBuyingService {
 
     TrialBalanceEntity indexMarketTrial(MarketProductEntity marketProduct) throws Exception;
 
+    List<GroupBuyingTeamOrderDetailEntity> queryInProgressTeamList(Long activityId, String userId, int ownerCount, int randomCount);
+
+    /**
+     * 查询组队统计信息
+     *
+     * @param activityId 活动ID
+     * @param goodsId 商品ID
+     * @return 组队统计信息
+     */
+    TeamStatisticVO queryTeamStatisticsByActivityId(Long activityId, String goodsId);
 }

@@ -6,7 +6,7 @@ import lombok.Data;
 /**
  * @Author: rem
  * @Date: 2025/03/09/19:07
- * @Description:
+ * @Description: 锁定营销支付单请求dto
  */
 @Data
 public class LockMarketPayOrderRequestDTO {

@@ -24,4 +24,20 @@
             <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
     </resultMap>
 
+        <select id="getAllCompleteCount" parameterType="java.util.Set" resultType="java.lang.Integer">
+                select count(id) from group_buying_order
+                where status = 1 and team_id in
+                <foreach item="teamId" collection="teamIds" open="(" separator="," close=")">
+                        #{teamId}
+                </foreach>
+        </select>
+
+        <select id="queryAllUserCount" parameterType="java.util.Set" resultType="java.lang.Integer">
+                select sum(lock_count) from group_buying_order
+                where team_id in
+                <foreach item="teamId" collection="teamIds" open="(" separator="," close=")">
+                        #{teamId}
+                </foreach>
+        </select>
+
 </mapper>

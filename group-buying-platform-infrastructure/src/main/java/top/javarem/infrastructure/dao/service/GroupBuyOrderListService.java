@@ -21,4 +21,10 @@ public interface GroupBuyOrderListService extends IService<GroupBuyOrderList> {
     int updateStatusPaySuccess(String userId, String outTradeNO, Date outTradeTime);
 
     List<String> queryAllOutTradeNoByTeamId(String teamId, Long activityId);
+
+    List<GroupBuyOrderList> queryOwnerGroupBuyingTeamOrderDetailList(String userId, Long activityId, int ownerCount);
+
+    List<GroupBuyOrderList> queryOtherGroupBuyingTeamOrderDetailList(String userId, Long activityId, int randomCount);
+
+    List<GroupBuyOrderList> queryActivityUserOrders(Long activityId, String goodsId);
 }

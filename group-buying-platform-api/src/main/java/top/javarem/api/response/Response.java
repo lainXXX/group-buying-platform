@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import top.javarem.types.enums.ResponseCode;
+import top.javarem.types.exception.AppException;
 
 import java.io.Serializable;
 
@@ -47,6 +48,20 @@ public class Response<T> implements Serializable {
                 .code(ResponseCode.UN_ERROR.getCode())
                 .info(ResponseCode.UN_ERROR.getInfo())
                 .data(data)
+                .build();
+    }
+
+    public static <T> Response<T> error(ResponseCode e) {
+        return Response.<T>builder()
+                .code(e.getCode())
+                .info(error().getInfo())
+                .build();
+    }
+
+    public static <T> Response<T> error(AppException e) {
+        return Response.<T>builder()
+                .code(e.getCode())
+                .info(error().getInfo())
                 .build();
     }
 

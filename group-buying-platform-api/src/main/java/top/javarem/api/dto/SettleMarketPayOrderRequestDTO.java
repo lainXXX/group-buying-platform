@@ -7,16 +7,14 @@ import java.util.Date;
 /**
  * @Author: rem
  * @Date: 2025/03/18/9:09
- * @Description:
+ * @Description: 营销结算支付单请求dto
  */
 @Data
-public class PaySuccessRequestDTO {
+public class SettleMarketPayOrderRequestDTO {
 
     private String userId;
 
     private String outTradeNo;
-
-    private String goodId;
 
     private String channel;
 
