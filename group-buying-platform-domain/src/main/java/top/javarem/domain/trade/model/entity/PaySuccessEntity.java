@@ -5,6 +5,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Date;
+
 /**
  * @Author: rem
  * @Date: 2025/03/13/15:15
@@ -25,5 +27,7 @@ public class PaySuccessEntity {
     private String channel;
 
     private String source;
+
+    private Date outTradeTime;
 
 }

@@ -14,13 +14,14 @@ import top.javarem.domain.activity.model.vo.GroupBuyingActivityDiscountVO;
 import top.javarem.domain.activity.service.IIndexGroupBuyingService;
 import top.javarem.domain.trade.model.entity.*;
 import top.javarem.domain.trade.model.vo.GroupBuyingProgressVO;
-import top.javarem.domain.trade.service.ITradeOrderService;
+import top.javarem.domain.trade.service.ITradeLockOrderService;
 import top.javarem.domain.trade.service.ITradeSettleOrderService;
 import top.javarem.types.common.GsonUtils;
 import top.javarem.types.enums.ResponseCode;
 import top.javarem.types.exception.AppException;
 
 import javax.annotation.Resource;
+import java.util.Date;
 import java.util.Objects;
 
 /**
@@ -35,7 +36,7 @@ import java.util.Objects;
 public class MarketTradeController implements IMarketTradeService {
 
     @Resource
-    private ITradeOrderService tradeOrderService;
+    private ITradeLockOrderService tradeOrderService;
 
     @Resource
     private IIndexGroupBuyingService indexGroupBuyingService;
@@ -163,7 +164,8 @@ public class MarketTradeController implements IMarketTradeService {
             String goodId = paySuccessRequestDTO.getGoodId();
             String channel = paySuccessRequestDTO.getChannel();
             String source = paySuccessRequestDTO.getSource();
-            if (StringUtils.isAnyBlank(userId, outTradeNo, goodId, channel, source)) {
+            Date outTradeTime = paySuccessRequestDTO.getOutTradeTime();
+            if (StringUtils.isAnyBlank(userId, outTradeNo, goodId, channel, source) && null != outTradeTime) {
                 throw new AppException(ResponseCode.ILLEGAL_PARAMETER);
             }
             log.info("营销交易结算支付订单 userId:{}, outTradeNo:{}", userId, outTradeNo);
@@ -173,6 +175,7 @@ public class MarketTradeController implements IMarketTradeService {
                     .goodId(goodId)
                     .channel(channel)
                     .source(source)
+                    .outTradeTime(outTradeTime)
                     .build());
             return Response.success();
         } catch (AppException e) {

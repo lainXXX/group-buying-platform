@@ -5,31 +5,24 @@
 <mapper namespace="top.javarem.infrastructure.dao.mapper.GroupBuyOrderListMapper">
 
     <resultMap id="BaseResultMap" type="top.javarem.infrastructure.dao.po.GroupBuyOrderList">
-            <id property="id" column="id" jdbcType="INTEGER"/>
-            <result property="userId" column="user_id" jdbcType="VARCHAR"/>
-            <result property="teamId" column="team_id" jdbcType="VARCHAR"/>
-            <result property="orderId" column="order_id" jdbcType="VARCHAR"/>
-            <result property="activityId" column="activity_id" jdbcType="BIGINT"/>
-            <result property="beginTime" column="begin_time" jdbcType="TIMESTAMP"/>
-            <result property="endTime" column="end_time" jdbcType="TIMESTAMP"/>
-            <result property="goodsId" column="goods_id" jdbcType="VARCHAR"/>
-            <result property="source" column="source" jdbcType="VARCHAR"/>
-            <result property="channel" column="channel" jdbcType="VARCHAR"/>
-            <result property="originalPrice" column="original_price" jdbcType="DECIMAL"/>
-            <result property="discountPrice" column="discount_price" jdbcType="DECIMAL"/>
-            <result property="status" column="status" jdbcType="TINYINT"/>
-            <result property="outTradeNo" column="out_trade_no" jdbcType="VARCHAR"/>
-            <result property="bizId" column="biz_id" jdbcType="VARCHAR"/>
-            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
-            <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+        <id property="id" column="id" jdbcType="INTEGER"/>
+        <result property="userId" column="user_id" jdbcType="VARCHAR"/>
+        <result property="teamId" column="team_id" jdbcType="VARCHAR"/>
+        <result property="orderId" column="order_id" jdbcType="VARCHAR"/>
+        <result property="activityId" column="activity_id" jdbcType="BIGINT"/>
+        <result property="beginTime" column="begin_time" jdbcType="TIMESTAMP"/>
+        <result property="endTime" column="end_time" jdbcType="TIMESTAMP"/>
+        <result property="goodsId" column="goods_id" jdbcType="VARCHAR"/>
+        <result property="source" column="source" jdbcType="VARCHAR"/>
+        <result property="channel" column="channel" jdbcType="VARCHAR"/>
+        <result property="originalPrice" column="original_price" jdbcType="DECIMAL"/>
+        <result property="discountPrice" column="discount_price" jdbcType="DECIMAL"/>
+        <result property="status" column="status" jdbcType="TINYINT"/>
+        <result property="outTradeNo" column="out_trade_no" jdbcType="VARCHAR"/>
+        <result property="outTradeTime" column="out_trade_time" jdbcType="TIMESTAMP"/>
+        <result property="bizId" column="biz_id" jdbcType="VARCHAR"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
     </resultMap>
 
-    <sql id="Base_Column_List">
-        id,user_id,team_id,
-        order_id,activity_id,begin_time,
-        end_time,goods_id,source,
-        channel,original_price,discount_price,
-        status,out_trade_no,biz_id,
-        create_time,update_time
-    </sql>
 </mapper>

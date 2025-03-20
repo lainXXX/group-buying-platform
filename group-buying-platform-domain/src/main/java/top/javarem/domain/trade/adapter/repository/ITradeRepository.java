@@ -60,4 +60,6 @@ public interface ITradeRepository {
     int updateNotifyTaskStatusRetry(String teamId);
 
     List<NotifyTaskEntity> queryUnExecutedNotifyTask(String teamId);
+
+    boolean scBlacklistIntercept(String source, String channel);
 }

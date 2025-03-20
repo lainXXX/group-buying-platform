@@ -40,11 +40,10 @@ public class TestSettle {
         tradePaySuccessEntity.setSource("s01");
         tradePaySuccessEntity.setChannel("c01");
         tradePaySuccessEntity.setUserId("rem");
-        tradePaySuccessEntity.setOutTradeNO("075116371415");
+        tradePaySuccessEntity.setOutTradeNo("075116371415");
         TradePaySettleEntity tradePaySettlementEntity = tradeSettlementOrderService.settlePayOrder(tradePaySuccessEntity);
         log.info("请求参数:{}", JSON.toJSONString(tradePaySuccessEntity));
         log.info("测试结果:{}", JSON.toJSONString(tradePaySettlementEntity));
-        Thread.sleep(5000);
     }
 
 }

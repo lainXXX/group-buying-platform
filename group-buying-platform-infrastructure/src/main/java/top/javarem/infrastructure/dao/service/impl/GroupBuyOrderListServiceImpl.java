@@ -45,10 +45,11 @@ public class GroupBuyOrderListServiceImpl extends ServiceImpl<GroupBuyOrderListM
     }
 
     @Override
-    public int updateStatusPaySuccess(String userId, String outTradeNO) {
+    public int updateStatusPaySuccess(String userId, String outTradeNO, Date outTradeTime) {
 
         return this.baseMapper.update(null, new LambdaUpdateWrapper<GroupBuyOrderList>()
                 .set(GroupBuyOrderList::getStatus, 1)
+                .set(GroupBuyOrderList::getOutTradeTime, outTradeTime)
                 .set(GroupBuyOrderList::getUpdateTime, new Date())
                 .eq(GroupBuyOrderList::getUserId, userId)
                 .eq(GroupBuyOrderList::getOutTradeNo, outTradeNO)

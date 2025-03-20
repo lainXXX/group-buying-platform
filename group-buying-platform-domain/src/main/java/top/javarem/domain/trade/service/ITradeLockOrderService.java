@@ -11,7 +11,7 @@ import top.javarem.domain.trade.model.vo.GroupBuyingProgressVO;
  * @Date: 2025/03/09/16:22
  * @Description: 交易订单服务接口
  */
-public interface ITradeOrderService {
+public interface ITradeLockOrderService {
 
     /**
      * 查询未支付订单

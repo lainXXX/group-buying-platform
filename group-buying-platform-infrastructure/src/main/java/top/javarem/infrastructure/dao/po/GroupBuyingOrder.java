@@ -79,6 +79,16 @@ public class GroupBuyingOrder implements Serializable {
     private String notifyUrl;
 
     /**
+     * 有效开始时间
+     */
+    private Date validBeginTime;
+
+    /**
+     * 有效结束时间
+     */
+    private Date validEndTime;
+
+    /**
      * 状态（0-拼单中、1-完成、2-失败）
      */
     private Integer status;

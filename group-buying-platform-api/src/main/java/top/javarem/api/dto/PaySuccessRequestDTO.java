@@ -2,6 +2,8 @@ package top.javarem.api.dto;
 
 import lombok.Data;
 
+import java.util.Date;
+
 /**
  * @Author: rem
  * @Date: 2025/03/18/9:09
@@ -19,5 +21,7 @@ public class PaySuccessRequestDTO {
     private String channel;
 
     private String source;
+
+    private Date outTradeTime;
 
 }

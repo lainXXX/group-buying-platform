@@ -11,7 +11,7 @@
  Target Server Version : 90100
  File Encoding         : 65001
 
- Date: 14/03/2025 14:27:18
+ Date: 20/03/2025 10:00:04
 */
 
 SET NAMES utf8mb4;
@@ -102,20 +102,19 @@ CREATE TABLE `group_buy_order_list`  (
   `discount_price` decimal(8, 2) NOT NULL COMMENT '折扣金额',
   `status` tinyint(1) NOT NULL DEFAULT 0 COMMENT '状态；0初始锁定、1消费完成',
   `out_trade_no` varchar(12) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '外部交易单号-确保外部调用唯一幂等',
+  `out_trade_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '交易时间',
   `biz_id` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '业务唯一ID',
   `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   `update_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `uq_order_id`(`order_id` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '拼团订单详情' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '拼团订单详情' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of group_buy_order_list
 -- ----------------------------
-INSERT INTO `group_buy_order_list` VALUES (1, 'rem', '23130978', '038391839430', 100123, '2024-12-07 10:19:40', '2024-12-07 10:19:40', '9890001', 's01', 'c01', 100.00, 80.00, 1, '692100854896', '', '2025-03-10 10:11:23', '2025-03-14 09:33:35');
-INSERT INTO `group_buy_order_list` VALUES (2, 'lain', '80557358', '803267557971', 100123, '2024-12-07 10:19:40', '2024-12-07 10:19:40', '9890001', 's01', 'c01', 100.00, 80.00, 0, '220775687276', '', '2025-03-10 10:12:38', '2025-03-10 10:12:38');
-INSERT INTO `group_buy_order_list` VALUES (3, 'lain', '23130978', '462533539264', 100123, '2024-12-07 10:19:40', '2024-12-07 10:19:40', '9890001', 's01', 'c01', 100.00, 80.00, 1, '388203193775', '', '2025-03-10 10:35:26', '2025-03-14 14:20:49');
-INSERT INTO `group_buy_order_list` VALUES (4, 'rem01', '80557358', '822050803119', 100123, '2024-12-07 10:19:40', '2025-05-28 10:19:40', '9890001', 's01', 'c01', 100.00, 20.00, 0, '374838002564', '100123_80557358_rem01_822050803119', '2025-03-12 11:05:46', '2025-03-12 11:05:46');
+INSERT INTO `group_buy_order_list` VALUES (5, 'lain', '99359307', '153159785916', 100123, '2024-12-07 10:19:40', '2025-05-28 10:19:40', '9890001', 's01', 'c01', 100.00, 20.00, 1, '779144288971', '2025-03-19 19:51:50', '100123_null_lain_153159785916', '2025-03-17 16:56:02', '2025-03-17 16:59:34');
+INSERT INTO `group_buy_order_list` VALUES (6, 'rem', '99359307', '115357604130', 100123, '2024-12-07 10:19:40', '2025-05-28 10:19:40', '9890001', 's01', 'c01', 100.00, 20.00, 1, '075116371415', '2025-03-20 07:09:01', '100123_99359307_rem_115357604130', '2025-03-17 16:58:12', '2025-03-19 23:58:28');
 
 -- ----------------------------
 -- Table structure for group_buying_activity
@@ -190,18 +189,20 @@ CREATE TABLE `group_buying_order`  (
   `target_count` int NOT NULL COMMENT '目标数量',
   `complete_count` int NOT NULL COMMENT '完成数量',
   `lock_count` int NOT NULL COMMENT '锁单数量',
+  `notify_url` varchar(128) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '回调url',
+  `valid_begin_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '有效开始时间',
+  `valid_end_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '有效结束时间',
   `status` tinyint(1) NOT NULL COMMENT '状态（0-拼单中、1-完成、2-失败）',
   `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   `update_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `uq_team_id`(`team_id` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '拼团订单' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '拼团订单' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of group_buying_order
 -- ----------------------------
-INSERT INTO `group_buying_order` VALUES (2, '23130978', 100123, 'c01', 's01', 100.00, 80.00, 80.00, 2, 2, 2, 1, '2025-03-10 10:11:23', '2025-03-14 14:20:49');
-INSERT INTO `group_buying_order` VALUES (3, '80557358', 100123, 'c01', 's01', 100.00, 80.00, 80.00, 2, 0, 2, 0, '2025-03-10 10:12:37', '2025-03-12 11:05:45');
+INSERT INTO `group_buying_order` VALUES (4, '99359307', 100123, 'c01', 's01', 100.00, 20.00, 80.00, 2, 2, 2, 'http://127.0.0.1:8090/api/v1/test/group_buy_notify', '2025-03-19 19:50:56', '2026-01-01 19:50:56', 1, '2025-03-17 16:56:02', '2025-03-19 23:58:28');
 
 -- ----------------------------
 -- Table structure for notify_task
@@ -213,17 +214,22 @@ CREATE TABLE `notify_task`  (
   `team_id` varchar(8) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '拼团组队ID',
   `notify_url` varchar(128) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '回调接口',
   `notify_count` int NOT NULL COMMENT '回调次数',
-  `notify_status` tinyint(1) NOT NULL COMMENT '回调状态',
+  `notify_status` tinyint(1) NOT NULL COMMENT '回调状态【0初始、1完成、2重试、3失败】',
   `parameter_json` varchar(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '参数对象',
   `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   `update_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '任务回调表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '任务回调表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of notify_task
 -- ----------------------------
-INSERT INTO `notify_task` VALUES (5, 100123, '23130978', '暂无', 0, 0, '{\"teamId\":\"23130978\",\"outTradeNo\":[\"692100854896\",\"388203193775\"]}', '2025-03-14 14:21:05', '2025-03-14 14:21:05');
+INSERT INTO `notify_task` VALUES (10, 100123, '99359307', 'http://127.0.0.1:8090/api/v1/test/group_buy_notify', 6, 1, '{\"teamId\":\"99359307\",\"outTradeNo\":[\"779144288971\",\"075116371415\"]}', '2025-03-18 09:52:59', '2025-03-19 23:58:29');
+INSERT INTO `notify_task` VALUES (11, 100123, '99359307', 'http://127.0.0.1:8090/api/v1/test/group_buy_notify', 5, 1, '{\"teamId\":\"99359307\",\"outTradeNo\":[\"779144288971\",\"075116371415\"]}', '2025-03-19 23:34:12', '2025-03-19 23:58:29');
+INSERT INTO `notify_task` VALUES (12, 100123, '99359307', 'http://127.0.0.1:8090/api/v1/test/group_buy_notify', 4, 1, '{\"teamId\":\"99359307\",\"outTradeNo\":[\"779144288971\",\"075116371415\"]}', '2025-03-19 23:48:50', '2025-03-19 23:58:29');
+INSERT INTO `notify_task` VALUES (13, 100123, '99359307', 'http://127.0.0.1:8090/api/v1/test/group_buy_notify', 3, 1, '{\"teamId\":\"99359307\",\"outTradeNo\":[\"779144288971\",\"075116371415\"]}', '2025-03-19 23:50:07', '2025-03-19 23:58:29');
+INSERT INTO `notify_task` VALUES (14, 100123, '99359307', 'http://127.0.0.1:8090/api/v1/test/group_buy_notify', 2, 1, '{\"teamId\":\"99359307\",\"outTradeNo\":[\"779144288971\",\"075116371415\"]}', '2025-03-19 23:56:13', '2025-03-19 23:58:29');
+INSERT INTO `notify_task` VALUES (15, 100123, '99359307', 'http://127.0.0.1:8090/api/v1/test/group_buy_notify', 2, 1, '{\"teamId\":\"99359307\",\"outTradeNo\":[\"779144288971\",\"075116371415\"]}', '2025-03-19 23:58:18', '2025-03-19 23:58:29');
 
 -- ----------------------------
 -- Table structure for sc_sku_activity

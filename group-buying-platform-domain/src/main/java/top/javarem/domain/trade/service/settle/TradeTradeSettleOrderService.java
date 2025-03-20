@@ -7,7 +7,9 @@ import top.javarem.domain.trade.adapter.repository.ITradeRepository;
 import top.javarem.domain.trade.model.aggregate.GroupBuyingSettleOrderAggregate;
 import top.javarem.domain.trade.model.entity.*;
 import top.javarem.domain.trade.service.ITradeSettleOrderService;
+import top.javarem.domain.trade.service.settle.factory.SettleRuleFilterFactory;
 import top.javarem.types.common.GsonUtils;
+import top.javarem.types.design.framework.link.model2.BusinessLinkedList;
 import top.javarem.types.enums.NotifyTaskHttpEnumVO;
 import top.javarem.types.enums.ResponseCode;
 import top.javarem.types.exception.AppException;
@@ -30,29 +32,33 @@ public class TradeTradeSettleOrderService implements ITradeSettleOrderService {
     @Resource
     private ITradeRepository repository;
     @Resource
+    private BusinessLinkedList<PaySuccessEntity, SettleRuleFilterFactory.DynamicContext, SettleRuleFilterBackEntity> settleRuleFilter;
+    @Resource
     private ITradePort port;
 
     @Override
     public TradePaySettleEntity settlePayOrder(PaySuccessEntity paySuccessEntity) throws Exception {
+        //        1.结算规则过滤
+        SettleRuleFilterBackEntity settleRuleFilterBackEntity = settleRuleFilter.apply(paySuccessEntity, new SettleRuleFilterFactory.DynamicContext());
+//        2.构建聚合
+        GroupBuyingTeamEntity groupBuyingTeamEntity = GroupBuyingTeamEntity.builder()
+                .teamId(settleRuleFilterBackEntity.getTeamId())
+                .activityId(settleRuleFilterBackEntity.getActivityId())
+                .targetCount(settleRuleFilterBackEntity.getTargetCount())
+                .completeCount(settleRuleFilterBackEntity.getCompleteCount())
+                .lockCount(settleRuleFilterBackEntity.getLockCount())
+                .status(settleRuleFilterBackEntity.getStatus())
+                .validBeginTime(settleRuleFilterBackEntity.getValidBeginTime())
+                .validEndTime(settleRuleFilterBackEntity.getValidEndTime())
+                .notifyUrl(settleRuleFilterBackEntity.getNotifyUrl())
+                .build();
 
-        log.info("交易结算订单服务- userId:{}, outTradeNo:{}", paySuccessEntity.getUserId(), paySuccessEntity.getOutTradeNo());
-//        1.通过外部透传ID查询订单是否存在
-        MarketPayOrderEntity marketPayOrderEntity = repository.queryNoPayOrderByOutTradeNo(paySuccessEntity.getUserId(), paySuccessEntity.getOutTradeNo());
-        if (marketPayOrderEntity == null) {
-            log.info("用户拼团订单无效 userId:{}, outTradeNo:{}", paySuccessEntity.getUserId(), paySuccessEntity.getOutTradeNo());
-            throw new AppException(ResponseCode.E0008);
-        }
-
-//        2.获取拼团组队信息
-        GroupBuyingTeamEntity groupBuyingTeamEntity = repository.queryGroupBuyingTeam(marketPayOrderEntity.getTeamId(), marketPayOrderEntity.getActivityId());
-
-//        3.构建聚合
         GroupBuyingSettleOrderAggregate groupBuyingSettleOrderAggregate = GroupBuyingSettleOrderAggregate.builder()
                 .userEntity(UserEntity.builder().userId(paySuccessEntity.getUserId()).build())
                 .groupBuyingTeamEntity(groupBuyingTeamEntity)
-                .marketPayOrderEntity(marketPayOrderEntity)
+                .paySuccessEntity(paySuccessEntity)
                 .build();
-//        更新订单详情状态为交易完成 更新拼团组队进度
+//        3.更新订单详情状态为交易完成 更新拼团组队进度
         repository.updateTradeOrder(groupBuyingSettleOrderAggregate);
 
         Map<String, Integer> notifyResultMap = execNotifyTaskJob(groupBuyingTeamEntity.getTeamId());

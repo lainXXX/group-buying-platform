@@ -4,6 +4,7 @@ package top.javarem.infrastructure.dao.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import top.javarem.infrastructure.dao.po.GroupBuyOrderList;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -17,7 +18,7 @@ public interface GroupBuyOrderListService extends IService<GroupBuyOrderList> {
 
     int queryUserActivityPartakeCount(Long activityId, String userId);
 
-    int updateStatusPaySuccess(String userId, String outTradeNO);
+    int updateStatusPaySuccess(String userId, String outTradeNO, Date outTradeTime);
 
     List<String> queryAllOutTradeNoByTeamId(String teamId, Long activityId);
 }

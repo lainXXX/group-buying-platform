@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import top.javarem.domain.trade.model.entity.GroupBuyingTeamEntity;
 import top.javarem.domain.trade.model.entity.MarketPayOrderEntity;
+import top.javarem.domain.trade.model.entity.PaySuccessEntity;
 import top.javarem.domain.trade.model.entity.UserEntity;
 
 /**
@@ -22,6 +23,6 @@ public class GroupBuyingSettleOrderAggregate {
 
     private GroupBuyingTeamEntity groupBuyingTeamEntity;
 
-    private MarketPayOrderEntity marketPayOrderEntity;
+    private PaySuccessEntity paySuccessEntity;
 
 }

@@ -8,9 +8,7 @@ import top.javarem.infrastructure.dao.po.GroupBuyingOrder;
 import top.javarem.infrastructure.dao.service.GroupBuyingOrderService;
 
 import javax.annotation.Resource;
-import java.util.Collections;
 import java.util.Date;
-import java.util.List;
 
 /**
  * @author aaa
@@ -51,11 +49,10 @@ public class GroupBuyingOrderServiceImpl extends ServiceImpl<GroupBuyingOrderMap
     public GroupBuyingOrder queryGroupBuyingTeam(String teamId, Long activityId) {
 
         return lambdaQuery()
-                .select(GroupBuyingOrder::getTeamId, GroupBuyingOrder::getActivityId, GroupBuyingOrder::getTargetCount, GroupBuyingOrder::getCompleteCount, GroupBuyingOrder::getLockCount, GroupBuyingOrder::getNotifyUrl, GroupBuyingOrder::getStatus)
+                .select(GroupBuyingOrder::getTeamId, GroupBuyingOrder::getActivityId, GroupBuyingOrder::getTargetCount, GroupBuyingOrder::getCompleteCount, GroupBuyingOrder::getLockCount, GroupBuyingOrder::getNotifyUrl, GroupBuyingOrder::getValidBeginTime, GroupBuyingOrder::getValidEndTime, GroupBuyingOrder::getStatus)
                 .eq(GroupBuyingOrder::getTeamId, teamId)
                 .eq(GroupBuyingOrder::getActivityId, activityId)
                 .one();
-
 
     }
 

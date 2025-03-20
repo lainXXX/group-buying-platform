@@ -23,6 +23,7 @@ import top.javarem.infrastructure.dao.service.GroupBuyOrderListService;
 import top.javarem.infrastructure.dao.service.GroupBuyingActivityService;
 import top.javarem.infrastructure.dao.service.GroupBuyingOrderService;
 import top.javarem.infrastructure.dao.service.NotifyTaskService;
+import top.javarem.infrastructure.dcc.DCCService;
 import top.javarem.types.common.Constants;
 import top.javarem.types.common.GsonUtils;
 import top.javarem.types.enums.ResponseCode;
@@ -47,6 +48,8 @@ public class TradeRepository implements ITradeRepository {
     private GroupBuyingActivityService groupBuyingActivityService;
     @Resource
     private NotifyTaskService notifyTaskService;
+    @Resource
+    private DCCService dccService;
 
     @Override
     public MarketPayOrderEntity queryNoPayOrderByOutTradeNo(String userId, String outTradeNo) {
@@ -176,6 +179,8 @@ public class TradeRepository implements ITradeRepository {
                 .completeCount(groupBuyingOrder.getCompleteCount())
                 .lockCount(groupBuyingOrder.getLockCount())
                 .notifyUrl(groupBuyingOrder.getNotifyUrl())
+                .validBeginTime(groupBuyingOrder.getValidBeginTime())
+                .validEndTime(groupBuyingOrder.getValidEndTime())
                 .status(TradeOrderStatusEnumVO.getByCode(groupBuyingOrder.getStatus()))
                 .build();
 
@@ -185,10 +190,10 @@ public class TradeRepository implements ITradeRepository {
     @Override
     public void updateTradeOrder(GroupBuyingSettleOrderAggregate groupBuyingSettleOrderAggregate) {
         String userId = groupBuyingSettleOrderAggregate.getUserEntity().getUserId();
-        MarketPayOrderEntity tradePayOrderEntity = groupBuyingSettleOrderAggregate.getMarketPayOrderEntity();
+        PaySuccessEntity tradePayOrderEntity = groupBuyingSettleOrderAggregate.getPaySuccessEntity();
         GroupBuyingTeamEntity groupBuyingTeamEntity = groupBuyingSettleOrderAggregate.getGroupBuyingTeamEntity();
 //            1.更新用户订单状态
-        int updateStatusPatSuccess = groupBuyOrderListService.updateStatusPaySuccess(userId, tradePayOrderEntity.getOutTradeNo());
+        int updateStatusPatSuccess = groupBuyOrderListService.updateStatusPaySuccess(userId, tradePayOrderEntity.getOutTradeNo(), tradePayOrderEntity.getOutTradeTime());
         if (updateStatusPatSuccess != 1) {
             throw new AppException(ResponseCode.UPDATE_ZERO);
         }
@@ -247,6 +252,11 @@ public class TradeRepository implements ITradeRepository {
             notifyTaskEntityList.add(notifyTaskEntity);
         }
         return notifyTaskEntityList;
+    }
+
+    @Override
+    public boolean scBlacklistIntercept(String source, String channel) {
+        return dccService.isScBlacklist(source, channel);
     }
 
     @Override

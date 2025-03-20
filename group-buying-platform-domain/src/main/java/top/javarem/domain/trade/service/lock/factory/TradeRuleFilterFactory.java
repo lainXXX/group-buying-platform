@@ -14,8 +14,6 @@ import top.javarem.domain.trade.service.lock.impl.UserPartakeLimitFilter;
 import top.javarem.types.design.framework.link.model2.BusinessLinkedList;
 import top.javarem.types.design.framework.link.model2.ChainArmory;
 
-import javax.annotation.Resource;
-
 /**
  * @Author: rem
  * @Date: 2025/03/11/19:53
@@ -24,15 +22,11 @@ import javax.annotation.Resource;
 @Service
 public class TradeRuleFilterFactory {
 
-    @Resource
-    private ActivityValidFilter activityValidFilter;
-    @Resource
-    private UserPartakeLimitFilter userPartakeLimitFilter;
 
-    @Bean("tradeRuleFilter")
-    public BusinessLinkedList<TradeRuleFilterEntity, TradeRuleFilterFactory.DynamicContext, TradeRuleFilterBackEntity> getTradeRuleFilter() {
+    @Bean("tradeLockRuleFilter")
+    public BusinessLinkedList<TradeRuleFilterEntity, TradeRuleFilterFactory.DynamicContext, TradeRuleFilterBackEntity> tradeLockRuleFilter(ActivityValidFilter activityValidFilter, UserPartakeLimitFilter userPartakeLimitFilter) {
 
-        ChainArmory<TradeRuleFilterEntity, DynamicContext, TradeRuleFilterBackEntity> tradeRuleFilter = new ChainArmory<>("tradeRuleFilter", activityValidFilter, userPartakeLimitFilter);
+        ChainArmory<TradeRuleFilterEntity, DynamicContext, TradeRuleFilterBackEntity> tradeRuleFilter = new ChainArmory<>("tradeLockRuleFilter", activityValidFilter, userPartakeLimitFilter);
         return tradeRuleFilter.getLogicLink();
 
     }
