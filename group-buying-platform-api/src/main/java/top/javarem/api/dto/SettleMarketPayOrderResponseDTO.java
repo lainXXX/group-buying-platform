@@ -5,6 +5,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+
 /**
  * @Author: rem
  * @Date: 2025/03/20/10:06
@@ -14,7 +16,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class SettleMarketPayOrderResponseDTO {
+public class SettleMarketPayOrderResponseDTO implements Serializable {
 
     private String userId;
 

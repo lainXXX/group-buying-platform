@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
 /**
@@ -16,11 +17,15 @@ import java.math.BigDecimal;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class LockMarketPayOrderResponseDTO {
+public class LockMarketPayOrderResponseDTO implements Serializable {
+
+    private String orderId;
+
+    private BigDecimal originalPrice;
 
     private BigDecimal discountPrice;
 
-    private String orderId;
+    private BigDecimal payPrice;
 
     private Integer tradeOrderStatus;
 

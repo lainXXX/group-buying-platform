@@ -33,7 +33,7 @@ public class DaoTest {
     public void test() {
 
 //        groupBuyOrderListService.queryOwnerGroupBuyingTeamOrderDetailList("rem", 100123L, 1);
-        List<GroupBuyOrderList> groupBuyOrderListList = groupBuyOrderListService.queryActivityUserOrders(100123L, goodsId);
+        List<GroupBuyOrderList> groupBuyOrderListList = groupBuyOrderListService.queryActivityUserOrders(100123L, "2321323");
         System.out.println(groupBuyOrderListList);
     }
 

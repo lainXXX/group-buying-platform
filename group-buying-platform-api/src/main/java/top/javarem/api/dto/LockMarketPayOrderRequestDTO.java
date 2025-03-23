@@ -2,6 +2,8 @@ package top.javarem.api.dto;
 
 import lombok.Data;
 
+import java.io.Serializable;
+
 
 /**
  * @Author: rem
@@ -9,7 +11,7 @@ import lombok.Data;
  * @Description: 锁定营销支付单请求dto
  */
 @Data
-public class LockMarketPayOrderRequestDTO {
+public class LockMarketPayOrderRequestDTO implements Serializable {
 
     private String userId;
 

@@ -1,7 +1,8 @@
-package top.javarem.api.response;
+package top.javarem.api;
 
 import top.javarem.api.dto.GoodsMarketRequestDTO;
 import top.javarem.api.dto.GoodsMarketResponseDTO;
+import top.javarem.api.response.Response;
 
 /**
  * @Author: rem

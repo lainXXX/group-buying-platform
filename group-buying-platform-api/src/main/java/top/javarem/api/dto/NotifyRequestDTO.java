@@ -2,11 +2,12 @@ package top.javarem.api.dto;
 
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.List;
 
 
 @Data
-public class NotifyRequestDTO {
+public class NotifyRequestDTO implements Serializable {
 
     /** 组队ID */
     private String teamId;

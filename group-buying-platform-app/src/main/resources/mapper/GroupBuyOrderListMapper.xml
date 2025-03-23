@@ -17,6 +17,7 @@
         <result property="channel" column="channel" jdbcType="VARCHAR"/>
         <result property="originalPrice" column="original_price" jdbcType="DECIMAL"/>
         <result property="discountPrice" column="discount_price" jdbcType="DECIMAL"/>
+        <result property="payPrice" column="pay_price" jdbcType="DECIMAL"/>
         <result property="status" column="status" jdbcType="TINYINT"/>
         <result property="outTradeNo" column="out_trade_no" jdbcType="VARCHAR"/>
         <result property="outTradeTime" column="out_trade_time" jdbcType="TIMESTAMP"/>

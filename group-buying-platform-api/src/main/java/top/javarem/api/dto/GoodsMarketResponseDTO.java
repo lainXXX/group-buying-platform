@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
@@ -19,7 +20,7 @@ import java.util.concurrent.TimeUnit;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class GoodsMarketResponseDTO {
+public class GoodsMarketResponseDTO implements Serializable {
 
     private Goods goods;
 
@@ -34,7 +35,7 @@ public class GoodsMarketResponseDTO {
     @Builder
     @AllArgsConstructor
     @NoArgsConstructor
-    public static class Goods {
+    public static class Goods implements Serializable {
 
         private String goodsId;
 
@@ -53,7 +54,7 @@ public class GoodsMarketResponseDTO {
     @Builder
     @AllArgsConstructor
     @NoArgsConstructor
-    public static class Team {
+    public static class Team implements Serializable {
         // 用户ID
         private String userId;
         // 拼单组队ID
@@ -102,7 +103,7 @@ public class GoodsMarketResponseDTO {
     @Builder
     @AllArgsConstructor
     @NoArgsConstructor
-    public static class TeamStatistic {
+    public static class TeamStatistic implements Serializable {
 
         /**
          * 拼团队伍总数

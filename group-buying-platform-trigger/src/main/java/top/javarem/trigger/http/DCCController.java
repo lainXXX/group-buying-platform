@@ -1,6 +1,7 @@
 package top.javarem.trigger.http;
 
 import lombok.extern.slf4j.Slf4j;
+import org.apache.dubbo.config.annotation.DubboService;
 import org.redisson.api.RTopic;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,6 +21,7 @@ import javax.annotation.Resource;
 @RestController
 @RequestMapping("/api/v1/dcc")
 @CrossOrigin("*")
+@DubboService(version = "1.0")
 @Slf4j
 public class DCCController implements DCCService {
 

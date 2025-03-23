@@ -100,6 +100,7 @@ CREATE TABLE `group_buy_order_list`  (
   `channel` varchar(8) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '来源',
   `original_price` decimal(8, 2) NOT NULL COMMENT '原始价格',
   `discount_price` decimal(8, 2) NOT NULL COMMENT '折扣金额',
+  `pay_price` decimal(8, 2) NOT NULL COMMENT '支付金额',
   `status` tinyint(1) NOT NULL DEFAULT 0 COMMENT '状态；0初始锁定、1消费完成',
   `out_trade_no` varchar(12) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '外部交易单号-确保外部调用唯一幂等',
   `out_trade_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '交易时间',

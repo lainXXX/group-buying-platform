@@ -2,6 +2,7 @@ package top.javarem.api.dto;
 
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -10,7 +11,7 @@ import java.util.Date;
  * @Description: 营销结算支付单请求dto
  */
 @Data
-public class SettleMarketPayOrderRequestDTO {
+public class SettleMarketPayOrderRequestDTO implements Serializable {
 
     private String userId;
 

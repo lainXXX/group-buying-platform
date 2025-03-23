@@ -2,6 +2,7 @@ package top.javarem.trigger.http;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.dubbo.config.annotation.DubboService;
 import org.springframework.web.bind.annotation.*;
 import top.javarem.api.IMarketTradeService;
 import top.javarem.api.dto.LockMarketPayOrderRequestDTO;
@@ -33,6 +34,7 @@ import java.util.Objects;
 @RestController
 @RequestMapping("/api/v1/trade")
 @CrossOrigin("*")
+@DubboService(version = "1.0")
 @Slf4j
 public class MarketTradeController implements IMarketTradeService {
 

@@ -2,11 +2,12 @@ package top.javarem.trigger.http;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.dubbo.config.annotation.DubboService;
 import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.*;
 import top.javarem.api.dto.GoodsMarketRequestDTO;
 import top.javarem.api.dto.GoodsMarketResponseDTO;
-import top.javarem.api.response.IMarketIndexService;
+import top.javarem.api.IMarketIndexService;
 import top.javarem.api.response.Response;
 import top.javarem.domain.activity.model.entity.GroupBuyingTeamOrderDetailEntity;
 import top.javarem.domain.activity.model.entity.MarketProductEntity;
@@ -30,6 +31,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/v1/index")
 @CrossOrigin("*")
+@DubboService(version = "1.0")
 @Slf4j
 public class MarketIndexController implements IMarketIndexService {
 
