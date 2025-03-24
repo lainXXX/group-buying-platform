@@ -28,7 +28,7 @@ public class GroupBuyOrderListServiceImpl extends ServiceImpl<GroupBuyOrderListM
     public GroupBuyOrderList queryNoPayOrderByOutTradeNo(String userId, String outTradeNo) {
 
         return lambdaQuery()
-                .select(GroupBuyOrderList::getOrderId, GroupBuyOrderList::getTeamId, GroupBuyOrderList::getStatus, GroupBuyOrderList::getActivityId, GroupBuyOrderList::getDiscountPrice)
+                .select(GroupBuyOrderList::getOrderId, GroupBuyOrderList::getTeamId, GroupBuyOrderList::getStatus, GroupBuyOrderList::getActivityId, GroupBuyOrderList::getOriginalPrice, GroupBuyOrderList::getDiscountPrice, GroupBuyOrderList::getPayPrice)
                 .eq(GroupBuyOrderList::getUserId, userId)
                 .eq(GroupBuyOrderList::getOutTradeNo, outTradeNo)
                 .eq(GroupBuyOrderList::getStatus, 0)

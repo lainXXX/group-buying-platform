@@ -20,7 +20,7 @@ public interface GroupBuyOrderListMapper extends BaseMapper<GroupBuyOrderList> {
 
 
     @Select("select count(*) from group_buy_order_list where activity_id = #{activityId} and user_id = #{userId}")
-    int queryUserActivityPartakeCount(Long activityId, String userId);
+    int queryUserActivityPartakeCount(@Param("activityId") Long activityId, @Param("userId") String userId);
 
     @Select("select out_trade_no from group_buy_order_list where team_id = #{teamId} and activity_id = #{activityId}")
     List<String> queryAllOutTradeNoByTeamId(@Param("teamId") String teamId, @Param("activityId") Long activityId);

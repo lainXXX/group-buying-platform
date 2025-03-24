@@ -25,8 +25,13 @@ public class MarketPayOrderEntity {
 
     /** 预购订单ID */
     private String orderId;
+
+    private BigDecimal originalPrice;
+
     /** 折扣金额 */
     private BigDecimal discountPrice;
+
+    private BigDecimal payPrice;
 
     private String outTradeNo;
     /** 交易订单状态枚举 */
