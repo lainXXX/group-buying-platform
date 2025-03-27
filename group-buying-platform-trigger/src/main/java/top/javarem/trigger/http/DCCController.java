@@ -19,7 +19,7 @@ import javax.annotation.Resource;
  * @Description: 动态客户端配置
  */
 @RestController
-@RequestMapping("/api/v1/dcc")
+@RequestMapping("/api/v1/gbm/dcc")
 @CrossOrigin("*")
 @DubboService(version = "1.0")
 @Slf4j

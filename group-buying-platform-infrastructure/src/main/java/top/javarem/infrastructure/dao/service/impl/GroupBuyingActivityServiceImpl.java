@@ -34,7 +34,7 @@ public class GroupBuyingActivityServiceImpl extends ServiceImpl<GroupBuyingActiv
     public GroupBuyingActivity queryValidGroupBuyingActivityByActivityId(Long activityId) {
 
         return this.lambdaQuery()
-                .select(GroupBuyingActivity::getActivityId, GroupBuyingActivity::getGoodsId, GroupBuyingActivity::getDiscountId, GroupBuyingActivity::getGroupType, GroupBuyingActivity::getTakeLimitCount, GroupBuyingActivity::getTarget, GroupBuyingActivity::getValidTime, GroupBuyingActivity::getStatus, GroupBuyingActivity::getBeginTime, GroupBuyingActivity::getEndTime, GroupBuyingActivity::getTagId, GroupBuyingActivity::getTagScope)
+                .select(GroupBuyingActivity::getActivityId, GroupBuyingActivity::getDiscountId, GroupBuyingActivity::getGroupType, GroupBuyingActivity::getTakeLimitCount, GroupBuyingActivity::getTarget, GroupBuyingActivity::getValidTime, GroupBuyingActivity::getStatus, GroupBuyingActivity::getBeginTime, GroupBuyingActivity::getEndTime, GroupBuyingActivity::getTagId, GroupBuyingActivity::getTagScope)
                 .eq(GroupBuyingActivity::getActivityId, activityId)
                 .orderByDesc(GroupBuyingActivity::getId)
                 .last("limit 1")
@@ -46,7 +46,7 @@ public class GroupBuyingActivityServiceImpl extends ServiceImpl<GroupBuyingActiv
     public GroupBuyingActivity queryGroupBuyingActivityByActivityId(Long activityId) {
 
         return this.lambdaQuery()
-                .select(GroupBuyingActivity::getActivityId, GroupBuyingActivity::getGoodsId, GroupBuyingActivity::getDiscountId, GroupBuyingActivity::getGroupType, GroupBuyingActivity::getTakeLimitCount, GroupBuyingActivity::getTarget, GroupBuyingActivity::getValidTime, GroupBuyingActivity::getStatus, GroupBuyingActivity::getBeginTime, GroupBuyingActivity::getEndTime, GroupBuyingActivity::getTagId, GroupBuyingActivity::getTagScope)
+                .select(GroupBuyingActivity::getActivityId, GroupBuyingActivity::getDiscountId, GroupBuyingActivity::getGroupType, GroupBuyingActivity::getTakeLimitCount, GroupBuyingActivity::getTarget, GroupBuyingActivity::getValidTime, GroupBuyingActivity::getStatus, GroupBuyingActivity::getBeginTime, GroupBuyingActivity::getEndTime, GroupBuyingActivity::getTagId, GroupBuyingActivity::getTagScope)
                 .eq(GroupBuyingActivity::getActivityId, activityId)
                 .one();
 

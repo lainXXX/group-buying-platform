@@ -1,6 +1,7 @@
 package top.javarem.domain.trade.service.settle;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import top.javarem.domain.trade.adapter.port.ITradePort;
 import top.javarem.domain.trade.adapter.repository.ITradeRepository;
@@ -19,6 +20,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ThreadPoolExecutor;
 
 /**
  * @Author: rem
@@ -35,6 +37,9 @@ public class TradeTradeSettleOrderService implements ITradeSettleOrderService {
     private BusinessLinkedList<PaySuccessEntity, SettleRuleFilterFactory.DynamicContext, SettleRuleFilterBackEntity> settleRuleFilter;
     @Resource
     private ITradePort port;
+    @Resource
+    private ThreadPoolExecutor executor;
+
 
     @Override
     public TradePaySettleEntity settlePayOrder(PaySuccessEntity paySuccessEntity) throws Exception {
@@ -59,10 +64,12 @@ public class TradeTradeSettleOrderService implements ITradeSettleOrderService {
                 .paySuccessEntity(paySuccessEntity)
                 .build();
 //        3.更新订单详情状态为交易完成 更新拼团组队进度
-        repository.updateTradeOrder(groupBuyingSettleOrderAggregate);
+        NotifyTaskEntity notifyTaskEntity = repository.updateTradeOrder(groupBuyingSettleOrderAggregate);
 
-        Map<String, Integer> notifyResultMap = execNotifyTaskJob(groupBuyingTeamEntity.getTeamId());
-        log.info("回调通知拼团完结 result:{}", GsonUtils.gson.toJson(notifyResultMap));
+        if (notifyTaskEntity != null) {
+            Map<String, Integer> notifyResultMap = execNotifyTaskJob(Collections.singletonList(notifyTaskEntity));
+            log.info("回调通知拼团完结 result:{}", GsonUtils.gson.toJson(notifyResultMap));
+        }
 
         return TradePaySettleEntity.builder()
                 .userId(paySuccessEntity.getUserId())
@@ -93,27 +100,27 @@ public class TradeTradeSettleOrderService implements ITradeSettleOrderService {
 
     private Map<String, Integer> execNotifyTaskJob(List<NotifyTaskEntity> notifyTaskEntityList) {
         int successCount = 0, errorCount = 0, retryCount = 0;
-        for (NotifyTaskEntity notifyTaskEntity : notifyTaskEntityList) {
-            String response = port.groupBuyingNotifyTask(notifyTaskEntity);
-            if (NotifyTaskHttpEnumVO.SUCCESS.getCode().equals(response)) {
-                int updateCount = repository.updateNotifyTaskStatusSuccess(notifyTaskEntity.getTeamId());
-                if (updateCount == 1) {
-                    successCount++;
-                }
-            } else if (NotifyTaskHttpEnumVO.ERROR.getCode().equals(response)) {
-                if (retryCount > 5) {
-                    int updateCount = repository.updateNotifyTaskStatusError(notifyTaskEntity.getTeamId());
+            for (NotifyTaskEntity notifyTaskEntity : notifyTaskEntityList) {
+                String response = port.groupBuyingNotifyTask(notifyTaskEntity);
+                if (NotifyTaskHttpEnumVO.SUCCESS.getCode().equals(response)) {
+                    int updateCount = repository.updateNotifyTaskStatusSuccess(notifyTaskEntity.getTeamId());
                     if (updateCount == 1) {
-                        errorCount++;
+                        successCount++;
                     }
-                } else {
-                    int updateCount = repository.updateNotifyTaskStatusRetry(notifyTaskEntity.getTeamId());
-                    if (updateCount == 1) {
-                        retryCount++;
+                } else if (NotifyTaskHttpEnumVO.ERROR.getCode().equals(response)) {
+                    if (notifyTaskEntity.getNotifyCount() > 4) {
+                        int updateCount = repository.updateNotifyTaskStatusError(notifyTaskEntity.getTeamId());
+                        if (updateCount == 1) {
+                            errorCount++;
+                        }
+                    } else {
+                        int updateCount = repository.updateNotifyTaskStatusRetry(notifyTaskEntity.getTeamId());
+                        if (updateCount == 1) {
+                            retryCount++;
+                        }
                     }
-                }
 
-            }
+                }
         }
         Map<String, Integer> resultMap = new HashMap<>();
         resultMap.put("waitCount", notifyTaskEntityList.size());

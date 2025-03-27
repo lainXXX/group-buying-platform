@@ -68,7 +68,7 @@ public class GroupBuyOrderListServiceImpl extends ServiceImpl<GroupBuyOrderListM
 
         return this.lambdaQuery()
                 .select(GroupBuyOrderList::getTeamId, GroupBuyOrderList::getUserId, GroupBuyOrderList::getOutTradeNo)
-                .ne(GroupBuyOrderList::getUserId, userId)
+                .eq(GroupBuyOrderList::getUserId, userId)
                 .eq(GroupBuyOrderList::getActivityId, activityId)
                 .in(GroupBuyOrderList::getStatus, 0, 1)
                 .gt(GroupBuyOrderList::getEndTime, new Date())
@@ -83,7 +83,7 @@ public class GroupBuyOrderListServiceImpl extends ServiceImpl<GroupBuyOrderListM
 
         return this.lambdaQuery()
                 .select(GroupBuyOrderList::getTeamId, GroupBuyOrderList::getUserId, GroupBuyOrderList::getOutTradeNo)
-                .eq(GroupBuyOrderList::getUserId, userId)
+                .ne(GroupBuyOrderList::getUserId, userId)
                 .eq(GroupBuyOrderList::getActivityId, activityId)
                 .in(GroupBuyOrderList::getStatus, 0, 1)
                 .gt(GroupBuyOrderList::getEndTime, new Date())

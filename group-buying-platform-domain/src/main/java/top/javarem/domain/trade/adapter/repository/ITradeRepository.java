@@ -49,7 +49,7 @@ public interface ITradeRepository {
      * 更新订单详情状态为交易完成 更新拼团组队进度
      * @param groupBuyingSettleOrderAggregate
      */
-    void updateTradeOrder(GroupBuyingSettleOrderAggregate groupBuyingSettleOrderAggregate);
+    NotifyTaskEntity updateTradeOrder(GroupBuyingSettleOrderAggregate groupBuyingSettleOrderAggregate);
 
     List<NotifyTaskEntity> queryUnExecutedNotifyTask();
 

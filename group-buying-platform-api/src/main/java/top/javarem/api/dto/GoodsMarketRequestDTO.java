@@ -14,10 +14,6 @@ public class GoodsMarketRequestDTO implements Serializable {
 
     private String goodsId;
 
-    private String channel;
-
-    private String source;
-
     private String userId;
 
 }

@@ -22,9 +22,11 @@ import java.util.concurrent.TimeUnit;
 @NoArgsConstructor
 public class GoodsMarketResponseDTO implements Serializable {
 
+    private Long activityId;
+
     private Goods goods;
 
-    private List<Team> teams;
+    private List<Team> teamList;
 
     private TeamStatistic teamStatistic;
 
@@ -39,7 +41,7 @@ public class GoodsMarketResponseDTO implements Serializable {
 
         private String goodsId;
 
-        private BigDecimal originPrice;
+        private BigDecimal originalPrice;
 
         private BigDecimal discountPrice;
 
@@ -61,6 +63,8 @@ public class GoodsMarketResponseDTO implements Serializable {
         private String teamId;
         // 活动ID
         private Long activityId;
+
+        private Integer differenceCount;
         // 目标数量
         private Integer targetCount;
         // 完成数量

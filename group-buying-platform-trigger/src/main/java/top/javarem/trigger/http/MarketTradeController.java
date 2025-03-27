@@ -32,7 +32,7 @@ import java.util.Objects;
  * @Description:
  */
 @RestController
-@RequestMapping("/api/v1/trade")
+@RequestMapping("/api/v1/gbm/trade")
 @CrossOrigin("*")
 @DubboService(version = "1.0")
 @Slf4j
@@ -68,7 +68,7 @@ public class MarketTradeController implements IMarketTradeService {
                         .build();
             }
             // 查询 outTradeNo 是否已经存在交易记录
-            MarketPayOrderEntity marketPayOrderEntity = tradeOrderService.queryNoPayOrderByOutTradeNo(userId, outTradeNo);
+/*            MarketPayOrderEntity marketPayOrderEntity = tradeOrderService.queryNoPayOrderByOutTradeNo(userId, outTradeNo);
             if (null != marketPayOrderEntity) {
                 LockMarketPayOrderResponseDTO lockMarketPayOrderResponseDTO = LockMarketPayOrderResponseDTO.builder()
                         .orderId(marketPayOrderEntity.getOrderId())
@@ -84,7 +84,7 @@ public class MarketTradeController implements IMarketTradeService {
                         .info(ResponseCode.SUCCESS.getInfo())
                         .data(lockMarketPayOrderResponseDTO)
                         .build();
-            }
+            }*/
 
             // 判断拼团锁单是否完成了目标 也就是拼团人数是否达到上限
             if (null != teamId) {
@@ -110,7 +110,7 @@ public class MarketTradeController implements IMarketTradeService {
             GroupBuyingActivityDiscountVO groupBuyActivityDiscountVO = trialBalanceEntity.getGroupBuyingActivityDiscountVO();
 
             // 锁单
-            marketPayOrderEntity = tradeOrderService.lockMarketPayOrder(
+            MarketPayOrderEntity marketPayOrderEntity = tradeOrderService.lockMarketPayOrder(
                     UserEntity.builder().userId(userId).build(),
                     PayActivityEntity.builder()
                             .teamId(teamId)

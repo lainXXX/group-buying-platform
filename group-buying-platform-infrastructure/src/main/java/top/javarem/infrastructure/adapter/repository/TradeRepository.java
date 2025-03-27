@@ -9,6 +9,8 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.transaction.support.TransactionSynchronizationAdapter;
+import org.springframework.transaction.support.TransactionSynchronizationManager;
 import top.javarem.domain.trade.adapter.repository.ITradeRepository;
 import top.javarem.domain.trade.model.aggregate.GroupBuyingOrderAggregate;
 import top.javarem.domain.trade.model.aggregate.GroupBuyingSettleOrderAggregate;
@@ -83,6 +85,7 @@ public class TradeRepository implements ITradeRepository {
     @Transactional(timeout = 500)
     @Override
     public MarketPayOrderEntity lockMarketPayOrder(GroupBuyingOrderAggregate groupBuyingOrderAggregate) {
+
         PayActivityEntity payActivityEntity = groupBuyingOrderAggregate.getPayActivityEntity();
         UserEntity userEntity = groupBuyingOrderAggregate.getUserEntity();
         PayDiscountEntity payDiscountEntity = groupBuyingOrderAggregate.getPayDiscountEntity();
@@ -103,6 +106,8 @@ public class TradeRepository implements ITradeRepository {
                     .lockCount(1)
                     .notifyUrl(payDiscountEntity.getNotifyUrl())
                     .status(TradeOrderStatusEnumVO.CREATE.getCode())
+                    .validBeginTime(payActivityEntity.getBeginTime())
+                    .validEndTime(payActivityEntity.getEndTime())
                     .createTime(new Date())
                     .updateTime(new Date())
                     .build();
@@ -193,7 +198,7 @@ public class TradeRepository implements ITradeRepository {
 
     @Transactional(timeout = 500)
     @Override
-    public void updateTradeOrder(GroupBuyingSettleOrderAggregate groupBuyingSettleOrderAggregate) {
+    public NotifyTaskEntity updateTradeOrder(GroupBuyingSettleOrderAggregate groupBuyingSettleOrderAggregate) {
         String userId = groupBuyingSettleOrderAggregate.getUserEntity().getUserId();
         PaySuccessEntity tradePayOrderEntity = groupBuyingSettleOrderAggregate.getPaySuccessEntity();
         GroupBuyingTeamEntity groupBuyingTeamEntity = groupBuyingSettleOrderAggregate.getGroupBuyingTeamEntity();
@@ -226,12 +231,21 @@ public class TradeRepository implements ITradeRepository {
             notifyTask.setNotifyStatus(0);
             HashMap<String, Object> hashMap = new HashMap<>();
             hashMap.put("teamId", groupBuyingTeamEntity.getTeamId());
-            hashMap.put("outTradeNo", outTradeNoList);
+            hashMap.put("outTradeNoList", outTradeNoList);
             notifyTask.setParameterJson(GsonUtils.gson.toJson(hashMap));
             notifyTaskService.save(notifyTask);
+
+            return NotifyTaskEntity.builder()
+                    .activityId(notifyTask.getActivityId())
+                    .teamId(notifyTask.getTeamId())
+                    .notifyUrl(notifyTask.getNotifyUrl())
+                    .notifyCount(notifyTask.getNotifyCount())
+                    .notifyStatus(notifyTask.getNotifyStatus())
+                    .parameterJson(notifyTask.getParameterJson())
+                    .build();
         }
 
-
+        return null;
     }
 
     @Override

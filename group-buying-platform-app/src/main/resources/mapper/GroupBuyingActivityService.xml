@@ -8,7 +8,6 @@
             <id property="id" column="id" jdbcType="BIGINT"/>
             <result property="activityId" column="activity_id" jdbcType="BIGINT"/>
             <result property="activityName" column="activity_name" jdbcType="VARCHAR"/>
-            <result property="goodsId" column="goods_id" jdbcType="VARCHAR"/>
             <result property="discountId" column="discount_id" jdbcType="VARCHAR"/>
             <result property="groupType" column="group_type" jdbcType="TINYINT"/>
             <result property="takeLimitCount" column="take_limit_count" jdbcType="INTEGER"/>
@@ -23,12 +22,4 @@
             <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
     </resultMap>
 
-    <sql id="Base_Column_List">
-        id,activity_id,activity_name,
-        goods_id,discount_id,
-        group_type,take_limit_count,target,
-        valid_time,status,begin_time,
-        end_time,tag_id,tag_scope,
-        create_time,update_time
-    </sql>
 </mapper>

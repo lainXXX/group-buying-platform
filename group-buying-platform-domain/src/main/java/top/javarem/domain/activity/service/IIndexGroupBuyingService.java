@@ -14,6 +14,12 @@ import java.util.List;
  */
 public interface IIndexGroupBuyingService {
 
+    /**
+     * 营销优惠试算
+     * @param marketProduct 营销产品实体类
+     * @return 试算结果实体对象（给用户展示拼团可获得的优惠信息）
+     * @throws Exception
+     */
     TrialBalanceEntity indexMarketTrial(MarketProductEntity marketProduct) throws Exception;
 
     List<GroupBuyingTeamOrderDetailEntity> queryInProgressTeamList(Long activityId, String userId, int ownerCount, int randomCount);

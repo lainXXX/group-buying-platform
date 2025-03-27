@@ -2,6 +2,7 @@ package top.javarem.api;
 
 import top.javarem.api.dto.GoodsMarketRequestDTO;
 import top.javarem.api.dto.GoodsMarketResponseDTO;
+import top.javarem.api.dto.GroupBuyingTeamResponseDTO;
 import top.javarem.api.response.Response;
 
 /**
@@ -17,5 +18,8 @@ public interface IMarketIndexService {
      * @return request
      */
     Response<GoodsMarketResponseDTO> queryGroupBuyingMarketConfig(GoodsMarketRequestDTO requestDTO);
+
+    Response<GroupBuyingTeamResponseDTO> queryGroupBuyingTeams(GoodsMarketRequestDTO requestDTO);
+
 
 }

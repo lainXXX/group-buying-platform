@@ -19,7 +19,7 @@ import java.util.Set;
 @Mapper
 public interface GroupBuyingOrderMapper extends BaseMapper<GroupBuyingOrder> {
 
-    Integer getAllCompleteCount(Set<String> teamIds);
+    Integer getAllCompleteCount(@Param("teamIds") Set<String> teamIds);
 
     Integer queryAllUserCount(Set<String> teamIds);
 }

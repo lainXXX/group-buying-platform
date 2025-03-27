@@ -19,7 +19,7 @@ implements SkuService {
     @Override
     public Sku querySkuByGoodsId(String goodsId) {
         return lambdaQuery()
-                .select(Sku::getGoodsId, Sku::getGoodsName, Sku::getOriginalPrice)
+                .select(Sku::getGoodsId, Sku::getGoodsName, Sku::getOriginalPrice, Sku::getSource, Sku::getChannel)
                 .eq(Sku::getGoodsId, goodsId)
                 .one();
     }

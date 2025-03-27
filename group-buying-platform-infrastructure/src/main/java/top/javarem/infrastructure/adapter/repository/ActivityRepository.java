@@ -62,7 +62,6 @@ public class ActivityRepository implements IActivityRepository {
         return GroupBuyingActivityDiscountVO.builder()
                 .activityId(groupBuyingActivityRes.getActivityId())
                 .activityName(groupBuyingActivityRes.getActivityName())
-                .goodsId(groupBuyingActivityRes.getGoodsId())
                 .groupBuyingDiscount(groupBuyingDiscount)
                 .groupType(groupBuyingActivityRes.getGroupType())
                 .takeLimitCount(groupBuyingActivityRes.getTakeLimitCount())
@@ -84,6 +83,8 @@ public class ActivityRepository implements IActivityRepository {
                 .goodsId(sku.getGoodsId())
                 .goodsName(sku.getGoodsName())
                 .originalPrice(sku.getOriginalPrice())
+                .channel(sku.getChannel())
+                .source(sku.getSource())
                 .build();
     }
 
@@ -160,7 +161,7 @@ public class ActivityRepository implements IActivityRepository {
 
     @Override
     public List<GroupBuyingTeamOrderDetailEntity> queryOthersGroupBuyingTeamOrderDetailList(String userId, Long activityId, int randomCount) {
-        //        1.查询拼团个人订单信息
+        //        1.查询拼团订单信息 自己以外的订单
         List<GroupBuyOrderList> groupBuyOrderDetails = groupBuyOrderListService.queryOtherGroupBuyingTeamOrderDetailList(userId, activityId, randomCount * 2);
 
         if (CollectionUtils.isEmpty(groupBuyOrderDetails)) return null;
@@ -219,7 +220,11 @@ public class ActivityRepository implements IActivityRepository {
 //        1.查询活动内的拼团订单数
         List<GroupBuyOrderList> groupBuyOrderLists = groupBuyOrderListService.queryActivityUserOrders(activityId, goodsId);
 
-        if (CollectionUtils.isEmpty(groupBuyOrderLists)) return null;
+        if (CollectionUtils.isEmpty(groupBuyOrderLists)) return TeamStatisticVO.builder()
+                .allTeamCount(0)
+                .allTeamCompleteCount(0)
+                .allTeamUserCount(0)
+                .build();;
 //        2.过滤组队获取teamId
         Set<String> teamIds = groupBuyOrderLists.stream()
                 .filter(groupBuyOrderList -> StringUtils.isNotBlank(groupBuyOrderList.getTeamId()))

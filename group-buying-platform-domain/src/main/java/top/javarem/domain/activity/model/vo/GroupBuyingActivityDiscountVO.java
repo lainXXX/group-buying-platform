@@ -38,11 +38,6 @@ public class GroupBuyingActivityDiscountVO {
     private String channel;
 
     /**
-     * 商品ID
-     */
-    private String goodsId;
-
-    /**
      * 折扣信息
      */
     private GroupBuyingDiscount groupBuyingDiscount;

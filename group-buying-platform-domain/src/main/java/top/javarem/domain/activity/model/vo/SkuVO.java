@@ -33,4 +33,8 @@ public class SkuVO {
      */
     private BigDecimal originalPrice;
 
+    private String source;
+
+    private String channel;
+
 }

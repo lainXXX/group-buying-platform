@@ -28,9 +28,9 @@ public class TestTrade {
         lockMarketPayOrderRequestDTO.setActivityId(100123L);
         lockMarketPayOrderRequestDTO.setChannel("c01");
         lockMarketPayOrderRequestDTO.setSource("s01");
-        lockMarketPayOrderRequestDTO.setGoodsId("9890001");
+        lockMarketPayOrderRequestDTO.setGoodsId("100002");
         lockMarketPayOrderRequestDTO.setTeamId(null);
-        lockMarketPayOrderRequestDTO.setUserId("lain");
+        lockMarketPayOrderRequestDTO.setUserId("rem");
         lockMarketPayOrderRequestDTO.setOutTradeNo(RandomStringUtils.randomNumeric(12));
         lockMarketPayOrderRequestDTO.setNotifyUrl("http://127.0.0.1:8090/api/v1/test/group_buy_notify");
         tradeService.lockPayOrder(lockMarketPayOrderRequestDTO);

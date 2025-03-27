@@ -8,11 +8,14 @@ import org.springframework.web.bind.annotation.*;
 import top.javarem.api.dto.GoodsMarketRequestDTO;
 import top.javarem.api.dto.GoodsMarketResponseDTO;
 import top.javarem.api.IMarketIndexService;
+import top.javarem.api.dto.GroupBuyingTeamResponseDTO;
 import top.javarem.api.response.Response;
+import top.javarem.domain.activity.adapter.repository.IActivityRepository;
 import top.javarem.domain.activity.model.entity.GroupBuyingTeamOrderDetailEntity;
 import top.javarem.domain.activity.model.entity.MarketProductEntity;
 import top.javarem.domain.activity.model.entity.TrialBalanceEntity;
 import top.javarem.domain.activity.model.vo.GroupBuyingActivityDiscountVO;
+import top.javarem.domain.activity.model.vo.SkuVO;
 import top.javarem.domain.activity.model.vo.TeamStatisticVO;
 import top.javarem.domain.activity.service.IIndexGroupBuyingService;
 import top.javarem.types.common.GsonUtils;
@@ -29,7 +32,7 @@ import java.util.List;
  * @Description:
  */
 @RestController
-@RequestMapping("/api/v1/index")
+@RequestMapping("/api/v1/gbm/index")
 @CrossOrigin("*")
 @DubboService(version = "1.0")
 @Slf4j
@@ -37,13 +40,20 @@ public class MarketIndexController implements IMarketIndexService {
 
     @Resource
     private IIndexGroupBuyingService indexGroupBuyingService;
+    @Resource
+    private IActivityRepository activityRepository;
 
-    @PostMapping("query_goods_config")
+    @PostMapping("query_group_buy_market_config")
     @Override
     public Response<GoodsMarketResponseDTO> queryGroupBuyingMarketConfig(@RequestBody GoodsMarketRequestDTO requestDTO) {
         log.info("查询营销拼团配置开始:{} goods:{}", requestDTO.getUserId(), requestDTO.getGoodsId());
         try {
-            if (StringUtils.isAnyBlank(requestDTO.getUserId(), requestDTO.getGoodsId(), requestDTO.getChannel(), requestDTO.getSource())) {
+            if (StringUtils.isAnyBlank(requestDTO.getUserId(), requestDTO.getGoodsId())) {
+                log.error("查询营销拼团配置 -非法参数");
+                return Response.error(ResponseCode.ILLEGAL_PARAMETER);
+            }
+            SkuVO skuVO = activityRepository.querySkuByGoodsId(requestDTO.getGoodsId());
+            if (skuVO == null) {
                 log.error("查询营销拼团配置 -非法参数");
                 return Response.error(ResponseCode.ILLEGAL_PARAMETER);
             }
@@ -51,8 +61,8 @@ public class MarketIndexController implements IMarketIndexService {
             TrialBalanceEntity trialBalanceEntity = indexGroupBuyingService.indexMarketTrial(MarketProductEntity.builder()
                     .userId(requestDTO.getUserId())
                     .goodsId(requestDTO.getGoodsId())
-                    .source(requestDTO.getSource())
-                    .channel(requestDTO.getChannel())
+                    .source(skuVO.getSource())
+                    .channel(skuVO.getChannel())
                     .build());
             GroupBuyingActivityDiscountVO discountVO = trialBalanceEntity.getGroupBuyingActivityDiscountVO();
             Long activityId = discountVO.getActivityId();
@@ -62,13 +72,13 @@ public class MarketIndexController implements IMarketIndexService {
             TeamStatisticVO teamStatisticVO = indexGroupBuyingService.queryTeamStatisticsByActivityId(activityId, requestDTO.getGoodsId());
             GoodsMarketResponseDTO.Goods goods = GoodsMarketResponseDTO.Goods.builder()
                     .goodsId(trialBalanceEntity.getGoodsId())
-                    .originPrice(trialBalanceEntity.getOriginalPrice())
+                    .originalPrice(trialBalanceEntity.getOriginalPrice())
                     .discountPrice(trialBalanceEntity.getDiscountPrice())
                     .payPrice(trialBalanceEntity.getPayPrice())
                     .build();
 
             List<GoodsMarketResponseDTO.Team> teams = new ArrayList<>();
-            if (CollectionUtils.isEmpty(groupBuyingTeamOrderDetailList)) {
+            if (!CollectionUtils.isEmpty(groupBuyingTeamOrderDetailList)) {
                 for (GroupBuyingTeamOrderDetailEntity userGroupBuyOrderDetailEntity : groupBuyingTeamOrderDetailList) {
                     GoodsMarketResponseDTO.Team team = GoodsMarketResponseDTO.Team.builder()
                             .userId(userGroupBuyOrderDetailEntity.getUserId())
@@ -82,6 +92,7 @@ public class MarketIndexController implements IMarketIndexService {
                             .validTimeCountdown(GoodsMarketResponseDTO.Team.differenceDateTime2Str(new Date(), userGroupBuyOrderDetailEntity.getValidEndTime()))
                             .outTradeNo(userGroupBuyOrderDetailEntity.getOutTradeNo())
                             .build();
+                    team.setDifferenceCount(team.getTargetCount() - team.getLockCount());
                     teams.add(team);
                 }
             }
@@ -96,8 +107,9 @@ public class MarketIndexController implements IMarketIndexService {
                     .code(ResponseCode.SUCCESS.getCode())
                     .info(ResponseCode.SUCCESS.getInfo())
                     .data(GoodsMarketResponseDTO.builder()
+                            .activityId(activityId)
                             .goods(goods)
-                            .teams(teams)
+                            .teamList(teams)
                             .teamStatistic(teamStatistic)
                             .build())
                     .build();
@@ -112,4 +124,12 @@ public class MarketIndexController implements IMarketIndexService {
                     .build();
         }
     }
+
+    @PostMapping("/query_all_team")
+    @Override
+    public Response<GroupBuyingTeamResponseDTO> queryGroupBuyingTeams(GoodsMarketRequestDTO requestDTO) {
+        return null;
+    }
+
+
 }
