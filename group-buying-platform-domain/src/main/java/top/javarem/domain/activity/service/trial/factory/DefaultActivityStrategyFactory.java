@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import top.javarem.domain.activity.model.entity.MarketProductEntity;
 import top.javarem.domain.activity.model.entity.TrialBalanceEntity;
@@ -17,9 +18,9 @@ import java.math.BigDecimal;
 /**
  * @Author: rem
  * @Date: 2025/02/26/16:37
- * @Description:默认拼团活动策略工厂
+ * @Description: 默认拼团活动策略工厂
  */
-@Service
+@Component
 public class DefaultActivityStrategyFactory {
 
     private final RootNode rootNode;

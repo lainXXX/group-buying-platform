@@ -44,6 +44,7 @@ public class TradePort implements ITradePort {
         try {
             if (lock.tryLock(3, TimeUnit.SECONDS)) {
                 try {
+
                     if (StringUtils.isBlank(notifyTaskEntity.getNotifyUrl())) {
                         return NotifyTaskHttpEnumVO.SUCCESS.getCode();
                     }

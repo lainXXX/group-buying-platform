@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.javarem.infrastructure.dao.mapper.MessageMapper">
+
+    <resultMap id="BaseResultMap" type="top.javarem.infrastructure.dao.po.MessageTask">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="msgId" column="msg_id" jdbcType="VARCHAR"/>
+            <result property="msgType" column="msg_type" jdbcType="VARCHAR"/>
+            <result property="deliveryType" column="delivery_type" jdbcType="VARCHAR"/>
+            <result property="deliveryCount" column="delivery_count" jdbcType="INTEGER"/>
+            <result property="retryCount" column="retry_count" jdbcType="INTEGER"/>
+            <result property="retryInterval" column="retry_interval" jdbcType="INTEGER"/>
+            <result property="msgJson" column="msg_json" jdbcType="VARCHAR"/>
+            <result property="notifyUrl" column="notify_url" jdbcType="VARCHAR"/>
+            <result property="status" column="status" jdbcType="TINYINT"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+</mapper>

@@ -3,6 +3,7 @@ package top.javarem.trigger.job;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
+import top.javarem.domain.message.adapter.repository.IMessageRepository;
 import top.javarem.domain.trade.service.ITradeSettleOrderService;
 import top.javarem.types.common.GsonUtils;
 
@@ -19,12 +20,12 @@ import java.util.Map;
 public class GroupBuyingNotifyJob {
 
     @Resource
-    private ITradeSettleOrderService tradeSettleOrderService;
+    private IMessageRepository messageRepository;
 
     @Scheduled(cron = "0 */1 * * * *")
     public void groupBuyingNotify() {
         try {
-            Map<String, Integer> result = tradeSettleOrderService.execNotifyTaskJob();
+            Map<String, Integer> result = messageRepository.execNotifyTaskJob();
             log.info("定时任务- 支付回调通知拼团完成 result:{}", GsonUtils.gson.toJson(result));
         } catch (Exception e) {
             log.error("定时任务- 支付回调通知拼团完成任务失败", e);

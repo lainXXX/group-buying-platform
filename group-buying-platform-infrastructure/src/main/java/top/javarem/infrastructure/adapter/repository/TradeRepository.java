@@ -1,16 +1,12 @@
 package top.javarem.infrastructure.adapter.repository;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonObject;
-import com.google.gson.reflect.TypeToken;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.transaction.support.TransactionSynchronizationAdapter;
-import org.springframework.transaction.support.TransactionSynchronizationManager;
+import top.javarem.domain.message.model.entity.MessageContext;
 import top.javarem.domain.trade.adapter.repository.ITradeRepository;
 import top.javarem.domain.trade.model.aggregate.GroupBuyingOrderAggregate;
 import top.javarem.domain.trade.model.aggregate.GroupBuyingSettleOrderAggregate;
@@ -26,6 +22,7 @@ import top.javarem.infrastructure.dao.service.GroupBuyingActivityService;
 import top.javarem.infrastructure.dao.service.GroupBuyingOrderService;
 import top.javarem.infrastructure.dao.service.NotifyTaskService;
 import top.javarem.infrastructure.dcc.DCCService;
+import top.javarem.types.annotation.DistributeMessage;
 import top.javarem.types.common.Constants;
 import top.javarem.types.common.GsonUtils;
 import top.javarem.types.enums.ResponseCode;
@@ -197,8 +194,9 @@ public class TradeRepository implements ITradeRepository {
     }
 
     @Transactional(timeout = 500)
+    @DistributeMessage(msgType = "notify_settle_order", deliveryType = "MQ")
     @Override
-    public NotifyTaskEntity updateTradeOrder(GroupBuyingSettleOrderAggregate groupBuyingSettleOrderAggregate) {
+    public MessageContext settleOrder(GroupBuyingSettleOrderAggregate groupBuyingSettleOrderAggregate) {
         String userId = groupBuyingSettleOrderAggregate.getUserEntity().getUserId();
         PaySuccessEntity tradePayOrderEntity = groupBuyingSettleOrderAggregate.getPaySuccessEntity();
         GroupBuyingTeamEntity groupBuyingTeamEntity = groupBuyingSettleOrderAggregate.getGroupBuyingTeamEntity();
@@ -223,26 +221,22 @@ public class TradeRepository implements ITradeRepository {
             }
 //            查询组队全部外部单号
             List<String> outTradeNoList = groupBuyOrderListService.queryAllOutTradeNoByTeamId(groupBuyingTeamEntity.getTeamId(), groupBuyingTeamEntity.getActivityId());
-            NotifyTask notifyTask = new NotifyTask();
-            notifyTask.setTeamId(groupBuyingTeamEntity.getTeamId());
-            notifyTask.setActivityId(groupBuyingTeamEntity.getActivityId());
-            notifyTask.setNotifyUrl(groupBuyingTeamEntity.getNotifyUrl());
-            notifyTask.setNotifyCount(0);
-            notifyTask.setNotifyStatus(0);
+//            NotifyTask notifyTask = new NotifyTask();
+//            notifyTask.setTeamId(groupBuyingTeamEntity.getTeamId());
+//            notifyTask.setActivityId(groupBuyingTeamEntity.getActivityId());
+//            notifyTask.setNotifyUrl(groupBuyingTeamEntity.getNotifyUrl());
+//            notifyTask.setNotifyCount(0);
+//            notifyTask.setNotifyStatus(0);
+
+//            notifyTaskService.save(notifyTask);
             HashMap<String, Object> hashMap = new HashMap<>();
             hashMap.put("teamId", groupBuyingTeamEntity.getTeamId());
             hashMap.put("outTradeNoList", outTradeNoList);
-            notifyTask.setParameterJson(GsonUtils.gson.toJson(hashMap));
-            notifyTaskService.save(notifyTask);
-
-            return NotifyTaskEntity.builder()
-                    .activityId(notifyTask.getActivityId())
-                    .teamId(notifyTask.getTeamId())
-                    .notifyUrl(notifyTask.getNotifyUrl())
-                    .notifyCount(notifyTask.getNotifyCount())
-                    .notifyStatus(notifyTask.getNotifyStatus())
-                    .parameterJson(notifyTask.getParameterJson())
+            return MessageContext.builder()
+                    .notifyUrl(groupBuyingOrderRes.getNotifyUrl())
+                    .msgJson(GsonUtils.gson.toJson(hashMap))
                     .build();
+
         }
 
         return null;

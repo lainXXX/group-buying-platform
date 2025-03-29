@@ -22,7 +22,7 @@ public class DiscountTest {
     @Test
     public void test() {
 
-        groupBuyingDiscountService.queryGroupBuyingDiscountByDiscountId("21120209")
+        groupBuyingDiscountService.queryGroupBuyingDiscountByDiscountId("21120209");
 
     }
 

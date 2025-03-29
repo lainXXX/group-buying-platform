@@ -64,12 +64,12 @@ public class TradeTradeSettleOrderService implements ITradeSettleOrderService {
                 .paySuccessEntity(paySuccessEntity)
                 .build();
 //        3.更新订单详情状态为交易完成 更新拼团组队进度
-        NotifyTaskEntity notifyTaskEntity = repository.updateTradeOrder(groupBuyingSettleOrderAggregate);
+        repository.settleOrder(groupBuyingSettleOrderAggregate);
 
-        if (notifyTaskEntity != null) {
-            Map<String, Integer> notifyResultMap = execNotifyTaskJob(Collections.singletonList(notifyTaskEntity));
-            log.info("回调通知拼团完结 result:{}", GsonUtils.gson.toJson(notifyResultMap));
-        }
+//        if (notifyTaskEntity != null) {
+//            Map<String, Integer> notifyResultMap = execNotifyTaskJob(Collections.singletonList(notifyTaskEntity));
+//            log.info("回调通知拼团完结 result:{}", GsonUtils.gson.toJson(notifyResultMap));
+//        }
 
         return TradePaySettleEntity.builder()
                 .userId(paySuccessEntity.getUserId())

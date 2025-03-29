@@ -1,5 +1,6 @@
 package top.javarem.domain.trade.adapter.repository;
 
+import top.javarem.domain.message.model.entity.MessageContext;
 import top.javarem.domain.trade.model.aggregate.GroupBuyingOrderAggregate;
 import top.javarem.domain.trade.model.aggregate.GroupBuyingSettleOrderAggregate;
 import top.javarem.domain.trade.model.entity.GroupBuyingTeamEntity;
@@ -46,10 +47,10 @@ public interface ITradeRepository {
     GroupBuyingTeamEntity queryGroupBuyingTeam(String teamId, Long activityId);
 
     /**
-     * 更新订单详情状态为交易完成 更新拼团组队进度
-     * @param groupBuyingSettleOrderAggregate
+     * 结算订单 更新订单详情状态为交易完成 更新拼团组队进度
+     * @param groupBuyingSettleOrderAggregate 拼团结算订单需求聚合
      */
-    NotifyTaskEntity updateTradeOrder(GroupBuyingSettleOrderAggregate groupBuyingSettleOrderAggregate);
+    MessageContext settleOrder(GroupBuyingSettleOrderAggregate groupBuyingSettleOrderAggregate);
 
     List<NotifyTaskEntity> queryUnExecutedNotifyTask();
 
