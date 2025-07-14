@@ -40,7 +40,6 @@ public class TradeTradeSettleOrderService implements ITradeSettleOrderService {
     @Resource
     private ThreadPoolExecutor executor;
 
-
     @Override
     public TradePaySettleEntity settlePayOrder(PaySuccessEntity paySuccessEntity) throws Exception {
         //        1.结算规则过滤
