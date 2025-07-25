@@ -29,4 +29,14 @@ public class RedissonService implements IRedisService {
         return redissonClient.getBitSet(key);
 
     }
+
+    @Override
+    public <T> T getValue(String cacheKey) {
+        return redissonClient.<T>getBucket(cacheKey).get();
+    }
+
+    @Override
+    public <T> void setValue(String cacheKey, T dbResult) {
+        redissonClient.<T>getBucket(cacheKey).set(dbResult);
+    }
 }

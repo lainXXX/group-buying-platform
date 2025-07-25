@@ -3,6 +3,8 @@ package top.javarem.infrastructure.dcc;
 import org.springframework.stereotype.Service;
 import top.javarem.types.annotation.DCCValue;
 
+import java.util.function.Supplier;
+
 /**
  * @Author: rem
  * @Date: 2025/03/09/14:56
@@ -19,6 +21,16 @@ public class DCCService {
 
     @DCCValue("scBlacklist:s02c02")
     private String scBlacklist;
+
+    @DCCValue("cacheSwitch:0")
+    private String cacheOpenSwitch;
+
+    /**
+     * 缓存开启开关，0为开启，1为关闭
+     */
+    public boolean isCacheOpenSwitch(){
+        return "0".equals(cacheOpenSwitch);
+    }
 
     public boolean isDowngradeSwitch() {
         return "1".equals(degradeSwitch);

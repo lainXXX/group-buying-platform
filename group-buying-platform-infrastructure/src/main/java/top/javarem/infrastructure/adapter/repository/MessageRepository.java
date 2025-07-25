@@ -40,9 +40,7 @@ public class MessageRepository implements IMessageRepository {
     public void distributeMessage(MessageEntity messageEntity, boolean isAsync) {
 //        1.幂等性检查 保证消息唯一性
         boolean isExists = messageService.isExits(messageEntity.getMsgId());
-        if (isExists) {
-            return;
-        }
+        if (isExists) return;
 //        2，插入message消息
         MessageTask messageTask = buildMessage(messageEntity);
         messageService.save(messageTask);

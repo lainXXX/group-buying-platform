@@ -61,4 +61,8 @@ public class GroupBuyingDiscount implements Serializable {
     private Date updateTime;
 
     private static final long serialVersionUID = 1L;
+
+    public static String cacheRedisKey(Long discountId) {
+        return "group_buy_market_top.javarem.infrastructure.dao.po.GroupBuyDiscount_" + discountId;
+    }
 }

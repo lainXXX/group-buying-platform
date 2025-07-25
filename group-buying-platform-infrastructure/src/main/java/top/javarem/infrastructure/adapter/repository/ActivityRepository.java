@@ -26,7 +26,7 @@ import java.util.stream.Collectors;
  * @Description: 活动仓储实现类
  */
 @Repository
-public class ActivityRepository implements IActivityRepository {
+public class ActivityRepository extends AbstractRepository implements IActivityRepository {
 
     @Resource
     private GroupBuyingActivityService groupBuyingActivityService;
@@ -46,10 +46,11 @@ public class ActivityRepository implements IActivityRepository {
     @Override
     public GroupBuyingActivityDiscountVO queryGroupBuyingActivityDiscount(Long activityId) {
 
+        GroupBuyingActivity groupBuyingActivityRes = getFromCacheOrDb(GroupBuyingActivity.cacheRedisKey(activityId),
+                () -> groupBuyingActivityService.queryValidGroupBuyingActivityByActivityId(activityId));
         // 根据SC渠道值查询配置中最新的1个有效的活动
-        GroupBuyingActivity groupBuyingActivityRes = groupBuyingActivityService.queryValidGroupBuyingActivityByActivityId(activityId);
         if (groupBuyingActivityRes == null) return null;
-        GroupBuyingDiscount groupBuyingDiscountRes = groupBuyingDiscountService.queryGroupBuyingDiscountByDiscountId(groupBuyingActivityRes.getDiscountId());
+        GroupBuyingDiscount groupBuyingDiscountRes = getFromCacheOrDb(GroupBuyingDiscount.cacheRedisKey(activityId), () -> groupBuyingDiscountService.queryGroupBuyingDiscountByDiscountId(groupBuyingActivityRes.getDiscountId()));
         if (groupBuyingDiscountRes == null) return null;
         GroupBuyingActivityDiscountVO.GroupBuyingDiscount groupBuyingDiscount = GroupBuyingActivityDiscountVO.GroupBuyingDiscount.builder()
                 .discountName(groupBuyingDiscountRes.getDiscountName())

@@ -86,4 +86,8 @@ public class GroupBuyingActivity implements Serializable {
     private Date updateTime;
 
     private static final long serialVersionUID = 1L;
+
+    public static String cacheRedisKey(Long activityId) {
+        return "group_buy_market_top.javarem.infrastructure.dao.po.GroupBuyActivity_" + activityId;
+    }
 }

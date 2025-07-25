@@ -56,4 +56,8 @@ public interface IRedisService {
         }
 
     }
+
+    <T> T getValue(String cacheKey);
+
+    <T> void setValue(String cacheKey, T dbResult);
 }
