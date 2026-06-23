@@ -1,13 +1,10 @@
+### Maven ###
 target/
-!.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
 
 ### IntelliJ IDEA ###
-.idea/modules.xml
-.idea/jarRepositories.xml
-.idea/compiler.xml
-.idea/libraries/
+.idea/
 *.iws
 *.iml
 *.ipr
@@ -36,12 +33,14 @@ build/
 
 ### Mac OS ###
 .DS_Store
-/data/
-/.idea/
-/.idea/
-/group-buying-platform-app/data/
-/data/
-/group-buying-platform-app/data/
-/group-buying-platform-app/data/
-/group-buying-platform-app/data/
-/.idea/
+
+### Logs ###
+data/log/
+logs/
+*.log
+
+### Nginx ###
+docs/dev-ops/nginx-1.20.2/
+
+### Test junk ###
+group-buying-platform-app/src/test/java/test/
