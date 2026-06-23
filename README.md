@@ -5,165 +5,166 @@
   <img src="https://img.shields.io/badge/License-MIT-blue" alt="License">
 </p>
 
-<h1 align="center">🛒 Group-Buying Platform</h1>
-<p align="center"><strong>A production-grade group-buying &amp; marketplace platform built with DDD architecture</strong></p>
+<h1 align="center">🛒 拼团平台 Group-Buying Platform</h1>
+<p align="center"><strong>基于 DDD 领域驱动设计的企业级拼团交易系统</strong></p>
 
 ---
 
-## 📋 Overview
+## 📋 项目简介
 
-**Group-Buying Platform** is a full-featured, domain-driven e-commerce platform that supports group-buying activities, dynamic discount pricing, crowd-based targeting, and multi-channel settlement. Designed with clean architecture and enterprise-grade patterns, it serves as both a learn-by-doing project and a solid foundation for real-world marketplace systems.
+**拼团平台** 是一个完整的企业级电商拼团交易系统，基于 DDD（领域驱动设计）分层架构实现。支持灵活配置的拼团活动、动态折扣计算引擎、人群标签风控过滤、以及多渠道结算回调。
 
-The platform integrates with external mini-mall systems via Dubbo RPC, processes asynchronous callbacks through RabbitMQ, and dynamically adjusts configuration at runtime via Redis-based DCC (Dynamic Configuration Center).
-
----
-
-## ✨ Features
-
-| Feature | Description |
-|---------|-------------|
-| **Group-Buying Activities** | Create and manage group-buying campaigns with configurable rules |
-| **Dynamic Discount Engine** | Multiple discount types: percentage off (ZK), fixed reduction (ZJ), amount off (MJ), straight discount (N) |
-| **Crowd Tag Filtering** | Restrict activity participation based on user crowd tags |
-| **Rule Chain (Responsibility Chain)** | Extensible trade rule filtering using Chain of Responsibility pattern |
-| **Multi-Threaded Strategy Router** | Concurrent query aggregation with decision tree routing |
-| **DCC (Dynamic Configuration Center)** | Runtime configuration updates via Redis pub/sub without restart |
-| **Multi-Channel Settlement** | Strategy-pattern based settlement callbacks: HTTP, MQ, RPC |
-| **Distributed Message Delivery** | Reliable async message processing with RabbitMQ |
-| **Dubbo RPC API** | Expose group-buying services as Dubbo RPC interfaces |
-| **Team Formation & Settlement** | Group-buying team creation, progress tracking, and settlement |
+项目通过 Dubbo RPC 对外提供拼团服务，可与外部商城系统无缝对接；采用 RabbitMQ 处理异步消息与事件分发；基于 Redis 实现运行时动态配置中心（DCC），无需重启即可调整业务参数。
 
 ---
 
-## 🏗️ Architecture
+## ✨ 核心功能
+
+| 功能 | 描述 |
+|------|------|
+| **拼团活动管理** | 创建和管理拼团活动，支持灵活的规则配置 |
+| **动态折扣引擎** | 四种折扣类型：百分比折扣（ZK）、直降（ZJ）、满减（MJ）、直减（N） |
+| **人群标签过滤** | 基于用户标签进行活动准入控制，精准营销 |
+| **责任链规则过滤** | 可扩展的交易规则过滤管道，支持灵活编排 |
+| **多线程策略路由** | 基于决策树的多线程并发查询汇聚，提升性能 |
+| **动态配置中心（DCC）** | 基于 Redis 发布订阅，运行时动态调整配置 |
+| **多渠道结算** | 策略模式结算回调：HTTP、MQ、RPC 三种渠道 |
+| **分布式消息** | 基于 RabbitMQ 的可靠异步消息处理 |
+| **Dubbo RPC 接口** | 以 Dubbo 协议对外暴露拼团服务 |
+| **拼团组队结算** | 成团进度追踪、组队统计、自动结算 |
+
+---
+
+## 🏗️ 系统架构
 
 ```
 ┌──────────────────────────────────────────────────────────────────────┐
-│                        Trigger Layer                                │
+│                         Trigger 触发层                                │
 │  ┌──────────────┐  ┌───────────────┐  ┌──────────────────────────┐  │
-│  │  HTTP Controllers │  │  MQ Listeners  │  │  Scheduled Jobs        │  │
+│  │  HTTP 控制器  │  │  MQ 消息监听  │  │  定时任务                  │  │
 │  └──────────────┘  └───────────────┘  └──────────────────────────┘  │
 ├──────────────────────────────────────────────────────────────────────┤
-│                        Domain Layer                                 │
+│                         Domain 领域层                                 │
 │  ┌─────────────────────┐  ┌──────────────────┐  ┌────────────────┐ │
-│  │  Activity (Discount) │  │  Trade (Order)    │  │  Tag (Crowd)   │ │
-│  │  • Discount Strategy │  │  • Rule Filter    │  │  • Tag Check   │ │
-│  │  • Trial Balance     │  │  • Lock/Settle    │  │  • Job Process │ │
-│  │  • Group-Buying      │  │  • Team Progress  │  │                │ │
+│  │  活动（折扣）         │  │  交易（订单）      │  │  标签（人群）    │ │
+│  │  • 折扣策略计算      │  │  • 规则过滤       │  │  • 标签校验    │ │
+│  │  • 试算平衡          │  │  • 锁单/结算      │  │  • 标签任务处理 │ │
+│  │  • 拼团信息          │  │  • 成团进度追踪   │  │                │ │
 │  └─────────────────────┘  └──────────────────┘  └────────────────┘ │
 │  ┌──────────────────────────────────────────────────────────────┐   │
-│  │  Message (Distribution)                                      │   │
-│  │  • Callback Strategies (HTTP / MQ / RPC)                     │   │
+│  │  消息（分发）                                                  │   │
+│  │  • 回调策略（HTTP / MQ / RPC）                                │   │
 │  └──────────────────────────────────────────────────────────────┘   │
 ├──────────────────────────────────────────────────────────────────────┤
-│                     Infrastructure Layer                            │
+│                     Infrastructure 基础设施层                         │
 │  ┌──────────┐ ┌──────────┐ ┌────────┐ ┌────────┐ ┌──────────────┐  │
 │  │  MySQL    │ │  Redis   │ │RabbitMQ│ │ Nacos  │ │  Dubbo RPC   │  │
 │  │(MyBatis+) │ │(Redisson)│ │        │ │        │ │              │  │
 │  └──────────┘ └──────────┘ └────────┘ └────────┘ └──────────────┘  │
 ├──────────────────────────────────────────────────────────────────────┤
-│                            API Layer                                │
-│           Dubbo RPC Interfaces & DTOs (top.javarem.api)            │
+│                          API 层                                      │
+│              Dubbo RPC 接口 & DTO（top.javarem.api）                 │
 ├──────────────────────────────────────────────────────────────────────┤
-│                         Types Layer                                 │
-│   Annotations, Enums, Exceptions, Design Framework, Utilities       │
+│                         Types 基础类型层                              │
+│           注解、枚举、异常、设计模式框架、工具类                       │
 ├──────────────────────────────────────────────────────────────────────┤
-│                         App Layer                                   │
-│         Spring Boot Application Entry & Configuration               │
+│                         App 应用层                                    │
+│                  Spring Boot 启动入口 & 配置                          │
 └──────────────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## 🧩 Module Structure
+## 🧩 模块说明
 
-| Module | Responsibility |
-|--------|---------------|
-| `group-buying-platform-api` | Dubbo RPC service interfaces, request/response DTOs |
-| `group-buying-platform-app` | Spring Boot application entry, config (Redis, ThreadPool, OKHttp, DCC) |
-| `group-buying-platform-domain` | Core business logic — activity, trade, tag, message domains |
-| `group-buying-platform-infrastructure` | Data persistence (MyBatis-Plus), Redis, DCC, event publishing, gateway |
-| `group-buying-platform-trigger` | HTTP controllers, MQ listeners, scheduled cron jobs |
-| `group-buying-platform-types` | Common types, custom annotations, design pattern framework, enums, exceptions |
-
----
-
-## 🛠️ Tech Stack
-
-| Technology | Purpose |
-|-----------|---------|
-| **Java 8** | Runtime |
-| **Spring Boot 2.7.12** | Application framework |
-| **Apache Dubbo 3.0.9** | RPC service exposure & invocation |
-| **Nacos** | Service discovery & configuration |
-| **RabbitMQ** | Async message & event processing |
-| **Redis / Redisson** | Caching, distributed locks, DCC |
-| **MySQL + MyBatis-Plus** | Data persistence |
-| **Nginx** | Reverse proxy & static resources |
-| **Maven** | Build & dependency management |
-| **JWT** | Authentication (login) |
-
-### Design Patterns Applied
-
-- **Strategy Pattern** — Discount calculation (ZK, ZJ, MJ, N), settlement callbacks (HTTP, MQ, RPC)
-- **Chain of Responsibility** — Trade rule filtering pipeline (3 model variants)
-- **Factory Pattern** — Rule filter & settlement strategy creation
-- **Template Method** — Abstract discount calculation workflow
-- **Strategy Router (Decision Tree)** — Multi-threaded concurrent query aggregation
-- **AOP + Annotation** — Distributed message publishing via `@DistributeMessage`
+| 模块 | 职责 |
+|------|------|
+| `group-buying-platform-api` | Dubbo RPC 服务接口、请求/响应 DTO |
+| `group-buying-platform-app` | Spring Boot 启动入口、配置（Redis、线程池、OKHttp、DCC） |
+| `group-buying-platform-domain` | 核心业务逻辑 — 活动、交易、标签、消息四大领域 |
+| `group-buying-platform-infrastructure` | 数据持久化（MyBatis-Plus）、Redis 缓存、DCC、事件发布、外部网关 |
+| `group-buying-platform-trigger` | HTTP 控制器、MQ 消息监听器、定时任务 |
+| `group-buying-platform-types` | 公共类型、自定义注解、设计模式框架（责任链/决策树）、枚举、异常 |
 
 ---
 
-## 🚀 Quick Start
+## 🛠️ 技术栈
 
-### Prerequisites
+| 技术 | 用途 |
+|------|------|
+| **Java 8** | 运行环境 |
+| **Spring Boot 2.7.12** | 应用框架 |
+| **Apache Dubbo 3.0.9** | RPC 远程调用 |
+| **Nacos** | 服务发现与配置管理 |
+| **RabbitMQ** | 异步消息与事件处理 |
+| **Redis / Redisson** | 缓存、分布式锁、动态配置中心 |
+| **MySQL + MyBatis-Plus** | 数据持久化 |
+| **Nginx** | 反向代理与静态资源 |
+| **Maven** | 构建与依赖管理 |
+| **JWT** | 身份认证 |
+
+### 运用到的设计模式
+
+- **策略模式** — 折扣计算（ZK、ZJ、MJ、N）、结算回调（HTTP、MQ、RPC）
+- **责任链模式** — 交易规则过滤管道（内置 3 种模型变体）
+- **工厂模式** — 规则过滤器与结算策略的创建
+- **模板方法** — 抽象折扣计算流程
+- **策略路由（决策树）** — 多线程并发查询汇聚
+- **AOP + 注解** — 通过 `@DistributeMessage` 实现分布式消息发布
+
+---
+
+## 🚀 快速开始
+
+### 环境要求
 
 - JDK 1.8+
 - MySQL 8.0+
-- Redis (with Redisson)
+- Redis（配合 Redisson）
 - RabbitMQ
 - Nacos 2.x
 - Maven 3.6+
 
-### Steps
+### 启动步骤
 
 ```bash
-# 1. Clone the repository
+# 1. 克隆项目
 git clone https://github.com/lainXXX/group-buying-platform.git
 
-# 2. Import database schema
+# 2. 导入数据库
 mysql -u root -p < docs/dev-ops/mysql/sql/20250328-distribute-message-group_buying_platform.sql
 
-# 3. Configure application
-# Edit group-buying-platform-app/src/main/resources/application-dev.yml
-# Set your MySQL, Redis, RabbitMQ, and Nacos connection info
+# 3. 修改配置
+# 编辑 group-buying-platform-app/src/main/resources/application-dev.yml
+# 配置 MySQL、Redis、RabbitMQ、Nacos 等连接信息
 
-# 4. Build the project
+# 4. 构建项目
 cd group-buying-platform
 mvn clean install -DskipTests
 
-# 5. Run
+# 5. 启动
 java -jar group-buying-platform-app/target/group-buying-platform-app-1.0-SNAPSHOT.jar
 ```
 
 ---
 
-## 🔌 API Exposed (Dubbo RPC)
+## 🔌 Dubbo RPC 接口
 
-| Interface | Description |
-|-----------|-------------|
-| `IMarketIndexService` | Market index & product inquiry |
-| `IMarketTradeService` | Trade-related operations (lock order, settle, notify) |
-| `DCCService` | Dynamic configuration center operations |
+| 接口 | 说明 |
+|------|------|
+| `IMarketIndexService` | 首页营销及商品查询 |
+| `IMarketTradeService` | 交易相关操作（锁单、结算、通知） |
+| `DCCService` | 动态配置中心操作 |
+| `IMallTestService` | 商城测试接口 |
 
 ---
 
-## 📄 License
+## 📄 开源协议
 
-This project is licensed under the **MIT License** — see the [LICENSE](./LICENSE) file for details.
+本项目基于 **MIT License** 开源，详情请查看 [LICENSE](./LICENSE) 文件。
 
 ---
 
 <p align="center">
-  Built with ❤️ for learning and sharing
+  一个学习与分享的项目 ❤️
 </p>
